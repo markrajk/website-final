@@ -1513,6 +1513,9 @@ body {
   }
 }
 
+//=============================================
+//             SECTION DASHBOARD
+//=============================================
 #main-overview {
 
   .section-dashboard {
@@ -1546,11 +1549,282 @@ body {
       @include justify-content(center);
 
       &-media-container {
+        margin-left: 10em;
+        // padding-top: 6em;
         max-width: 72.5em;
         
         &-img {
           width: 100%;
         }
+      }
+    }
+  }
+}
+
+//=============================================
+//             SECTION LEARN MORE
+//=============================================
+#main-overview .section-learn {
+  padding-top: 12em;
+  padding-bottom: 12em;
+  font-size: 1rem;
+
+  &-header {
+    margin-bottom: 6em;
+    text-align: center;
+
+    &-title {
+      margin-bottom: .69em;
+      font-size: 3.6rem;
+      font-weight: 700;
+      line-height: 1.17;
+      color: #171f38;
+    }
+
+    &-text {
+      font-size: 1.65rem;
+      font-weight: 400;
+      color: #2c3857;
+    }
+  }
+
+  &-main {
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(space-between);
+
+    &-card {
+      padding: 3.5em 3.3em;
+      max-width: 39.2em;
+      border-radius: 4px;
+
+      &-title {
+        margin-bottom: 1.43em;
+        font-size: 2.1em;
+        font-weight: 600;
+        letter-spacing: 0.11px;
+      }
+
+      &-text {
+        margin-bottom: 2.39em;
+        font-size: 1.55em;
+        font-weight: 400;
+        letter-spacing: 0.08px;
+      }
+
+      &-learn-more {
+        font-size: 1.8rem;
+        font-weight: 500;
+        text-decoration: none;
+
+        & i,
+        & svg {
+          margin-left: .5em;
+          font-size: .78em;
+        }
+      }
+
+      &.light {
+        background-color: #ebf5f3;
+
+        & .section-learn-main-card-title {
+          color: #171f38;
+        }
+
+        & .section-learn-main-card-text {
+          color: #2c3857;
+        }
+
+        & .section-learn-main-card-learn-more {
+          color: #0a615a;
+        }
+      }
+
+      &.dark {
+        background-color: #04454d;
+
+        & .section-learn-main-card-title {
+          color: #FFF;
+        }
+
+        & .section-learn-main-card-text {
+          color: #FFF;
+        }
+
+        & .section-learn-main-card-learn-more {
+          color: #8cf09b;
+        }
+      }
+    }
+  }
+}
+
+//=============================================
+//             SECTION START
+//=============================================
+#main-overview {
+
+  & .section-start {
+    font-size: 1rem;
+    background-color: #f5f2eb;
+    overflow: hidden;
+
+    &-main {
+      padding-top: 11em;
+      padding-bottom: 11em;
+      position: relative;
+      text-align: center;
+
+      &-title {
+        margin-bottom: .92em;
+        font-size: 3.8em;
+        font-weight: 700;
+        line-height: 1.11;
+        color: #171f38;
+      }
+
+      &-text {
+        margin-bottom: 2.47em;
+        font-size: 1.7em;
+        font-weight: 400;
+        letter-spacing: 0.09px;
+        color: #2c3857;
+      }
+
+      &-inputs {
+
+        & input {
+          margin-right: .71em;
+          padding: 1.18em 1.06em;
+          width: 100%;
+          max-width: 20.71em;
+          font-size: 1.7em;
+          font-weight: 400;
+          letter-spacing: 0.09px;
+          border-radius: 5px;
+          border: solid 2.3px #c1c9d8;
+          background-color: #ffffff;
+
+          &::placeholder {
+            color: #657794;
+          }
+        }
+
+        & .button {
+          padding: 1em 2.11em;
+          font-size: 1.9em;
+          font-weight: 600;
+          line-height: 1.21;
+          letter-spacing: 0.1px;
+          color: #ffffff;
+        }
+      }
+
+      &-img {
+
+        &.img-01 {
+          max-width: 36.3em;
+          position: absolute;
+          left: -15em;
+          bottom: 0;
+        }
+
+        &.img-02 {
+          max-width: 14.7em;
+          position: absolute;
+          right: 4.7em;
+          bottom: 8.2em;
+        }
+
+        &.img-03 {
+          max-width: 11.1em;
+          position: absolute;
+          right: -4em;
+          bottom: -4em;
+        }
+      }
+    }
+  }
+}
+
+.custom-accordion{
+  max-width: 39.2em;
+  font-size: 1rem;
+
+  &-item {
+    overflow: hidden;
+    margin-bottom: 1.2em;
+
+    &-header {
+      padding: 1.18em 1.47em;
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(space-between);
+      background-color: #FFF;
+      border-radius: 4px;
+      font-size: 1.7em;
+      font-weight: 600;
+      letter-spacing: 0.09px;
+      color: #171f38;
+      transition: all 0s ease-in-out .4s;
+      cursor: pointer;
+    }
+
+    &-body {
+      padding: 0 2.4em 0;
+      max-height: 0;
+      color: #FFF;
+      border-radius: 4px;
+      background-color: #20303c;
+      transition: all .4s ease-in-out;
+
+      &-title {
+        opacity: 0;
+        padding-bottom: 1.18em;
+        font-size: 1.7em;
+        font-weight: 600;
+        letter-spacing: 0.09px;
+        color: #ffffff;
+        transition: opacity .3s ease-in-out .2s;
+      }
+
+      &-text {
+        opacity: 0;
+        font-size: 1.5em;
+        font-weight: 400;
+        line-height: 1.87;
+        letter-spacing: 0.08px;
+        color: #ffffff;
+        transition: opacity .3s ease-in-out .2s;
+
+        &:not(:last-of-type) {
+          margin-bottom: 1.67em;
+        }
+      }
+    }
+
+    &.open {
+      & .custom-accordion-item-header {
+        color: #FFF;
+        background-color: #20303c;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        transition: all 0s ease-in-out 0s;
+      }
+
+      & .custom-accordion-item-body {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding: 2.1em 2.4em 3em;
+        max-height: 100vh;
+      }
+
+      & .custom-accordion-item-body-text {
+        opacity: 1;
+      }
+
+      & .custom-accordion-item-body-title {
+        opacity: 1;
       }
     }
   }
