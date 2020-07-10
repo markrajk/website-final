@@ -1,0 +1,1865 @@
+// ====================================================================================================================================
+//                                                              VARIABLES
+// ====================================================================================================================================
+$green-primary: #19cf40;
+$text-color-primary: #1c1c1c;
+
+
+// ====================================================================================================================================
+//                                                              FONTS
+// ====================================================================================================================================
+
+@mixin custom-respond($value) {
+  @media(max-width: $value * 1px) {
+    @content;
+  }
+}
+
+@mixin respond($breakpoint) {
+  @if $breakpoint == desktop-xxsm {
+    @media (max-width: 379px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-xsm {
+    @media (max-width: 575px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-sm {
+    @media (max-width: 769px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-md {
+    @media (max-width: 991px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-lg {
+    @media (max-width: 1199px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop-xl {
+    @media (max-width: 1379px) {
+      @content;
+    }
+  }
+  @if $breakpoint == desktop-xxl {
+    @media (max-width: 1720px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop-xxxl {
+    @media (max-width: 1900px) {
+      @content;
+    }
+  }
+
+  @if $breakpoint == desktop-default {
+    @media (min-width: 1440px) {
+      @content;
+    }
+  }
+}
+
+@function resize($base, $value) {
+  $result: $base * $value;
+  @return $result;
+}
+
+// Flexbox Mixins
+// http://philipwalton.github.io/solved-by-flexbox/
+// https://github.com/philipwalton/solved-by-flexbox
+// 
+// Copyright (c) 2013 Brian Franco
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to
+// permit persons to whom the Software is furnished to do so, subject to
+// the following conditions:
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+//
+// This is a set of mixins for those who want to mess around with flexbox
+// using the native support of current browsers. For full support table
+// check: http://caniuse.com/flexbox
+//
+// Basically this will use:
+//
+// * Fallback, old syntax (IE10, mobile webkit browsers - no wrapping)
+// * Final standards syntax (FF, Safari, Chrome, IE11, Opera)
+//
+// This was inspired by:
+// 
+// * http://dev.opera.com/articles/view/advanced-cross-browser-flexbox/
+// 
+// With help from:
+// 
+// * http://w3.org/tr/css3-flexbox/
+// * http://the-echoplex.net/flexyboxes/
+// * http://msdn.microsoft.com/en-us/library/ie/hh772069(v=vs.85).aspx
+// * http://css-tricks.com/using-flexbox/
+// * http://dev.opera.com/articles/view/advanced-cross-browser-flexbox/
+// * https://developer.mozilla.org/en-us/docs/web/guide/css/flexible_boxes
+
+//----------------------------------------------------------------------
+
+// Flexbox Containers
+//
+// The 'flex' value causes an element to generate a block-level flex
+// container box.
+//
+// The 'inline-flex' value causes an element to generate a inline-level
+// flex container box. 
+//
+// display: flex | inline-flex
+//
+// http://w3.org/tr/css3-flexbox/#flex-containers
+//
+// (Placeholder selectors for each type, for those who rather @extend)
+
+@mixin flexbox {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+// %flexbox { @include flexbox; }
+
+//----------------------------------
+
+@mixin inline-flex {
+	display: -webkit-inline-box;
+	display: -webkit-inline-flex;
+	display: -moz-inline-flex;
+	display: -ms-inline-flexbox;
+	display: inline-flex;
+}
+
+// %inline-flex { @include inline-flex; }
+
+//----------------------------------------------------------------------
+
+// Flexbox Direction
+//
+// The 'flex-direction' property specifies how flex items are placed in
+// the flex container, by setting the direction of the flex container's
+// main axis. This determines the direction that flex items are laid out in. 
+//
+// Values: row | row-reverse | column | column-reverse
+// Default: row
+//
+// http://w3.org/tr/css3-flexbox/#flex-direction-property
+
+@mixin flex-direction($value: row) {
+	@if $value == row-reverse {
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: horizontal;
+	} @else if $value == column {
+		-webkit-box-direction: normal;
+		-webkit-box-orient: vertical;
+	} @else if $value == column-reverse {
+		-webkit-box-direction: reverse;
+		-webkit-box-orient: vertical;
+	} @else {
+		-webkit-box-direction: normal;
+		-webkit-box-orient: horizontal;
+	}
+	-webkit-flex-direction: $value;
+	-moz-flex-direction: $value;
+	-ms-flex-direction: $value;
+	flex-direction: $value;
+}
+	// Shorter version:
+	@mixin flex-dir($args...) { @include flex-direction($args...); }
+
+//----------------------------------------------------------------------
+
+// Flexbox Wrap
+//
+// The 'flex-wrap' property controls whether the flex container is single-line
+// or multi-line, and the direction of the cross-axis, which determines
+// the direction new lines are stacked in. 
+//
+// Values: nowrap | wrap | wrap-reverse
+// Default: nowrap
+//
+// http://w3.org/tr/css3-flexbox/#flex-wrap-property
+
+@mixin flex-wrap($value: nowrap) {
+	// No Webkit Box fallback.
+	-webkit-flex-wrap: $value;
+	-moz-flex-wrap: $value;
+	@if $value == nowrap {
+		-ms-flex-wrap: none;
+	} @else { 
+		-ms-flex-wrap: $value; 
+	}
+	flex-wrap: $value;
+}
+
+//----------------------------------------------------------------------
+
+// Flexbox Flow (shorthand)
+//
+// The 'flex-flow' property is a shorthand for setting the 'flex-direction'
+// and 'flex-wrap' properties, which together define the flex container's
+// main and cross axes.
+//
+// Values: <flex-direction> | <flex-wrap> 
+// Default: row nowrap
+//
+// http://w3.org/tr/css3-flexbox/#flex-flow-property
+
+@mixin flex-flow($values: (row nowrap)) {
+	// No Webkit Box fallback.
+	-webkit-flex-flow: $values;
+	-moz-flex-flow: $values;
+	-ms-flex-flow: $values;
+	flex-flow: $values;
+}
+
+//----------------------------------------------------------------------
+
+// Flexbox Order
+//
+// The 'order' property controls the order in which flex items appear within
+// their flex container, by assigning them to ordinal groups.
+//
+// Default: 0
+//
+// http://w3.org/tr/css3-flexbox/#order-property
+
+@mixin order($int: 0) {
+	-webkit-box-ordinal-group: $int + 1;
+	-webkit-order: $int;
+	-moz-order: $int;
+	-ms-flex-order: $int;
+	order: $int;
+}
+
+//----------------------------------------------------------------------
+
+// Flexbox Grow
+//
+// The 'flex-grow' property sets the flex grow factor. Negative numbers
+// are invalid.
+//
+// Default: 0
+//
+// http://w3.org/tr/css3-flexbox/#flex-grow-property
+
+@mixin flex-grow($int: 0) {
+	-webkit-box-flex: $int;
+	-webkit-flex-grow: $int;
+	-moz-flex-grow: $int;
+	-ms-flex-positive: $int;
+	flex-grow: $int;
+}
+
+//----------------------------------------------------------------------
+
+// Flexbox Shrink
+//
+// The 'flex-shrink' property sets the flex shrink factor. Negative numbers
+// are invalid.
+//
+// Default: 1
+//
+// http://w3.org/tr/css3-flexbox/#flex-shrink-property
+
+@mixin flex-shrink($int: 1) {
+	-webkit-flex-shrink: $int;
+	-moz-flex-shrink: $int;
+	-ms-flex-negative: $int;
+	flex-shrink: $int;
+}
+
+//----------------------------------------------------------------------
+
+// Flexbox Basis
+//
+// The 'flex-basis' property sets the flex basis. Negative lengths are invalid. 
+//
+// Values: Like "width" 
+// Default: auto
+//
+// http://www.w3.org/TR/css3-flexbox/#flex-basis-property
+
+@mixin flex-basis($value: auto) {
+	-webkit-flex-basis: $value;
+	-moz-flex-basis: $value;
+	-ms-flex-preferred-size: $value;
+	flex-basis: $value;
+}
+
+//----------------------------------------------------------------------
+
+// Flexbox "Flex" (shorthand)
+//
+// The 'flex' property specifies the components of a flexible length: the
+// flex grow factor and flex shrink factor, and the flex basis. When an
+// element is a flex item, 'flex' is consulted instead of the main size
+// property to determine the main size of the element. If an element is
+// not a flex item, 'flex' has no effect.
+//
+// Values: none | <flex-grow> <flex-shrink> || <flex-basis>
+// Default: See individual properties (1 1 0).
+//
+// http://w3.org/tr/css3-flexbox/#flex-property
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+    
+	// Set a variable to be used by box-flex properties
+	$fg-boxflex: $fg;
+
+	// Box-Flex only supports a flex-grow value so let's grab the
+	// first item in the list and just return that.
+	@if type-of($fg) == 'list' {
+		$fg-boxflex: nth($fg, 1);
+	}
+
+	-webkit-box-flex: $fg-boxflex;
+	-webkit-flex: $fg $fs $fb;
+	-moz-box-flex: $fg-boxflex;
+	-moz-flex: $fg $fs $fb;
+	-ms-flex: $fg $fs $fb;
+	flex: $fg $fs $fb;
+}
+
+//----------------------------------------------------------------------
+
+// Flexbox Justify Content
+//
+// The 'justify-content' property aligns flex items along the main axis
+// of the current line of the flex container. This is done after any flexible
+// lengths and any auto margins have been resolved. Typically it helps distribute
+// extra free space leftover when either all the flex items on a line are
+// inflexible, or are flexible but have reached their maximum size. It also
+// exerts some control over the alignment of items when they overflow the line.
+//
+// Note: 'space-*' values not supported in older syntaxes.
+//
+// Values: flex-start | flex-end | center | space-between | space-around
+// Default: flex-start
+//
+// http://w3.org/tr/css3-flexbox/#justify-content-property
+
+@mixin justify-content($value: flex-start) {
+	@if $value == flex-start {
+		-webkit-box-pack: start;
+		-ms-flex-pack: start;
+	} @else if $value == flex-end {
+		-webkit-box-pack: end;
+		-ms-flex-pack: end;
+	} @else if $value == space-between {
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+	} @else if $value == space-around {
+		-ms-flex-pack: distribute;		
+	} @else {
+		-webkit-box-pack: $value;
+		-ms-flex-pack: $value;
+	}
+	-webkit-justify-content: $value;
+	-moz-justify-content: $value;
+	justify-content: $value;
+}
+	// Shorter version:
+	@mixin flex-just($args...) { @include justify-content($args...); }
+
+//----------------------------------------------------------------------
+
+// Flexbox Align Items
+//
+// Flex items can be aligned in the cross axis of the current line of the
+// flex container, similar to 'justify-content' but in the perpendicular
+// direction. 'align-items' sets the default alignment for all of the flex
+// container's items, including anonymous flex items. 'align-self' allows
+// this default alignment to be overridden for individual flex items. (For
+// anonymous flex items, 'align-self' always matches the value of 'align-items'
+// on their associated flex container.) 
+//
+// Values: flex-start | flex-end | center | baseline | stretch
+// Default: stretch
+//
+// http://w3.org/tr/css3-flexbox/#align-items-property
+
+@mixin align-items($value: stretch) {
+	@if $value == flex-start {
+		-webkit-box-align: start;
+		-ms-flex-align: start;
+	} @else if $value == flex-end {
+		-webkit-box-align: end;
+		-ms-flex-align: end;
+	} @else {
+		-webkit-box-align: $value;
+		-ms-flex-align: $value;
+	}
+	-webkit-align-items: $value;
+	-moz-align-items: $value;
+	align-items: $value;
+}
+
+//----------------------------------
+
+// Flexbox Align Self
+//
+// Values: auto | flex-start | flex-end | center | baseline | stretch
+// Default: auto
+
+@mixin align-self($value: auto) {
+	// No Webkit Box Fallback.
+	-webkit-align-self: $value;
+	-moz-align-self: $value;
+	@if $value == flex-start {
+		-ms-flex-item-align: start;
+	} @else if $value == flex-end {
+		-ms-flex-item-align: end;
+	} @else {
+		-ms-flex-item-align: $value;
+	}
+	align-self: $value;
+}
+
+//----------------------------------------------------------------------
+
+// Flexbox Align Content
+//
+// The 'align-content' property aligns a flex container's lines within the
+// flex container when there is extra space in the cross-axis, similar to
+// how 'justify-content' aligns individual items within the main-axis. Note,
+// this property has no effect when the flexbox has only a single line.
+//
+// Values: flex-start | flex-end | center | space-between | space-around | stretch
+// Default: stretch
+//
+// http://w3.org/tr/css3-flexbox/#align-content-property
+
+@mixin align-content($value: stretch) {
+	// No Webkit Box Fallback.
+	-webkit-align-content: $value;
+	-moz-align-content: $value;
+	@if $value == flex-start {
+		-ms-flex-line-pack: start;
+	} @else if $value == flex-end {
+		-ms-flex-line-pack: end;
+	} @else {
+		-ms-flex-line-pack: $value;
+	}
+	align-content: $value;
+}
+
+@mixin grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+
+
+
+// Ensure CSS grid works with IE 11 spec.
+// https://css-tricks.com/browser-compatibility-css-grid-layouts-simple-sass-mixins/
+// sass-lint:disable no-vendor-prefixes, no-duplicate-properties
+@mixin grid {
+  display: -ms-grid;
+  display: grid;
+}
+
+// $columns values should be delimited by a space
+@mixin grid-template-columns($columns...) {
+  -ms-grid-columns: $columns;
+  grid-template-columns: $columns;
+}
+
+// $rows values should be delimited by a space
+@mixin grid-template-rows($rows...) {
+  -ms-grid-rows: $rows;
+  grid-template-rows: $rows;
+}
+
+// Can be used in combination with above grid-template-X mixins.
+// These result in the same output:
+// @include grid-template-columns(10px grid-repeat(4, 20px) 30px);
+// @include grid-template-columns(10px 20px 20px 20px 20px 30px);
+@function grid-repeat($repeat, $stuff: 1fr) {
+  $list: ();
+  @for $i from 1 through $repeat {
+    $list: append($list, $stuff, space);
+  }
+  @return $list;
+}
+
+@mixin grid-column($col-start, $col-end) {
+  -ms-grid-column: $col-start;
+  -ms-grid-column-span: $col-end - $col-start;
+  grid-column: #{$col-start} / #{$col-end};
+}
+
+@mixin grid-row($row-start, $row-end) {
+  -ms-grid-row: $row-start;
+  -ms-grid-row-span: $row-end - $row-start;
+  grid-row: #{$row-start} / #{$row-end};
+}
+
+@mixin grid-align-self($value) {
+  -ms-grid-row-align: $value;
+  align-self: $value;
+}
+
+@mixin grid-justify-self($value) {
+  -ms-grid-column-align: $value;
+  justify-self: $value;
+}
+
+@mixin target-ie {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
+
+  @supports (-ms-ime-align:auto) {
+    @content;
+  }
+}
+
+// ====================================================================================================================================
+//                                                              GENERAL
+// ====================================================================================================================================
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+  
+  font-size: 62.5%;   //1rem = 10px 10px/16 62.5%
+
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    font-size: 1rem;
+    color: $text-color-primary;
+    
+  //   overflow-x: hidden;
+  //   overflow-y: auto;
+  //   scrollbar-width: none;
+  //   -ms-overflow-style: none;
+
+  //   &::-webkit-scrollbar { 
+  //     width: 0 !important;
+  // }
+}
+
+// ====================================================================================================================================
+//                                                              UTILITY
+// ====================================================================================================================================
+.container {
+  margin: 0 auto;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 100%;
+  max-width: calc(123.2rem + 10%);
+}
+
+.button {
+  @include inline-flex();
+  @include align-items(center);
+  @include justify-content(center);
+  border-radius: 3.5px;
+  border: solid 2px transparent;
+  text-decoration: none;
+
+  &-primary {
+    color: #FFF;
+    background-color: $green-primary;
+    border-color: $green-primary;
+
+    &.outlined {
+      color: $green-primary;
+      background-color: #FFF;
+    }
+  }
+}
+
+.dropdown {
+  height: 100%;
+  position: relative;
+
+  &:hover .dropdown-list {
+    transform: translate(0, 100%) scale(1);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &:hover .dropdown-trigger {
+    opacity: .7;
+  }
+
+  &-trigger {
+    & i,
+    & svg {
+      margin-left: 1.3rem;
+    }
+  }
+
+  &-list {
+    display: block;
+    padding: 3rem 2.4rem;
+    width: 30rem;
+    position: absolute;
+    bottom: 0;
+    left: -3rem;
+    transform: translate(0, 95%) scale(.97);
+    opacity: 0;
+    visibility: hidden;
+    border-radius: 4px;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+    border: solid 1.5px #eaeaea;
+    background-color: #ffffff;
+    list-style: none;
+    transition: all .2s ease-in-out;
+    transition-property: transform, opacity;
+
+    &.hidden {
+      transform: translate(0, 95%) scale(.97)!important;
+      opacity: 0!important;
+      visibility: hidden!important;
+    }
+
+    &-item {
+
+      &:not(:last-of-type) {
+        margin-bottom: 1.3rem;
+      }
+
+      &-title {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 0.21px;
+        text-align: left;
+        color: #24292e;
+      }
+
+      &-link {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 400;
+        letter-spacing: 0.21px;
+        color: #586069;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+          color: #000;
+          text-decoration: underline;
+        }
+      }
+
+      &-footer {
+        display: block;
+        margin-top: 2.5rem;
+        padding-top: 2.2rem;
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 0.21px;
+        color: #24292e;
+        text-decoration: none;
+        border-top: 1.5px solid #eaeaea;
+      }
+    }
+  }
+}
+
+
+.b-b {
+  width: 100%;
+  border-bottom: 2px solid #F3F3F3;
+}
+
+
+// ====================================================================================================================================
+//                                                              LAYOUT
+// ====================================================================================================================================
+
+// ==================================
+// HEADER
+// ==================================
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #FFF;
+  // border-bottom: 1.5px solid #f1f1f1;
+  z-index: 2000;
+  transition: all .25s ease-in-out;
+  border-bottom: 1.5px solid transparent;
+
+
+  & .nav {
+    height: 6.8rem;
+    display: flex;
+    align-items: center;
+    
+
+    //TABLET
+    @include respond(desktop-md) {
+      height: 7rem;
+      border-bottom: 1.5px solid #F1F1F1;
+    }
+   
+    &.container {
+      @include respond(desktop-xsm) {
+        padding-right: 3rem;
+      }
+    }
+
+    &-brand {
+      margin-right: 5.2%;
+
+      & .brand-img-wrapper {
+        display: inline-block;
+      }
+
+      &-img {
+        height: 4.49rem;
+
+        @include respond(desktop-md) {
+          height: 4.29rem;
+        }
+
+        @include respond(desktop-xsm) {
+          height: 3.6rem;
+        }
+      }
+    }
+
+    &-list {
+      height: 70%;
+      margin-right: auto;
+      max-width: 46rem;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      list-style: none;
+      justify-content: space-between;
+
+      &-item {
+        height: 100%;
+
+        &-link {
+          height: 100%;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.6rem;
+          font-weight: 500;
+          line-height: 1.25;
+          letter-spacing: 0.08px;
+          color: #1d2b55;
+          text-decoration: none;
+
+          &.active {
+            position: relative;
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 120%;
+              height: 3px;
+              background-color: $green-primary;
+              bottom: .5rem;
+              left: 50%;
+              transform: translate(-50%, 0);
+              
+            }
+          }
+        }
+
+        &:not(:first-of-type) {
+          margin-left: 2rem;
+        }
+      }
+
+      & > * {
+        white-space: nowrap;
+      }
+    }
+
+    &-buttons {
+      margin-left: 5%;
+      white-space: nowrap;
+
+      @include respond(desktop-md) {
+        margin-right: -.5rem;
+        margin-left: auto;
+      }
+
+      & .btn-link {
+        font-weight: 600;
+        margin-right:  2.2rem;
+
+        @include respond(desktop-md) {
+          font-size: 1.6rem;
+          margin-right: 1.6rem;
+        }
+      }
+
+      & input {
+        margin-right: 1.5rem;
+        padding: 1.1rem 1.2rem;
+        font-size: 1.5rem;
+        font-weight: 500;
+        line-height: 1.27;
+        letter-spacing: 0.08px;
+        border-radius: 3.5px;
+        border: solid 2px rgba(195, 203, 217, 0.38);
+        outline: none;
+
+        &::placeholder {
+          color: #667690;
+        }
+      }
+
+      & .button-primary {
+        padding: 1rem 2.1rem;
+        font-size: 1.5rem;
+        border-radius: 3.5px;
+
+        @include respond(desktop-md) {
+          padding: 1.2rem 2.2rem;
+        }
+      }
+
+      & .btn-outlined {
+        padding: 1.25rem 1.8rem;
+        font-size: 1.75rem;
+      }
+    }
+
+    & .nav-menu-toggle {
+      margin-left: auto;
+      cursor: pointer;
+
+      & svg {
+        color: #232324;
+        font-size: 2.5rem;
+      }
+    }
+
+    //MENU
+    &-menu {
+      height: 100vh;
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      transform: translate(100%, 0);
+      transition: all .5s ease-in-out;
+      background-color: #FFF;
+      z-index: 5000;
+
+      @include respond(desktop-md) {
+        display: block;
+      }
+
+      & .container {
+        @include respond(desktop-xsm) {
+          padding-right: 3rem;
+        }
+      }
+      
+      &-header {
+        height: calc(6.9rem + 1.5px);
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1.5px solid #f1f1f1;
+
+        & .brand-img-wrapper {
+          display: inline-block;
+        }
+
+        img {
+          max-height: 4.29rem;
+
+          @include respond(desktop-xsm) {
+            height: 3.6rem;
+          }
+        }
+
+        & .nav-menu-toggle {
+          margin-left: auto;
+          font-size: 2.5rem;
+          color: #232324;
+          cursor: pointer;
+        }
+      }
+
+      &-body {
+
+        &-list {
+          list-style: none;
+
+          &-item {
+            
+            &-link {
+              padding-top: 1.8rem;
+              padding-bottom: 1.8rem;
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              font-size: 1.7rem;
+              color: #2f2f2f;
+              text-decoration: none;
+
+              &.active {
+                color: #070707;
+              }
+
+              &:hover,
+              &:focus {
+                background-color: #f1f1f1;
+              }
+            }
+          }
+        }
+      }
+
+      &-footer {
+        padding-top: 1.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .btn {
+          width: 49%;
+          padding: 1.3rem 1.65rem;
+          font-size: 1.8rem;
+          @include respond(desktop-xsm) {
+            width: 100%;
+
+            &:not(:first-of-type) {
+              margin-top: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// ==================================
+// FOOTER
+// ==================================
+.footer {
+  border-top: 1px solid #EAEAEA;
+  &-main {
+    padding-top: 7.5rem;
+    padding-bottom: 7.5rem;
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+
+    //TABLET
+    @include respond(desktop-md) {
+      padding-top: 5.7rem;
+      padding-bottom: 5.2rem;
+    }
+
+    //MOBILE
+    @include respond(desktop-xsm) {
+      flex-wrap: wrap;
+    }
+
+    &-list {
+      width: 100%;
+      max-width: 20rem;
+      text-align: center;
+      list-style: none;
+
+      //MOBILE
+      @include respond(desktop-xsm) {
+        max-width: 50%;
+      }
+
+      &:not(:last-of-type) {
+        margin-right: 5.5rem;
+
+        //TABLET
+        @include respond(desktop-md) {
+          margin-right: 0;
+        }
+      }
+
+      &:first-of-type {
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: 4.2rem;
+        }
+      }
+
+      &-item {
+        margin-bottom: 1.5rem;
+
+        //TABLET
+        @include respond(desktop-md) {
+          margin-bottom: 1.9rem;
+        }
+
+        &-title {
+          margin-bottom: .4rem;
+          font-size: 1.6rem;
+          font-weight: 700;
+          line-height: 1.63;
+          letter-spacing: 0.16px;
+          color: #313131;
+
+          //TABLET
+          @include respond(desktop-md) {
+            margin-bottom: 0;
+            font-size: 1.3rem;
+          }
+        }
+
+        &-link {
+          font-size: 1.5rem;
+          font-weight: 400;
+          line-height: 1.73;
+          letter-spacing: 0.15px;
+          color: #6f6f6f;
+          text-decoration: none;
+
+          &:hover,
+          &:focus {
+            color: #222;
+            text-decoration: underline;
+          }
+
+          //TABLET
+          @include respond(desktop-md) {
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  &-mid {
+    padding: 2.5rem 0;
+    background-color: #f5f5f5;
+
+    //TABLET
+    @include respond(desktop-md) {
+      padding: 2.1rem 0;
+    }
+
+    & .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      //TABLET
+      @include respond(desktop-md) {
+        justify-content: center;
+      }
+    }
+
+    &-links {
+
+      &-link {
+        font-size: 1.5rem;
+        font-weight: 700;
+        line-height: 1.47;
+        letter-spacing: 0.15px;
+        color: #454545;
+        text-decoration: none;
+
+        //TABLET
+        @include respond(desktop-md) {
+          font-size: 1.2rem;
+          letter-spacing: 0.12px;
+        }
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+
+        &:not(:last-of-type) {
+          margin-right: 3rem;
+        }
+      }
+    }
+
+    &-lng {
+      font-size: 1.5rem;
+      font-weight: 400;
+      line-height: 1.47;
+      letter-spacing: 0.15px;
+      color: #454545;
+      text-decoration: none;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+
+      & span {
+        font-weight: 700;
+      }
+
+      //TABLET
+      @include respond(desktop-md) {
+        display: none;
+      }
+    }
+  }
+
+  &-copy {
+    padding-top: 1.7rem;
+    padding-bottom: 1.7rem;
+    background-color: #ebeaeb;
+
+    &-text {
+      font-size: 1.25rem;
+      font-weight: 400;
+      line-height: 1.76;
+      letter-spacing: 0.13px;
+      color: #454545;
+
+      //TABLET
+      @include respond(desktop-md) {
+        font-size: 1.05rem;
+        text-align: center;
+      }
+    }
+  }
+}
+
+// ====================================================================================================================================
+//                                                              PAGE STYLES
+// ====================================================================================================================================
+//=============================================
+//               SECTION HERO
+//=============================================
+#main-overview {
+  padding-top: 8.4rem;
+
+  & .section-hero {
+    padding-right: 0;
+    padding-top: 6em;
+    padding-bottom: 9.6em;
+    @include flexbox();
+    @include align-items(flex-start);
+    @include justify-content(flex-start);
+    font-size: 1rem;
+
+    &-wrapper {
+      //background: right / contain no-repeat url(../assets/img/hero-background-img.png);
+
+      background-image: url(../assets/img/hero-background-img.png);
+      background-position: center 100%;
+
+      //1379
+      @include respond(desktop-xl) {
+        background: none;
+      }
+    }
+
+    &-main {
+      width: 100%;
+      max-width: 58em;
+
+      &-subtitle {
+      font-size: 2em;
+      margin-bottom: .75em;
+      font-weight: 700;
+      color: #222426;
+      }
+
+      &-title {
+        margin-bottom: .86em;
+        font-size: 4.05em;
+        font-weight: 700;
+        line-height: 1.43;
+        color: #0e1321;
+      }
+
+      &-text {
+        max-width: 25.15em;
+        margin-bottom: 2.12em;
+        font-size: 1.65em;
+        font-weight: 500;
+        line-height: 1.7;
+        letter-spacing: 0.08px;
+        color: #5a5a5a;
+      }
+
+      &-buttons {
+        margin-bottom: 3.5em;
+
+        & .button {
+          padding: 1em 2em;
+          font-size: 1.7em;
+          font-weight: 600;
+          letter-spacing: 0.17px;
+
+          &:first-of-type {
+            margin-right: 1.18em;
+          }
+        }
+      }
+
+      &-info {
+        font-size: 1.4em;
+        font-weight: 500;
+        letter-spacing: 0.14px;
+        color: #414448;
+      }
+    }
+
+    &-img {
+      display: none;
+      min-width: 0;
+      width: 100%;
+      max-width: 85em;
+
+      //1379
+      @include respond(desktop-xl) {
+        display: inline-block;
+      }
+    }
+  }
+
+  // & .section-hero {
+  //   padding-right: 0;
+  //   padding-top: 6em;
+  //   padding-bottom: 9.6em;
+  //   @include flexbox();
+  //   @include align-items(center);
+  //   @include justify-content(flex-start);
+  //   font-size: 1rem;
+
+  //   &-wrapper {
+  //     //background: right / contain no-repeat url(../assets/img/hero-background-img.png);
+
+  //     background-image: url(../assets/img/hero-background-img.png);
+  //     background-position: center 100%;
+
+  //     //1379
+  //     @include respond(desktop-xl) {
+  //       background: none;
+  //     }
+  //   }
+
+  //   &-main {
+  //     width: 100%;
+  //     max-width: 58rem;
+
+  //     &-subtitle {
+  //     font-size: 2rem;
+  //     margin-bottom: .75em;
+  //     font-weight: 700;
+  //     color: #222426;
+  //     }
+
+  //     &-title {
+  //       margin-bottom: .86em;
+  //       font-size: 4.05rem;
+  //       font-weight: 700;
+  //       line-height: 1.43;
+  //       color: #0e1321;
+  //     }
+
+  //     &-text {
+  //       margin-bottom: 2.12em;
+  //       font-size: 1.65rem;
+  //       font-weight: 500;
+  //       line-height: 1.7;
+  //       letter-spacing: 0.08px;
+  //       color: #5a5a5a;
+  //     }
+
+  //     &-buttons {
+  //       margin-bottom: 3.5em;
+
+  //       & .button {
+  //         padding: 1em 2em;
+  //         font-size: 1.7rem;
+  //         font-weight: 600;
+  //         letter-spacing: 0.17px;
+
+  //         &:first-of-type {
+  //           margin-right: 1.18em;
+  //         }
+  //       }
+  //     }
+
+  //     &-info {
+  //       font-size: 1.4rem;
+  //       font-weight: 500;
+  //       letter-spacing: 0.14px;
+  //       color: #414448;
+  //     }
+  //   }
+
+  //   &-img {
+  //     display: none;
+  //     min-width: 0;
+  //     width: 100%;
+  //     max-width: 80em;
+
+  //     //1379
+  //     @include respond(desktop-xl) {
+  //       display: inline-block;
+  //     }
+  //   }
+  // }
+}
+
+//=============================================
+//             SECTION BANNER
+//=============================================
+#main-overview {
+
+  & .section-banner {
+    font-style: 1rem;
+    padding-top: 5.5em;
+    padding-bottom: 5.5em;
+    background-color: rgba(245, 246, 248, 0.87);
+  
+    &-main {
+      text-align: center;
+
+      &-subtitle {
+        margin-bottom: .72em;
+        font-size: 1.8rem;
+        font-weight: 600;
+        color: #121212;
+      }
+  
+      &-title {
+        margin-bottom: .83em;
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 1.17;
+        color: #0e1321;
+      }
+  
+      &-text {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 68.4rem;
+        font-size: 1.75rem;
+        font-weight: 400;
+        line-height: 1.71;
+        color: #151515;
+      }
+
+      &-learn-more {
+        margin-top: 1.67em;
+        font-size: 1.8rem;
+        display: inline-block;
+        font-weight: 600;
+        color: #06cc64;
+        text-decoration: none;
+
+        & i,
+        & svg {
+          margin-left: .5em;
+          font-size: 1.6rem;
+        }
+      }
+    }
+  }
+}
+
+
+//=============================================
+//             FEATURE CARD
+//=============================================
+#main-overview {
+
+  & .section-feature-card {
+    font-size: 1rem;
+    @include flexbox();
+    @include align-items(center);
+    @include justify-content(center);
+
+    &-img {
+      min-width: 0;
+      width: 100%;
+      max-width: 30em;
+    }
+
+    &-main {
+      margin-left: 9em;
+      max-width: 48.6em;
+      
+      &-subtitle {
+        margin-bottom: .75em;
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #121212;
+      }
+
+      &-title {
+        margin-bottom: .83em;
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 1.39;
+        color: #0e1321;
+      }
+
+      &-text {
+        margin-bottom: 1.82em;
+        font-size: 1.65rem;
+        font-weight: 400;
+        line-height: 1.82;
+        color: #151515;
+      }
+
+      &-list {
+
+        &-item {
+          font-size: 1.7rem;
+          font-weight: 500;
+          color: #afafaf;
+          text-decoration: none;
+
+          &.active {
+            color: #0053b4;
+            font-weight: 600;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+
+          &:hover {
+            text-decoration: underline;
+          }
+
+          &:not(:last-of-type) {
+            margin-right: 1.76em;
+          }
+        }
+      }
+
+      &-learn-more {
+        font-size: 1.8rem;
+        font-weight: 500;
+        color: #0053b4;
+        text-decoration: none;
+
+        & i,
+        & svg {
+          margin-left: .8em;
+          font-size: 1.4rem;
+        }
+      }
+    }
+
+    &.reversed {
+      @include flex-direction(row-reverse);
+
+      & .section-feature-card-main {
+        margin-left: 0;
+        margin-right: 9rem;
+      }
+    }
+
+    &.card-01 {
+      padding-top: 7.4em;
+    }
+
+    &.card-02 {
+      padding-top: 3.5em;
+      padding-bottom: 7.5em;
+    }
+
+    &.card-03 {
+      padding-top: 7.5em;
+      padding-bottom: 7.5em;
+    }
+  }
+}
+
+#main-overview {
+
+  .section-dashboard {
+    padding-top: 6em;
+    padding-bottom: 6em;
+    font-size: 1rem;
+    background-color: #ebf5f3;
+
+    &-header {
+      margin-bottom: 6em;
+      text-align: center;
+  
+      &-title {
+        margin-bottom: .69em;
+        font-size: 3.6rem;
+        font-weight: 700;
+        line-height: 1.17;
+        color: #171f38;
+      }
+
+      &-text {
+        font-size: 1.65rem;
+        font-weight: 400;
+        color: #2c3857;
+      }
+    }
+
+    &-main {
+      @include flexbox();
+      @include align-items(center);
+      @include justify-content(center);
+
+      &-media-container {
+        max-width: 72.5em;
+        
+        &-img {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+//=========================================================================================================================================
+//                                                           ADDITIONAL CLASSES
+//=========================================================================================================================================
+
+.header-scroll {
+  border-color: #EBEBEB;
+}
+
+.menu-open {
+  transform: translate(0,0)!important;
+}
+
+.invisible {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show-inline {
+  display: inline;
+}
+
+.show-block {
+  display: block;
+}
+
+.show-xxsm-block {
+  display: none!important;
+
+  @include respond(desktop-xxsm) {
+    display: block!important;
+  }
+}
+
+.show-xsm-block {
+  display: none!important;
+
+  @include respond(desktop-xsm) {
+    display: block!important;
+  }
+}
+
+.show-sm-block {
+  display: none!important;
+
+  @include respond(desktop-sm) {
+    display: block!important;
+  }
+}
+
+.show-md-block {
+  display: none!important;
+
+  @include respond(desktop-md) {
+    display: block!important;
+  }
+}
+
+.show-lg-block {
+  display: none!important;
+
+  @include respond(desktop-lg) {
+    display: block!important;
+  }
+}
+
+.show-xl-block {
+  display: none!important;
+
+  @include respond(desktop-xl) {
+    display: block!important;
+  }
+}
+
+.show-xxl-block {
+  display: none!important;
+
+  @include respond(desktop-xxl) {
+    display: block!important;
+  }
+}
+
+.show-inline-block {
+  display: inline-block!important;
+}
+
+.show-xxsm-inline-block {
+  display: none!important;
+
+  @include respond(desktop-xxsm) {
+    display: inline-block!important;
+  }
+}
+
+.show-xsm-inline-block {
+  display: none!important;
+
+  @include respond(desktop-xsm) {
+    display: inline-block!important;
+  }
+}
+
+.show-sm-inline-block {
+  display: none!important;
+
+  @include respond(desktop-sm) {
+    display: inline-block!important;
+  }
+}
+
+.show-md-inline-block {
+  display: none!important;
+
+  @include respond(desktop-md) {
+    display: inline-block!important;
+  }
+}
+
+.show-lg-inline-block {
+  display: none!important;
+
+  @include respond(desktop-lg) {
+    display: inline-block!important;
+  }
+}
+
+.show-xl-inline-block {
+  display: none!important;
+
+  @include respond(desktop-xl) {
+    display: inline-block!important;
+  }
+}
+
+.show-xxl-inline-block {
+  display: none!important;
+
+  @include respond(desktop-xxl) {
+    display: inline-block!important;
+  }
+}
+
+.show-flex {
+  display: flex!important;
+}
+
+.show-xxsm-flex {
+  display: none!important;
+
+  @include respond(desktop-xxsm) {
+    display: flex!important;
+  }
+}
+
+.show-xsm-flex {
+  display: none!important;
+
+  @include respond(desktop-xsm) {
+    display: flex!important;
+  }
+}
+
+.show-sm-flex {
+  display: none!important;
+
+  @include respond(desktop-sm) {
+    display: flex!important;
+  }
+}
+
+.show-md-flex {
+  display: none!important;
+
+  @include respond(desktop-md) {
+    display: flex!important;
+  }
+}
+
+.show-lg-flex {
+  display: none!important;
+
+  @include respond(desktop-lg) {
+    display: flex!important;
+  }
+}
+
+.show-xl-flex {
+  display: none!important;
+
+  @include respond(desktop-xl) {
+    display: flex!important;
+  }
+}
+
+.show-xxl-flex {
+  display: none!important;
+
+  @include respond(desktop-xxl) {
+    display: flex!important;
+  }
+}
+
+.show-inline-flex {
+  display: inline-flex!important;
+}
+
+.show-xxsm-inline-flex {
+  display: none!important;
+
+  @include respond(desktop-xxsm) {
+    display: inline-flex!important;
+  }
+}
+
+.show-xsm-inline-flex {
+  display: none!important;
+
+  @include respond(desktop-xsm) {
+    display: inline-flex!important;
+  }
+}
+
+.show-sm-inline-flex {
+  display: none!important;
+
+  @include respond(desktop-sm) {
+    display: inline-flex!important;
+  }
+}
+
+.show-md-inline-flex {
+  display: none!important;
+
+  @include respond(desktop-md) {
+    display: inline-flex!important;
+  }
+}
+
+.show-lg-inline-flex {
+  display: none!important;
+
+  @include respond(desktop-lg) {
+    display: inline-flex!important;
+  }
+}
+
+.show-xl-inline-flex {
+  display: none!important;
+
+  @include respond(desktop-xl) {
+    display: inline-flex!important;
+  }
+}
+
+.show-xxl-inline-flex {
+  display: none!important;
+
+  @include respond(desktop-xxl) {
+    display: inline-flex!important;
+  }
+}
+
+.hide {
+  display: none!important;
+}
+
+.hide-xxsm {
+  @include respond(desktop-xxsm) {
+    display: none!important;
+  }
+}
+
+.hide-xsm {
+  @include respond(desktop-xsm) {
+    display: none!important;
+  }
+}
+
+.hide-sm {
+  @include respond(desktop-sm) {
+    display: none!important;
+  }
+}
+
+.hide-md {
+  @include respond(desktop-md) {
+    display: none!important;
+  }
+}
+
+.hide-lg {
+  @include respond(desktop-lg) {
+    display: none!important;
+  }
+}
+
+.hide-xl {
+  @include respond(desktop-xl) {
+    display: none!important;
+  }
+}
+
+.hide-xxl {
+  @include respond(desktop-xxl) {
+    display: none!important;
+  }
+}
+
