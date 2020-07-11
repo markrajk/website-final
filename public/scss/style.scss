@@ -851,6 +851,8 @@ body {
       }
 
       & input {
+        min-width: 0;
+        width: 100%;
         display: none;
         margin-right: 1.5rem;
         padding: 1.1rem 1.2rem;
@@ -1453,14 +1455,14 @@ body {
       max-width: 48.6em;
       
       &-subtitle {
-        margin-bottom: .75em;
+        margin-bottom: .6em;
         font-size: 1.6rem;
         font-weight: 600;
         color: #121212;
       }
 
       &-title {
-        margin-bottom: .83em;
+        margin-bottom: .62em;
         font-size: 3.6rem;
         font-weight: 700;
         line-height: 1.39;
@@ -1468,7 +1470,7 @@ body {
       }
 
       &-text {
-        margin-bottom: 1.82em;
+        margin-bottom: 1.45em;
         font-size: 1.65rem;
         font-weight: 400;
         line-height: 1.82;
@@ -1795,7 +1797,7 @@ body {
       @include justify-content(space-between);
       background-color: #FFF;
       border-radius: 4px;
-      transition: all 0s ease-in-out .4s;
+      transition: all 0s ease-in-out;
       cursor: pointer;
 
       &-title {
@@ -1803,13 +1805,13 @@ body {
         font-weight: 600;
         color: #171f38;
         letter-spacing: 0.09px;
-        transition: all 0s ease-in-out .4s;
+        transition: all 0s ease-in-out;
       }
 
       & i,
       & svg {
         font-size: 1.7em;
-        transition: all 0s ease-in-out .4s;
+        transition: all 0s ease-in-out;
       }
     }
 
@@ -1819,7 +1821,7 @@ body {
       color: #FFF;
       border-radius: 4px;
       background-color: #20303c;
-      transition: all .4s ease-in-out;
+      transition: all .0s ease-in-out;
 
       &-text {
         opacity: 0;
@@ -1861,6 +1863,7 @@ body {
         border-top-right-radius: 0;
         padding: 0 2.4em 3em;
         max-height: 100vh;
+        transition: all .6s ease-in-out;
       }
 
       & .custom-accordion-item-body-text {
