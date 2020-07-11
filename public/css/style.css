@@ -13,7 +13,13 @@ body {
   font-family: 'Inter', sans-serif;
   scroll-behavior: smooth;
   font-size: 1rem;
-  color: #1c1c1c; }
+  color: #1c1c1c;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none; }
+  body::-webkit-scrollbar {
+    width: 0 !important; }
 
 .container {
   margin: 0 auto;
@@ -21,6 +27,14 @@ body {
   padding-right: 5%;
   width: 100%;
   max-width: calc(123.2rem + 10%); }
+  @media (max-width: 991px) {
+    .container {
+      padding-left: 2.5%;
+      padding-right: 2.5%; } }
+  @media (max-width: 575px) {
+    .container {
+      padding-left: 5%;
+      padding-right: 5%; } }
 
 .button {
   display: -webkit-inline-box;
@@ -150,7 +164,7 @@ body {
             height: 4.29rem; } }
         @media (max-width: 575px) {
           .header .nav-brand-img {
-            height: 3.6rem; } }
+            height: 3.8rem; } }
     .header .nav-list {
       height: 70%;
       margin-right: auto;
@@ -160,6 +174,9 @@ body {
       align-items: center;
       list-style: none;
       justify-content: space-between; }
+      @media (max-width: 1280px) {
+        .header .nav-list {
+          max-width: 43rem; } }
       .header .nav-list-item {
         height: 100%; }
         .header .nav-list-item-link {
@@ -199,14 +216,15 @@ body {
       .header .nav-buttons .button-link {
         font-size: 1.6em;
         font-weight: 500;
-        margin-right: 2.2rem; }
+        margin-right: 2.2rem;
+        color: inherit; }
         .header .nav-buttons .button-link.contact-sales {
           color: #1D2B55; }
         .header .nav-buttons .button-link.login {
           color: #0A615A; }
         @media (max-width: 991px) {
           .header .nav-buttons .button-link {
-            font-size: 1.6rem;
+            font-size: 1.7rem;
             margin-right: 1.6rem; } }
         @media (max-width: 1440px) {
           .header .nav-buttons .button-link {
@@ -240,6 +258,9 @@ body {
         font-weight: 600;
         letter-spacing: 0.08px;
         border-radius: 3.5px; }
+        @media (max-width: 991px) {
+          .header .nav-buttons .button-primary {
+            font-size: 1.7rem; } }
       .header .nav-buttons .btn-outlined {
         padding: 1.25rem 1.8rem;
         font-size: 1.75rem; }
@@ -449,11 +470,11 @@ body {
     -webkit-align-items: flex-start;
     -moz-align-items: flex-start;
     align-items: flex-start;
-    -webkit-box-pack: start;
-    -ms-flex-pack: start;
-    -webkit-justify-content: flex-start;
-    -moz-justify-content: flex-start;
-    justify-content: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between;
     font-size: 1rem; }
     #main-overview .section-hero-wrapper {
       background-image: url(../assets/img/hero-background-img.png);
@@ -500,7 +521,6 @@ body {
         color: #414448; }
     #main-overview .section-hero-img {
       display: none;
-      min-width: 0;
       width: 100%;
       max-width: 85em; }
       @media (max-width: 1440px) {

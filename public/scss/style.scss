@@ -563,14 +563,14 @@ body {
     font-size: 1rem;
     color: $text-color-primary;
     
-  //   overflow-x: hidden;
-  //   overflow-y: auto;
-  //   scrollbar-width: none;
-  //   -ms-overflow-style: none;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 
-  //   &::-webkit-scrollbar { 
-  //     width: 0 !important;
-  // }
+    &::-webkit-scrollbar { 
+      width: 0 !important;
+  }
 }
 
 // ====================================================================================================================================
@@ -582,6 +582,16 @@ body {
   padding-right: 5%;
   width: 100%;
   max-width: calc(123.2rem + 10%);
+
+  @include respond(desktop-md) {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+  }
+
+  @include respond(desktop-xsm) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
 }
 
 .button {
@@ -761,7 +771,7 @@ body {
         }
 
         @include respond(desktop-xsm) {
-          height: 3.6rem;
+          height: 3.8rem;
         }
       }
     }
@@ -775,6 +785,10 @@ body {
       align-items: center;
       list-style: none;
       justify-content: space-between;
+
+      @include custom-respond(1280) {
+        max-width: 43rem;
+      }
 
       &-item {
         height: 100%;
@@ -831,6 +845,7 @@ body {
         font-size: 1.6em;
         font-weight: 500;
         margin-right:  2.2rem;
+        color: inherit;
 
         &.contact-sales {
           color: #1D2B55;
@@ -841,7 +856,7 @@ body {
         }
 
         @include respond(desktop-md) {
-          font-size: 1.6rem;
+          font-size: 1.7rem;
           margin-right: 1.6rem;
         }
 
@@ -887,6 +902,10 @@ body {
         font-weight: 600;
         letter-spacing: 0.08px;
         border-radius: 3.5px;
+
+        @include respond(desktop-md) {
+          font-size: 1.7rem;
+        }
       }
 
       & .btn-outlined {
@@ -1213,7 +1232,7 @@ body {
     padding-bottom: 9.6em;
     @include flexbox();
     @include align-items(flex-start);
-    @include justify-content(flex-start);
+    @include justify-content(space-between);
     font-size: 1rem;
 
     &-wrapper {
@@ -1283,7 +1302,7 @@ body {
 
     &-img {
       display: none;
-      min-width: 0;
+      //min-width: 0;
       width: 100%;
       max-width: 85em;
 
