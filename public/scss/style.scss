@@ -819,7 +819,7 @@ body {
     }
 
     &-buttons {
-      margin-left: 5%;
+      margin-left: 3%;
       white-space: nowrap;
 
       @include respond(desktop-md) {
@@ -853,6 +853,7 @@ body {
       & input {
         min-width: 0;
         width: 100%;
+        max-width: 14.67em;
         display: none;
         margin-right: 1.5rem;
         padding: 1.1rem 1.2rem;
@@ -864,12 +865,19 @@ body {
         border: solid 2px rgba(195, 203, 217, 0.38);
         outline: none;
 
+
+
         &::placeholder {
           color: #667690;
         }
 
         @include custom-respond(1440) {
           display: inline-block;
+        }
+
+        @include custom-respond(1280) {
+          display: none;
+          max-width: 13.13em;
         }
       }
 
@@ -879,10 +887,6 @@ body {
         font-weight: 600;
         letter-spacing: 0.08px;
         border-radius: 3.5px;
-
-        @include respond(desktop-md) {
-          padding: 1.2rem 2.2rem;
-        }
       }
 
       & .btn-outlined {
@@ -989,7 +993,7 @@ body {
         justify-content: space-between;
         flex-wrap: wrap;
 
-        .btn {
+        .button {
           width: 49%;
           padding: 1.3rem 1.65rem;
           font-size: 1.8rem;
@@ -1217,9 +1221,10 @@ body {
 
       background-image: url(../assets/img/hero-background-img.png);
       background-position: center 100%;
+      background-size: auto 100%;
 
-      //1379
-      @include respond(desktop-xl) {
+      //1440
+      @include custom-respond(1440) {
         background: none;
       }
     }
@@ -1282,8 +1287,8 @@ body {
       width: 100%;
       max-width: 85em;
 
-      //1379
-      @include respond(desktop-xl) {
+      //1440
+      @include custom-respond(1440) {
         display: inline-block;
       }
     }
@@ -1471,7 +1476,7 @@ body {
 
       &-text {
         margin-bottom: 1.45em;
-        font-size: 1.65rem;
+        font-size: 1.6rem;
         font-weight: 400;
         line-height: 1.82;
         color: #151515;
