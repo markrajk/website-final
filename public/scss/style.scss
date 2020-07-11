@@ -592,6 +592,14 @@ body {
   border: solid 2px transparent;
   text-decoration: none;
 
+  &-link {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &-primary {
     color: #FFF;
     background-color: $green-primary;
@@ -739,7 +747,7 @@ body {
     }
 
     &-brand {
-      margin-right: 5.2%;
+      margin-right: 4.4%;
 
       & .brand-img-wrapper {
         display: inline-block;
@@ -819,17 +827,31 @@ body {
         margin-left: auto;
       }
 
-      & .btn-link {
-        font-weight: 600;
+      & .button-link {
+        font-size: 1.6em;
+        font-weight: 500;
         margin-right:  2.2rem;
+
+        &.contact-sales {
+          color: #1D2B55;
+        }
+
+        &.login {
+          color: #0A615A;
+        }
 
         @include respond(desktop-md) {
           font-size: 1.6rem;
           margin-right: 1.6rem;
         }
+
+        @include custom-respond(1440) {
+          display: none;
+        }
       }
 
       & input {
+        display: none;
         margin-right: 1.5rem;
         padding: 1.1rem 1.2rem;
         font-size: 1.5rem;
@@ -843,11 +865,17 @@ body {
         &::placeholder {
           color: #667690;
         }
+
+        @include custom-respond(1440) {
+          display: inline-block;
+        }
       }
 
       & .button-primary {
         padding: 1rem 2.1rem;
         font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.08px;
         border-radius: 3.5px;
 
         @include respond(desktop-md) {
@@ -1545,16 +1573,17 @@ body {
 
     &-main {
       @include flexbox();
-      @include align-items(center);
-      @include justify-content(center);
+      @include align-items(flex-start);
+      @include justify-content(space-between);
 
       &-media-container {
-        margin-left: 10em;
-        // padding-top: 6em;
-        max-width: 72.5em;
+        margin-left: 2em;
+        padding-top: 7.2em;
+        max-width: 74.9em;
         
         &-img {
           width: 100%;
+          max-width: 74.9em;
         }
       }
     }
@@ -1597,6 +1626,10 @@ body {
       padding: 3.5em 3.3em;
       max-width: 39.2em;
       border-radius: 4px;
+
+      &:not(:last-of-type) {
+        margin-right: 2em;
+      }
 
       &-title {
         margin-bottom: 1.43em;
@@ -1756,18 +1789,28 @@ body {
     margin-bottom: 1.2em;
 
     &-header {
-      padding: 1.18em 1.47em;
+      padding: 2em 2.5em;
       @include flexbox();
       @include align-items(center);
       @include justify-content(space-between);
       background-color: #FFF;
       border-radius: 4px;
-      font-size: 1.7em;
-      font-weight: 600;
-      letter-spacing: 0.09px;
-      color: #171f38;
       transition: all 0s ease-in-out .4s;
       cursor: pointer;
+
+      &-title {
+        font-size: 1.7em;
+        font-weight: 600;
+        color: #171f38;
+        letter-spacing: 0.09px;
+        transition: all 0s ease-in-out .4s;
+      }
+
+      & i,
+      & svg {
+        font-size: 1.7em;
+        transition: all 0s ease-in-out .4s;
+      }
     }
 
     &-body {
@@ -1777,16 +1820,6 @@ body {
       border-radius: 4px;
       background-color: #20303c;
       transition: all .4s ease-in-out;
-
-      &-title {
-        opacity: 0;
-        padding-bottom: 1.18em;
-        font-size: 1.7em;
-        font-weight: 600;
-        letter-spacing: 0.09px;
-        color: #ffffff;
-        transition: opacity .3s ease-in-out .2s;
-      }
 
       &-text {
         opacity: 0;
@@ -1805,17 +1838,28 @@ body {
 
     &.open {
       & .custom-accordion-item-header {
-        color: #FFF;
+        
         background-color: #20303c;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         transition: all 0s ease-in-out 0s;
+
+        &-title {
+          color: #FFF;
+          transition: all 0s ease-in-out 0s;
+        }
+
+        & i,
+        & svg {
+          color: #FFF;
+          transition: all 0s ease-in-out 0s;
+        }
       }
 
       & .custom-accordion-item-body {
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-        padding: 2.1em 2.4em 3em;
+        padding: 0 2.4em 3em;
         max-height: 100vh;
       }
 

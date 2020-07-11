@@ -41,6 +41,10 @@ body {
   border-radius: 3.5px;
   border: solid 2px transparent;
   text-decoration: none; }
+  .button-link {
+    text-decoration: none; }
+    .button-link:hover {
+      text-decoration: underline; }
   .button-primary {
     color: #FFF;
     background-color: #19cf40;
@@ -136,7 +140,7 @@ body {
       .header .nav.container {
         padding-right: 3rem; } }
     .header .nav-brand {
-      margin-right: 5.2%; }
+      margin-right: 4.4%; }
       .header .nav-brand .brand-img-wrapper {
         display: inline-block; }
       .header .nav-brand-img {
@@ -192,14 +196,23 @@ body {
         .header .nav-buttons {
           margin-right: -.5rem;
           margin-left: auto; } }
-      .header .nav-buttons .btn-link {
-        font-weight: 600;
+      .header .nav-buttons .button-link {
+        font-size: 1.6em;
+        font-weight: 500;
         margin-right: 2.2rem; }
+        .header .nav-buttons .button-link.contact-sales {
+          color: #1D2B55; }
+        .header .nav-buttons .button-link.login {
+          color: #0A615A; }
         @media (max-width: 991px) {
-          .header .nav-buttons .btn-link {
+          .header .nav-buttons .button-link {
             font-size: 1.6rem;
             margin-right: 1.6rem; } }
+        @media (max-width: 1440px) {
+          .header .nav-buttons .button-link {
+            display: none; } }
       .header .nav-buttons input {
+        display: none;
         margin-right: 1.5rem;
         padding: 1.1rem 1.2rem;
         font-size: 1.5rem;
@@ -211,9 +224,14 @@ body {
         outline: none; }
         .header .nav-buttons input::placeholder {
           color: #667690; }
+        @media (max-width: 1440px) {
+          .header .nav-buttons input {
+            display: inline-block; } }
       .header .nav-buttons .button-primary {
         padding: 1rem 2.1rem;
         font-size: 1.5rem;
+        font-weight: 600;
+        letter-spacing: 0.08px;
         border-radius: 3.5px; }
         @media (max-width: 991px) {
           .header .nav-buttons .button-primary {
@@ -627,21 +645,23 @@ body {
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    align-items: center;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    justify-content: center; }
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    -webkit-align-items: flex-start;
+    -moz-align-items: flex-start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    justify-content: space-between; }
     #main-overview .section-dashboard-main-media-container {
-      margin-left: 10em;
-      max-width: 72.5em; }
+      margin-left: 2em;
+      padding-top: 7.2em;
+      max-width: 74.9em; }
       #main-overview .section-dashboard-main-media-container-img {
-        width: 100%; }
+        width: 100%;
+        max-width: 74.9em; }
 
 #main-overview .section-learn {
   padding-top: 12em;
@@ -680,6 +700,8 @@ body {
       padding: 3.5em 3.3em;
       max-width: 39.2em;
       border-radius: 4px; }
+      #main-overview .section-learn-main-card:not(:last-of-type) {
+        margin-right: 2em; }
       #main-overview .section-learn-main-card-title {
         margin-bottom: 1.43em;
         font-size: 2.1em;
@@ -778,7 +800,7 @@ body {
     overflow: hidden;
     margin-bottom: 1.2em; }
     .custom-accordion-item-header {
-      padding: 1.18em 1.47em;
+      padding: 2em 2.5em;
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-flex;
@@ -796,12 +818,17 @@ body {
       justify-content: space-between;
       background-color: #FFF;
       border-radius: 4px;
-      font-size: 1.7em;
-      font-weight: 600;
-      letter-spacing: 0.09px;
-      color: #171f38;
       transition: all 0s ease-in-out .4s;
       cursor: pointer; }
+      .custom-accordion-item-header-title {
+        font-size: 1.7em;
+        font-weight: 600;
+        color: #171f38;
+        letter-spacing: 0.09px;
+        transition: all 0s ease-in-out .4s; }
+      .custom-accordion-item-header i, .custom-accordion-item-header svg {
+        font-size: 1.7em;
+        transition: all 0s ease-in-out .4s; }
     .custom-accordion-item-body {
       padding: 0 2.4em 0;
       max-height: 0;
@@ -809,14 +836,6 @@ body {
       border-radius: 4px;
       background-color: #20303c;
       transition: all .4s ease-in-out; }
-      .custom-accordion-item-body-title {
-        opacity: 0;
-        padding-bottom: 1.18em;
-        font-size: 1.7em;
-        font-weight: 600;
-        letter-spacing: 0.09px;
-        color: #ffffff;
-        transition: opacity .3s ease-in-out .2s; }
       .custom-accordion-item-body-text {
         opacity: 0;
         font-size: 1.5em;
@@ -828,15 +847,20 @@ body {
         .custom-accordion-item-body-text:not(:last-of-type) {
           margin-bottom: 1.67em; }
     .custom-accordion-item.open .custom-accordion-item-header {
-      color: #FFF;
       background-color: #20303c;
       border-bottom-left-radius: 0;
       border-bottom-right-radius: 0;
       transition: all 0s ease-in-out 0s; }
+      .custom-accordion-item.open .custom-accordion-item-header-title {
+        color: #FFF;
+        transition: all 0s ease-in-out 0s; }
+      .custom-accordion-item.open .custom-accordion-item-header i, .custom-accordion-item.open .custom-accordion-item-header svg {
+        color: #FFF;
+        transition: all 0s ease-in-out 0s; }
     .custom-accordion-item.open .custom-accordion-item-body {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      padding: 2.1em 2.4em 3em;
+      padding: 0 2.4em 3em;
       max-height: 100vh; }
     .custom-accordion-item.open .custom-accordion-item-body-text {
       opacity: 1; }
