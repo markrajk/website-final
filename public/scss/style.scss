@@ -71,6 +71,11 @@ $text-color-primary: #1c1c1c;
   @return $result;
 }
 
+@function emcalc($base, $value) {
+  $result: $base / $value;
+  @return $result * 1em;
+}
+
 // Flexbox Mixins
 // http://philipwalton.github.io/solved-by-flexbox/
 // https://github.com/philipwalton/solved-by-flexbox
@@ -1235,9 +1240,24 @@ body {
     @include justify-content(space-between);
     font-size: 1rem;
 
-    &-wrapper {
-      //background: right / contain no-repeat url(../assets/img/hero-background-img.png);
+    //TABLET
+    @include respond(desktop-md) {
+      padding-right: 2.5%;
+      padding-top: 8.5em;
+      padding-bottom: 7em;
+      @include flex-direction(column);
+      @include align-items(center);
+      @include justify-content(center);
+      font-size: 1rem!important;
+      text-align: center;
+    }
 
+    //MOBILE
+    @include respond(desktop-xsm) {
+      padding-right: 5%;
+    }
+
+    &-wrapper {
       background-image: url(../assets/img/hero-background-img.png);
       background-position: center 100%;
       background-size: auto 100%;
@@ -1257,6 +1277,11 @@ body {
       margin-bottom: .75em;
       font-weight: 700;
       color: #222426;
+
+      //TALBET
+      @include respond(desktop-md) {
+        display: none;
+      }
       }
 
       &-title {
@@ -1265,6 +1290,18 @@ body {
         font-weight: 700;
         line-height: 1.43;
         color: #0e1321;
+
+        //TALBET
+        @include respond(desktop-md) {
+          margin-bottom: emcalc(3,3.4);
+          font-size: 3.4em;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(3.3,2.9);
+          font-size: 2.9em;
+        }
       }
 
       &-text {
@@ -1275,10 +1312,28 @@ body {
         line-height: 1.7;
         letter-spacing: 0.08px;
         color: #5a5a5a;
+
+        //TABLET
+        @include respond(desktop-md) {
+          margin-bottom: emcalc(3,1.7);
+          margin-left: auto;
+          margin-right: auto;
+          font-size: 1.7em;
+        }
       }
 
       &-buttons {
         margin-bottom: 3.5em;
+
+        //TABLET
+        @include respond(desktop-md) {
+          margin-bottom: 3em;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: 2em;
+        }
 
         & .button {
           padding: 1em 2em;
@@ -1289,6 +1344,17 @@ body {
           &:first-of-type {
             margin-right: 1.18em;
           }
+
+          //MOBILE
+          @include respond(desktop-xsm) {
+            padding-top: emcalc(1.4,1.6);
+            padding-bottom: emcalc(1.4,1.6);
+            padding-left: 0;
+            padding-right: 0;
+            width: 90%;
+            font-size: 1.6em;
+            font-weight: 500;
+          }
         }
       }
 
@@ -1297,6 +1363,11 @@ body {
         font-weight: 500;
         letter-spacing: 0.14px;
         color: #414448;
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          font-size: 1.3em;
+        }
       }
     }
 
@@ -1309,6 +1380,12 @@ body {
       //1440
       @include custom-respond(1440) {
         display: inline-block;
+      }
+
+      @include respond(desktop-md) {
+        margin-bottom: 4.8em;
+        max-width: 45.7em;
+        order: -1;
       }
     }
   }

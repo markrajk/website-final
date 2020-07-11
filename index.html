@@ -199,25 +199,33 @@
       <section class="section section-hero container">
         <div class="section-hero-main">
           <p class="section-hero-main-subtitle">Team Feedback</p>
-          <h1 class="section-hero-main-title">A great new tool to develop teams and companies</h1>
-          <p class="section-hero-main-text">
+          <h1 class="section-hero-main-title">A great new tool to <br class="show-xsm-block"> develop <br
+              class="show-md-block hide-xsm"> teams and<br class="show-xsm-block">
+            companies
+          </h1>
+          <p class="section-hero-main-text hide-xsm">
             Team Feedback is a new kind of corporate feedback
             tool which makes giving and receiving feedback
             a great simple routine.
           </p>
           <div class="section-hero-main-buttons">
-            <a href="#" class="button button-primary">Get started</a>
-            <a href="#" class="button button-primary outlined">Get started</a>
+            <a href="#" class="button button-primary hide-xsm">Get started</a>
+            <a href="#" class="button button-primary outlined hide-xsm">Get started</a>
+            <a href="#" class="button button-primary show-xsm-inline-flex">Download app to get started</a>
           </div>
-          <p class="section-hero-main-info">For teams up to 100 people TeamFeedback is free of charge.</p>
+          <p class="section-hero-main-info hide-xsm">For teams up to 100 people TeamFeedback is free of charge.</p>
+          <p class="section-hero-main-info show-xsm-block">All basic features free of charge.
+          </p>
         </div>
 
-        <img src="./public/assets/img/hero-img.png" alt="Team feedback features" class="section-hero-img">
+        <img src="./public/assets/img/hero-img.png" alt="Team feedback features" class="section-hero-img hide-md">
+        <img src="./public/assets/img/hero-small.png" alt="Team feedback features"
+          class="section-hero-img show-md-inline-block">
       </section>
     </div>
 
     <!-- SECTION BANNER -->
-    <section class="section section-banner">
+    <section class="section section-banner hide-md">
       <div class="section-banner-main container">
         <p class="section-banner-main-subtitle">Introduction</p>
         <h2 class="section-banner-main-title">What is Team Feedback</h2>
@@ -615,12 +623,10 @@
 
     function resizeHero() {
       console.log(window.innerWidth)
-      // if (window.innerWidth < 1200) {
-      //   heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
-      // } else if (window.innerWidth > 1440) {
-      //   heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
-      // }
-      heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
+      if (window.innerWidth > 991) {
+        heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
+      }
+      //heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
     }
 
     window.addEventListener('resize', resizeHero)

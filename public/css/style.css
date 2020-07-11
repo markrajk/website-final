@@ -476,6 +476,32 @@ body {
     -moz-justify-content: space-between;
     justify-content: space-between;
     font-size: 1rem; }
+    @media (max-width: 991px) {
+      #main-overview .section-hero {
+        padding-right: 2.5%;
+        padding-top: 8.5em;
+        padding-bottom: 7em;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        font-size: 1rem !important;
+        text-align: center; } }
+    @media (max-width: 575px) {
+      #main-overview .section-hero {
+        padding-right: 5%; } }
     #main-overview .section-hero-wrapper {
       background-image: url(../assets/img/hero-background-img.png);
       background-position: center 100%;
@@ -491,12 +517,23 @@ body {
         margin-bottom: .75em;
         font-weight: 700;
         color: #222426; }
+        @media (max-width: 991px) {
+          #main-overview .section-hero-main-subtitle {
+            display: none; } }
       #main-overview .section-hero-main-title {
         margin-bottom: .86em;
         font-size: 4.05em;
         font-weight: 700;
         line-height: 1.43;
         color: #0e1321; }
+        @media (max-width: 991px) {
+          #main-overview .section-hero-main-title {
+            margin-bottom: 0.8823529412em;
+            font-size: 3.4em; } }
+        @media (max-width: 575px) {
+          #main-overview .section-hero-main-title {
+            margin-bottom: 1.1379310345em;
+            font-size: 2.9em; } }
       #main-overview .section-hero-main-text {
         max-width: 25.15em;
         margin-bottom: 2.12em;
@@ -505,8 +542,20 @@ body {
         line-height: 1.7;
         letter-spacing: 0.08px;
         color: #5a5a5a; }
+        @media (max-width: 991px) {
+          #main-overview .section-hero-main-text {
+            margin-bottom: 1.7647058824em;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 1.7em; } }
       #main-overview .section-hero-main-buttons {
         margin-bottom: 3.5em; }
+        @media (max-width: 991px) {
+          #main-overview .section-hero-main-buttons {
+            margin-bottom: 3em; } }
+        @media (max-width: 575px) {
+          #main-overview .section-hero-main-buttons {
+            margin-bottom: 2em; } }
         #main-overview .section-hero-main-buttons .button {
           padding: 1em 2em;
           font-size: 1.7em;
@@ -514,11 +563,23 @@ body {
           letter-spacing: 0.17px; }
           #main-overview .section-hero-main-buttons .button:first-of-type {
             margin-right: 1.18em; }
+          @media (max-width: 575px) {
+            #main-overview .section-hero-main-buttons .button {
+              padding-top: 0.875em;
+              padding-bottom: 0.875em;
+              padding-left: 0;
+              padding-right: 0;
+              width: 90%;
+              font-size: 1.6em;
+              font-weight: 500; } }
       #main-overview .section-hero-main-info {
         font-size: 1.4em;
         font-weight: 500;
         letter-spacing: 0.14px;
         color: #414448; }
+        @media (max-width: 575px) {
+          #main-overview .section-hero-main-info {
+            font-size: 1.3em; } }
     #main-overview .section-hero-img {
       display: none;
       width: 100%;
@@ -526,6 +587,11 @@ body {
       @media (max-width: 1440px) {
         #main-overview .section-hero-img {
           display: inline-block; } }
+      @media (max-width: 991px) {
+        #main-overview .section-hero-img {
+          margin-bottom: 4.8em;
+          max-width: 45.7em;
+          order: -1; } }
 
 #main-overview .section-banner {
   font-style: 1rem;
