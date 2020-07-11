@@ -1352,6 +1352,7 @@ body {
             padding-left: 0;
             padding-right: 0;
             width: 90%;
+            max-width: emcalc(33,1.6);
             font-size: 1.6em;
             font-weight: 500;
           }
@@ -1382,10 +1383,16 @@ body {
         display: inline-block;
       }
 
+      //TABLET
       @include respond(desktop-md) {
         margin-bottom: 4.8em;
         max-width: 45.7em;
         order: -1;
+      }
+
+      //MOBILE
+      @include respond(desktop-xsm) {
+        max-width: 28.8em;
       }
     }
   }

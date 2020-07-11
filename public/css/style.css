@@ -570,6 +570,7 @@ body {
               padding-left: 0;
               padding-right: 0;
               width: 90%;
+              max-width: 20.625em;
               font-size: 1.6em;
               font-weight: 500; } }
       #main-overview .section-hero-main-info {
@@ -592,6 +593,9 @@ body {
           margin-bottom: 4.8em;
           max-width: 45.7em;
           order: -1; } }
+      @media (max-width: 575px) {
+        #main-overview .section-hero-img {
+          max-width: 28.8em; } }
 
 #main-overview .section-banner {
   font-style: 1rem;
