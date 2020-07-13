@@ -896,7 +896,7 @@ body {
           display: inline-block;
         }
 
-        @include custom-respond(1280) {
+        @include custom-respond(1300) {
           display: none;
           max-width: 13.13em;
         }
@@ -1313,7 +1313,7 @@ body {
       }
 
       &-text {
-        max-width: 25.15em;
+        max-width: 32em;
         margin-bottom: 1.8em;
         font-size: 1.65em;
         font-weight: 500;
@@ -1345,7 +1345,7 @@ body {
 
         & .button {
           padding: .9em 1.8em;
-          font-size: 1.7em;
+          font-size: 1.25em;
           font-weight: 600;
           letter-spacing: 0.17px;
 
