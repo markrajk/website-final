@@ -1976,7 +1976,7 @@ body {
       @include justify-content(space-between);
       background-color: #FFF;
       border-radius: 4px;
-      transition: all .6s ease-in-out;
+      transition: all .0s ease-in-out;
       cursor: pointer;
 
       &-title {
@@ -1999,7 +1999,7 @@ body {
       color: #FFF;
       border-radius: 4px;
       background-color: #20303c;
-      transition: all .6s linear;
+      transition: all 0s linear;
 
       &-text {
         padding-left: emcalc(2.4,1.5 );
@@ -2037,7 +2037,7 @@ body {
         background-color: #20303c;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
-        transition: all 0s ease-in-out 0s;
+        transition: all .0s ease-in-out 0s;
 
         &-title {
           color: #FFF;

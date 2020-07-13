@@ -281,8 +281,16 @@
     <!-- SECTION FEATURE CARD -->
     <section class="section section-feature-card container reversed card-02">
       <div class="section-feature-card-media">
-        <video class="card-01-01 section-feature-card-media-video" muted preload="auto">
-          <source src="/public/assets/video/card-01-01.m4v" type="video/mp4">
+        <video class="card-02-01 section-feature-card-media-video" muted preload="auto" autoplay>
+          <source src="./public/assets/video/card-02-01.m4v" type="video/mp4">
+        </video>
+
+        <video class="card-02-02 section-feature-card-media-video" muted preload="auto" autoplay>
+          <source src="./public/assets/video/card-02-02.m4v" type="video/mp4">
+        </video>
+
+        <video class="card-02-03 section-feature-card-media-video active" muted preload="auto" autoplay>
+          <source src="./public/assets/video/card-02-03.m4v" type="video/mp4">
         </video>
 
         <img src="./public/assets/img/phone-placeholder.jpeg" alt="Team Feedback app feature"
@@ -299,9 +307,10 @@
           how he is doing at the moment and how to improve.
         </p>
         <div class="section-feature-card-main-list">
-          <a href="#" class="section-feature-card-main-list-item active">Development chart</a>
-          <a href="#" class="section-feature-card-main-list-item">Improvers</a>
-          <a href="#" class="section-feature-card-main-list-item">Compliments</a>
+          <a href="#" class="section-feature-card-main-list-item play-video active" goTo="card-02-01">Development
+            chart</a>
+          <a href="#" class="section-feature-card-main-list-item play-video" goTo="card-02-02">Improvers &
+            Compliments</a>
         </div>
       </div>
     </section>
