@@ -543,7 +543,7 @@ body {
         font-weight: 500;
         line-height: 1.7;
         letter-spacing: 0.08px;
-        color: #5a5a5a; }
+        color: #383838; }
         @media (max-width: 991px) {
           #main-overview .section-hero-main-text {
             margin-bottom: 1.7647058824em;
@@ -621,7 +621,7 @@ body {
       font-size: 1.6rem;
       font-weight: 400;
       line-height: 1.88;
-      color: #151515; }
+      color: #383838; }
     #main-overview .section-banner-main-learn-more {
       margin-top: 1.67em;
       font-size: 1.8rem;
@@ -675,7 +675,7 @@ body {
       font-size: 1.6rem;
       font-weight: 400;
       line-height: 1.88;
-      color: #151515; }
+      color: #383838; }
     #main-overview .section-feature-card-main-list-item {
       font-size: 1.7rem;
       font-weight: 500;

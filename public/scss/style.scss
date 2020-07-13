@@ -1313,7 +1313,7 @@ body {
         font-weight: 500;
         line-height: 1.7;
         letter-spacing: 0.08px;
-        color: #5a5a5a;
+        color: #383838;
 
         //TABLET
         @include respond(desktop-md) {
@@ -1521,7 +1521,7 @@ body {
         font-size: 1.6rem;
         font-weight: 400;
         line-height: 1.88;
-        color: #151515;
+        color: #383838;
       }
 
       &-learn-more {
@@ -1591,7 +1591,7 @@ body {
         font-size: 1.6rem;
         font-weight: 400;
         line-height: 1.88;
-        color: #151515;
+        color: #383838;
       }
 
       &-list {
