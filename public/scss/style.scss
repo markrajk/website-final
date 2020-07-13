@@ -644,7 +644,7 @@ body {
   &-trigger {
     & i,
     & svg {
-      margin-left: 1.3rem;
+      margin-left: 1.2rem;
     }
   }
 
@@ -762,13 +762,14 @@ body {
     }
 
     &-brand {
-      margin-right: 4.5%;
+      margin-right: 5%;
 
       & .brand-img-wrapper {
         display: inline-block;
       }
 
       &-img {
+        margin-left: -.5rem;
         height: 4.23rem;
 
         @include respond(desktop-md) {
@@ -784,7 +785,7 @@ body {
     &-list {
       height: 70%;
       margin-right: auto;
-      max-width: 46rem;
+      max-width: 44.45em;
       width: 100%;
       display: flex;
       align-items: center;
@@ -803,7 +804,7 @@ body {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.6rem;
+          font-size: 1.55rem;
           font-weight: 500;
           line-height: 1.25;
           letter-spacing: 0.08px;
@@ -838,7 +839,7 @@ body {
     }
 
     &-buttons {
-      margin-left: 3%;
+      margin-left: 3.3%;
       white-space: nowrap;
 
       @include respond(desktop-md) {
@@ -847,7 +848,7 @@ body {
       }
 
       & .button-link {
-        font-size: 1.6em;
+        font-size: 1.55em;
         font-weight: 500;
         margin-right:  2.2rem;
         color: inherit;
