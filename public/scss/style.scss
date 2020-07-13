@@ -1564,8 +1564,12 @@ body {
     &-media {
       position: relative;
       -webkit-transform: translateZ(0);
+      width: 100%;
+      max-width: 30em;
+      height: 53.9em;
       
       &-img {
+        //display: none;
         min-width: 0;
         width: 100%;
         max-width: 30em;
@@ -1578,7 +1582,7 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        transition: opacity .0s linear;
+        transition: opacity .4s linear;
 
         &.active {
           top: 0;
@@ -1614,6 +1618,11 @@ body {
         font-weight: 400;
         line-height: 1.88;
         color: #383838;
+
+        & .play-video {
+          font-weight: 500;
+          color: #0b53b4;
+        }
       }
 
       &-list {

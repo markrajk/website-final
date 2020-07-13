@@ -252,6 +252,10 @@
           <source src="./public/assets/video/card-01-03.m4v" type="video/mp4">
         </video>
 
+        <video class="card-01-04 section-feature-card-media-video" muted preload="auto" autoplay>
+          <source src="./public/assets/video/card-01-04.m4v" type="video/mp4">
+        </video>
+
         <img src="./public/assets/img/phone-placeholder.jpeg" alt="Team Feedback app feature"
           class="section-feature-card-media-img">
       </div>
@@ -262,13 +266,14 @@
           Let your people give each other feedback with just a few
           clicks. Very simple, very quick and by the way it makes fun.
           Most given feedback is based on feedback routines which
-          appear for users as a simple todo list. For example giving
+          appear for users as a simple <a href="#" class="play-video" goTo="card-01-04">todo list</a>. For example
+          giving
           feedback to five colleagues takes just around a minute.
         </p>
         <div class="section-feature-card-main-list">
-          <a href="#" class="section-feature-card-main-list-item active" goTo="card-01-01">Peer to peer</a>
-          <a href="#" class="section-feature-card-main-list-item" goTo="card-01-02">Team feedback</a>
-          <a href="#" class="section-feature-card-main-list-item" goTo="card-01-03">Leader feedback</a>
+          <a href="#" class="section-feature-card-main-list-item play-video active" goTo="card-01-01">Peer to peer</a>
+          <a href="#" class="section-feature-card-main-list-item play-video" goTo="card-01-02">Team feedback</a>
+          <a href="#" class="section-feature-card-main-list-item play-video" goTo="card-01-03">Leader feedback</a>
         </div>
       </div>
     </section>
@@ -681,7 +686,7 @@
     //var featureCards = document.querySelectorAll('.section-feature-card');
 
     var featureCardLinks = document.querySelectorAll(
-      '.section-feature-card-main-list-item'
+      '.play-video'
     );
 
     for (var i = 0; i < featureCardLinks.length; i++) {
