@@ -239,8 +239,22 @@
 
     <!-- SECTION FEATURE CARD -->
     <section class="section section-feature-card container card-01">
-      <img src="./public/assets/img/feature-card-01.png" alt="Team Feedback app feature"
-        class="section-feature-card-img">
+      <div class="section-feature-card-media">
+        <video class="card-01-01 section-feature-card-media-video active" muted preload="auto" autoplay>
+          <source src="/public/assets/video/card-01-01.m4v" type="video/mp4">
+        </video>
+
+        <video class="card-01-02 section-feature-card-media-video" muted preload="auto" autoplay>
+          <source src="/public/assets/video/card-01-02.m4v" type="video/mp4">
+        </video>
+
+        <video class="card-01-03 section-feature-card-media-video" muted preload="auto" autoplay>
+          <source src="/public/assets/video/card-01-03.m4v" type="video/mp4">
+        </video>
+
+        <img src="./public/assets/img/phone-placeholder.jpeg" alt="Team Feedback app feature"
+          class="section-feature-card-media-img">
+      </div>
       <div class="section-feature-card-main">
         <p class="section-feature-card-main-subtitle">For your employees</p>
         <h2 class="section-feature-card-main-title">The new simple way <br> to give feedback</h2>
@@ -252,17 +266,23 @@
           feedback to five colleagues takes just around a minute.
         </p>
         <div class="section-feature-card-main-list">
-          <a href="#" class="section-feature-card-main-list-item active">Peer to peer</a>
-          <a href="#" class="section-feature-card-main-list-item">Team feedback</a>
-          <a href="#" class="section-feature-card-main-list-item">Leader feedback</a>
+          <a href="#" class="section-feature-card-main-list-item active" goTo="card-01-01">Peer to peer</a>
+          <a href="#" class="section-feature-card-main-list-item" goTo="card-01-02">Team feedback</a>
+          <a href="#" class="section-feature-card-main-list-item" goTo="card-01-03">Leader feedback</a>
         </div>
       </div>
     </section>
 
     <!-- SECTION FEATURE CARD -->
     <section class="section section-feature-card container reversed card-02">
-      <img src="./public/assets/img/feature-card-01.png" alt="Team Feedback app feature"
-        class="section-feature-card-img">
+      <div class="section-feature-card-media">
+        <video class="card-01-01 section-feature-card-media-video" muted preload="auto">
+          <source src="/public/assets/video/card-01-01.m4v" type="video/mp4">
+        </video>
+
+        <img src="./public/assets/img/phone-placeholder.jpeg" alt="Team Feedback app feature"
+          class="section-feature-card-media-img">
+      </div>
       <div class="section-feature-card-main">
         <p class="section-feature-card-main-subtitle">For your employees</p>
         <h2 class="section-feature-card-main-title">The new simple way <br> to receive feedback</h2>
@@ -297,8 +317,14 @@
 
     <!-- SECTION FEATURE CARD -->
     <section class="section section-feature-card container card-03">
-      <img src="./public/assets/img/feature-card-01.png" alt="Team Feedback app feature"
-        class="section-feature-card-img">
+      <div class="section-feature-card-media">
+        <video class="card-01-01 section-feature-card-media-video" muted preload="auto">
+          <source src="/public/assets/video/card-01-01.m4v" type="video/mp4">
+        </video>
+
+        <img src="./public/assets/img/phone-placeholder.jpeg" alt="Team Feedback app feature"
+          class="section-feature-card-media-img">
+      </div>
       <div class="section-feature-card-main">
         <p class="section-feature-card-main-subtitle">Team leaders</p>
         <h2 class="section-feature-card-main-title">The mobile app to keep team leaders up to date</h2>
@@ -649,6 +675,37 @@
         }
         this.classList.add('open')
       })
+    }
+
+    //FEATURE CARD
+    //var featureCards = document.querySelectorAll('.section-feature-card');
+
+    var featureCardLinks = document.querySelectorAll(
+      '.section-feature-card-main-list-item'
+    );
+
+    for (var i = 0; i < featureCardLinks.length; i++) {
+      console.log(featureCardLinks);
+      featureCardLinks[i].addEventListener('click', function (e) {
+        e.preventDefault();
+        var goTo = e.target.getAttribute('goTo');
+        var card = goTo.substring(0, goTo.length - 3);
+
+        document.querySelectorAll(`.${card} .section-feature-card-media-video`).forEach(e => e.classList.remove(
+          'active'));
+
+        featureCardLinks.forEach(e => e.classList.remove(
+          'active'));
+
+        e.target.classList.add('active');
+
+        console.log(document.querySelector(`.${card} video.${goTo}`))
+
+        document.querySelector(`.${card} video.${goTo}`).classList.add(
+          'active');
+
+
+      });
     }
   </script>
 </body>

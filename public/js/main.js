@@ -60,37 +60,37 @@ menuClose.addEventListener('click', function () {
   enableScroll();
 });
 
-function anchorLinkHandler(e) {
-  var distanceToTop = (el) => Math.floor(el.getBoundingClientRect().top);
-  var header = document.querySelector('.header').offsetHeight;
-  var subheader = document.querySelector('.subheader')
-    ? document.querySelector('.subheader').offsetHeight
-    : 0;
+// function anchorLinkHandler(e) {
+//   var distanceToTop = (el) => Math.floor(el.getBoundingClientRect().top);
+//   var header = document.querySelector('.header').offsetHeight;
+//   var subheader = document.querySelector('.subheader')
+//     ? document.querySelector('.subheader').offsetHeight
+//     : 0;
 
-  e.preventDefault();
-  var targetID = this.getAttribute('href');
-  var targetAnchor = document.querySelector(targetID);
-  if (!targetAnchor) return;
-  var originalTop = distanceToTop(targetAnchor) - header - subheader + 10;
+//   e.preventDefault();
+//   var targetID = this.getAttribute('href');
+//   var targetAnchor = document.querySelector(targetID);
+//   if (!targetAnchor) return;
+//   var originalTop = distanceToTop(targetAnchor) - header - subheader + 10;
 
-  window.scrollBy({
-    top: originalTop,
-    left: 0,
-    duration: 5000,
-    behavior: 'smooth',
-  });
+//   window.scrollBy({
+//     top: originalTop,
+//     left: 0,
+//     duration: 5000,
+//     behavior: 'smooth',
+//   });
 
-  var checkIfDone = setInterval(function () {
-    var atBottom =
-      window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-    if (distanceToTop(targetAnchor) === 0 || atBottom) {
-      // targetAnchor.tabIndex = '-1';
-      // targetAnchor.focus();
-      // window.history.pushState('', '', targetID);
-      clearInterval(checkIfDone);
-    }
-  }, 100);
-}
+//   var checkIfDone = setInterval(function () {
+//     var atBottom =
+//       window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+//     if (distanceToTop(targetAnchor) === 0 || atBottom) {
+//       // targetAnchor.tabIndex = '-1';
+//       // targetAnchor.focus();
+//       // window.history.pushState('', '', targetID);
+//       clearInterval(checkIfDone);
+//     }
+//   }, 100);
+// }
 
 var linksToAnchors = document.querySelectorAll('a[href^="#"]');
 

@@ -740,7 +740,7 @@ body {
   // border-bottom: 1.5px solid #f1f1f1;
   z-index: 2000;
   transition: all .25s ease-in-out;
-  border-bottom: 1.5px solid transparent;
+  border-bottom: 1.25px solid transparent;
 
 
   & .nav {
@@ -1561,10 +1561,31 @@ body {
     @include align-items(center);
     @include justify-content(center);
 
-    &-img {
-      min-width: 0;
-      width: 100%;
-      max-width: 30em;
+    &-media {
+      position: relative;
+      -webkit-transform: translateZ(0);
+      
+      &-img {
+        opacity: 0;
+        min-width: 0;
+        width: 100%;
+        max-width: 30em;
+      }
+
+      &-video {
+        opacity: 0;
+        visibility: hidden;
+        max-width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: opacity .4s linear;
+
+        &.active {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
 
     &-main {
@@ -2004,7 +2025,7 @@ body {
 //=========================================================================================================================================
 
 .header-scroll {
-  border-color: #EBEBEB;
+  border-color: #f1f1f1;
 }
 
 .menu-open {
