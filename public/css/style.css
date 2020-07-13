@@ -154,11 +154,11 @@ body {
       .header .nav.container {
         padding-right: 3rem; } }
     .header .nav-brand {
-      margin-right: 4.4%; }
+      margin-right: 4.5%; }
       .header .nav-brand .brand-img-wrapper {
         display: inline-block; }
       .header .nav-brand-img {
-        height: 4.49rem; }
+        height: 4.23rem; }
         @media (max-width: 991px) {
           .header .nav-brand-img {
             height: 4.29rem; } }
@@ -235,7 +235,7 @@ body {
         max-width: 14.67em;
         display: none;
         margin-right: 1.5rem;
-        padding: 1.1rem 1.2rem;
+        padding: .85rem 1.2rem;
         font-size: 1.5rem;
         font-weight: 500;
         line-height: 1.27;
@@ -253,7 +253,7 @@ body {
             display: none;
             max-width: 13.13em; } }
       .header .nav-buttons .button-primary {
-        padding: 1rem 2.1rem;
+        padding: .85rem 1.8rem;
         font-size: 1.5rem;
         font-weight: 600;
         letter-spacing: 0.08px;
@@ -458,7 +458,7 @@ body {
   padding-top: 8.4rem; }
   #main-overview .section-hero {
     padding-right: 0;
-    padding-top: 6em;
+    padding-top: 8.2em;
     padding-bottom: 9.6em;
     display: -webkit-box;
     display: -webkit-flex;
@@ -505,8 +505,8 @@ body {
     #main-overview .section-hero-wrapper {
       background-image: url(../assets/img/hero-background-img.png);
       background-position: center 100%;
-      background-size: auto 100%; }
-      @media (max-width: 1440px) {
+      background-size: auto 99%; }
+      @media (max-width: 1379px) {
         #main-overview .section-hero-wrapper {
           background: none; } }
     #main-overview .section-hero-main {
@@ -514,14 +514,14 @@ body {
       max-width: 58em; }
       #main-overview .section-hero-main-subtitle {
         font-size: 2em;
-        margin-bottom: .75em;
+        margin-bottom: .52em;
         font-weight: 700;
         color: #222426; }
         @media (max-width: 991px) {
           #main-overview .section-hero-main-subtitle {
             display: none; } }
       #main-overview .section-hero-main-title {
-        margin-bottom: .86em;
+        margin-bottom: .65em;
         font-size: 4.05em;
         font-weight: 700;
         line-height: 1.43;
@@ -536,7 +536,7 @@ body {
             font-size: 2.9em; } }
       #main-overview .section-hero-main-text {
         max-width: 25.15em;
-        margin-bottom: 2.12em;
+        margin-bottom: 1.8em;
         font-size: 1.65em;
         font-weight: 500;
         line-height: 1.7;
@@ -557,7 +557,7 @@ body {
           #main-overview .section-hero-main-buttons {
             margin-bottom: 2em; } }
         #main-overview .section-hero-main-buttons .button {
-          padding: 1em 2em;
+          padding: .9em 1.8em;
           font-size: 1.7em;
           font-weight: 600;
           letter-spacing: 0.17px; }
@@ -584,8 +584,8 @@ body {
     #main-overview .section-hero-img {
       display: none;
       width: 100%;
-      max-width: 85em; }
-      @media (max-width: 1440px) {
+      max-width: 80em; }
+      @media (max-width: 1379px) {
         #main-overview .section-hero-img {
           display: inline-block; } }
       @media (max-width: 991px) {
