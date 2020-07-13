@@ -1344,7 +1344,7 @@ body {
           letter-spacing: 0.17px;
 
           &:first-of-type {
-            margin-right: 1.18em;
+            margin-right: 1em;
           }
 
           //MOBILE
@@ -1622,6 +1622,10 @@ body {
         & .play-video {
           font-weight: 500;
           color: #0b53b4;
+
+          &.active {
+            font-weight: 700;
+          }
         }
       }
 
@@ -1974,7 +1978,7 @@ body {
       color: #FFF;
       border-radius: 4px;
       background-color: #20303c;
-      transition: all .0s ease-in-out;
+      transition: all .6s linear;
 
       &-text {
         opacity: 0;
@@ -2016,7 +2020,7 @@ body {
         border-top-right-radius: 0;
         padding: 0 2.4em 3em;
         max-height: 100vh;
-        transition: all .6s ease-in-out;
+        transition: all .6s linear;
       }
 
       & .custom-accordion-item-body-text {
