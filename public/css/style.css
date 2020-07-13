@@ -511,7 +511,7 @@ body {
       background-repeat: no-repeat; }
       @media (max-width: 1200px) {
         #main-overview .section-hero-wrapper {
-          background-position: 40% 100%;
+          background-position: 35% 100%;
           background-size: auto 95%; } }
       @media (max-width: 991px) {
         #main-overview .section-hero-wrapper {
