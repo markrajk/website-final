@@ -777,13 +777,31 @@ body {
     -webkit-justify-content: space-between;
     -moz-justify-content: space-between;
     justify-content: space-between; }
-    #main-overview .section-dashboard-main-media-container {
+    #main-overview .section-dashboard-main-media {
+      position: relative;
       margin-left: 2em;
-      padding-top: 7.2em;
+      margin-top: 7.2em;
+      max-width: 74.9em;
+      width: 100%;
+      height: 51.8em;
       max-width: 74.9em; }
-      #main-overview .section-dashboard-main-media-container-img {
+      #main-overview .section-dashboard-main-media-img {
+        display: none;
         width: 100%;
         max-width: 74.9em; }
+      #main-overview .section-dashboard-main-media-video {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        transition: all .5s ease-in-out;
+        border-radius: 5px;
+        box-shadow: 0 5px 10px 0 rgba(191, 191, 191, 0.35); }
+        #main-overview .section-dashboard-main-media-video.active {
+          opacity: 1;
+          visibility: visible; }
 
 #main-overview .section-learn {
   padding-top: 12em;
@@ -941,7 +959,7 @@ body {
       justify-content: space-between;
       background-color: #FFF;
       border-radius: 4px;
-      transition: all 0s ease-in-out;
+      transition: all .6s ease-in-out;
       cursor: pointer; }
       .custom-accordion-item-header-title {
         font-size: 1.7em;
@@ -953,13 +971,14 @@ body {
         font-size: 1.7em;
         transition: all 0s ease-in-out; }
     .custom-accordion-item-body {
-      padding: 0 2.4em 0;
       max-height: 0;
       color: #FFF;
       border-radius: 4px;
       background-color: #20303c;
       transition: all .6s linear; }
       .custom-accordion-item-body-text {
+        padding-left: 1.6em;
+        padding-right: 1.6em;
         opacity: 0;
         font-size: 1.5em;
         font-weight: 400;
@@ -969,6 +988,15 @@ body {
         transition: opacity .3s ease-in-out .2s; }
         .custom-accordion-item-body-text:not(:last-of-type) {
           margin-bottom: 1.1em; }
+      .custom-accordion-item-body-progress {
+        margin-top: 3em;
+        width: 0;
+        height: .5em;
+        background-color: #19cf40; }
+        .custom-accordion-item-body-progress.active {
+          width: 100%;
+          transition-property: width;
+          transition-timing-function: linear; }
     .custom-accordion-item.open .custom-accordion-item-header {
       background-color: #20303c;
       border-bottom-left-radius: 0;
@@ -983,7 +1011,6 @@ body {
     .custom-accordion-item.open .custom-accordion-item-body {
       border-top-left-radius: 0;
       border-top-right-radius: 0;
-      padding: 0 2.4em 3em;
       max-height: 100vh;
       transition: all .6s linear; }
     .custom-accordion-item.open .custom-accordion-item-body-text {
