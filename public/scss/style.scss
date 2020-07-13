@@ -1625,6 +1625,21 @@ body {
         line-height: 1.88;
         color: #383838;
 
+        & span {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          visibility: hidden;
+          transition: all .4s ease-in-out;
+
+          &.active {
+            position: relative;
+            opacity: 1;
+            visibility: visible;
+          }
+        }
+
         & .play-video {
           font-weight: 500;
           color: #0b53b4;

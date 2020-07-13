@@ -263,12 +263,36 @@
         <p class="section-feature-card-main-subtitle">For your employees</p>
         <h2 class="section-feature-card-main-title">The new simple way <br> to give feedback</h2>
         <p class="section-feature-card-main-text">
-          Let your people give each other feedback with just a few
-          clicks. Very simple, very quick and by the way it makes fun.
-          Most given feedback is based on feedback routines which
-          appear for users as a simple <a href="#" class="play-video" goTo="card-01-04">todo list</a>. For example
-          giving
-          feedback to five colleagues takes just around a minute.
+          <span class="card-01-01 active">
+            Let your people give each other feedback with just a few
+            clicks. Very simple, very quick and by the way it makes fun.
+            Most given feedback is based on feedback routines which
+            appear for users as a simple <a href="#" class="play-video" goTo="card-01-04">todo list</a>. For example
+            giving
+            feedback to five colleagues takes just around a minute.
+          </span>
+          <span class="card-01-02">
+            With team feedbacks team leaders collect their peoples
+            opinion about how do they feel working in their team and
+            what do they think could be done better in their team.
+            With the default settings Team feedbacks are
+            automatically collected every second week.
+          </span>
+          <span class="card-01-03">
+            With team leader feedback employees give
+            anonymously feedback about their teamleader.
+            Do you feel your boss treats you fairly? Does
+            he plan the work well enough? Does he give
+            clear enough instructions?
+          </span>
+          <span class="card-01-04">
+            Let your people give each other feedback with just a few
+            clicks. Very simple, very quick and by the way it makes fun.
+            Most given feedback is based on feedback routines which
+            appear for users as a simple <a href="#" class="play-video" goTo="card-01-04">todo list</a>. For example
+            giving
+            feedback to five colleagues takes just around a minute.
+          </span>
         </p>
         <div class="section-feature-card-main-list">
           <a href="#" class="section-feature-card-main-list-item play-video active" goTo="card-01-01">Peer to peer</a>
@@ -720,12 +744,18 @@
         var goTo = e.target.getAttribute('goTo');
         var card = goTo.substring(0, goTo.length - 3);
         var video = document.querySelector(`.${card} video.${goTo}`);
+        var text = document.querySelector(`.section-feature-card-main-text .${goTo}`);
 
         document.querySelectorAll(`.${card} .section-feature-card-media-video`).forEach(e => e.classList.remove(
           'active'));
 
+        document.querySelectorAll(`.section-feature-card-main-text span`).forEach(e => e.classList.remove(
+          'active'));
+
         featureCardLinks.forEach(e => e.classList.remove(
           'active'));
+
+        text.classList.add('active');
 
         e.target.classList.add('active');
 
