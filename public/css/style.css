@@ -461,7 +461,6 @@ body {
     padding-right: 0;
     padding-top: 8.2em;
     padding-bottom: 9.6em;
-    padding-bottom: 9.6em;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -508,7 +507,12 @@ body {
       margin-bottom: 6.2rem;
       background-image: url(../assets/img/hero-background-img.png);
       background-position: center 100%;
-      background-size: auto 99%; }
+      background-size: auto 99%;
+      background-repeat: no-repeat; }
+      @media (max-width: 1200px) {
+        #main-overview .section-hero-wrapper {
+          background-position: 40% 100%;
+          background-size: auto 95%; } }
       @media (max-width: 991px) {
         #main-overview .section-hero-wrapper {
           background: none; } }
