@@ -695,6 +695,7 @@ body {
       line-height: 1.39;
       color: #0e1321; }
     #main-overview .section-feature-card-main-text {
+      height: 8.875em;
       margin-bottom: 1.65em;
       font-size: 1.6rem;
       font-weight: 400;
