@@ -460,6 +460,7 @@ body {
     padding-right: 0;
     padding-top: 8.2em;
     padding-bottom: 9.6em;
+    padding-bottom: 9.6em;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-flex;
@@ -503,10 +504,11 @@ body {
       #main-overview .section-hero {
         padding-right: 5%; } }
     #main-overview .section-hero-wrapper {
+      margin-bottom: 6.2rem;
       background-image: url(../assets/img/hero-background-img.png);
       background-position: center 100%;
       background-size: auto 99%; }
-      @media (max-width: 1379px) {
+      @media (max-width: 991px) {
         #main-overview .section-hero-wrapper {
           background: none; } }
     #main-overview .section-hero-main {
@@ -585,9 +587,6 @@ body {
       display: none;
       width: 100%;
       max-width: 80em; }
-      @media (max-width: 1379px) {
-        #main-overview .section-hero-img {
-          display: inline-block; } }
       @media (max-width: 991px) {
         #main-overview .section-hero-img {
           margin-bottom: 4.8em;
@@ -610,7 +609,7 @@ body {
       font-weight: 600;
       color: #121212; }
     #main-overview .section-banner-main-title {
-      margin-bottom: .83em;
+      margin-bottom: .7em;
       font-size: 3.6rem;
       font-weight: 700;
       line-height: 1.17;
@@ -618,10 +617,10 @@ body {
     #main-overview .section-banner-main-text {
       margin-left: auto;
       margin-right: auto;
-      max-width: 68.4rem;
-      font-size: 1.75rem;
+      max-width: 37.5em;
+      font-size: 1.6rem;
       font-weight: 400;
-      line-height: 1.71;
+      line-height: 1.88;
       color: #151515; }
     #main-overview .section-banner-main-learn-more {
       margin-top: 1.67em;
@@ -633,6 +632,8 @@ body {
       #main-overview .section-banner-main-learn-more i, #main-overview .section-banner-main-learn-more svg {
         margin-left: .5em;
         font-size: 1.6rem; }
+  #main-overview .section-banner.banner-02 .section-banner-main-text {
+    max-width: 49.0625em; }
 
 #main-overview .section-feature-card {
   font-size: 1rem;
@@ -670,10 +671,10 @@ body {
       line-height: 1.39;
       color: #0e1321; }
     #main-overview .section-feature-card-main-text {
-      margin-bottom: 1.45em;
+      margin-bottom: 1.65em;
       font-size: 1.6rem;
       font-weight: 400;
-      line-height: 1.82;
+      line-height: 1.88;
       color: #151515; }
     #main-overview .section-feature-card-main-list-item {
       font-size: 1.7rem;
@@ -709,6 +710,8 @@ body {
       margin-right: 9rem; }
   #main-overview .section-feature-card.card-01 {
     padding-top: 7.4em; }
+    #main-overview .section-feature-card.card-01 .section-feature-card-main-text {
+      max-width: 28em; }
   #main-overview .section-feature-card.card-02 {
     padding-top: 3.5em;
     padding-bottom: 7.5em; }
@@ -722,7 +725,7 @@ body {
   font-size: 1rem;
   background-color: #ebf5f3; }
   #main-overview .section-dashboard-header {
-    margin-bottom: 6em;
+    margin-bottom: 6.2em;
     text-align: center; }
     #main-overview .section-dashboard-header-title {
       margin-bottom: .69em;
@@ -731,7 +734,7 @@ body {
       line-height: 1.17;
       color: #171f38; }
     #main-overview .section-dashboard-header-text {
-      font-size: 1.65rem;
+      font-size: 1.6rem;
       font-weight: 400;
       color: #2c3857; }
   #main-overview .section-dashboard-main {
@@ -763,16 +766,16 @@ body {
   padding-bottom: 12em;
   font-size: 1rem; }
   #main-overview .section-learn-header {
-    margin-bottom: 6em;
+    margin-bottom: 7em;
     text-align: center; }
     #main-overview .section-learn-header-title {
-      margin-bottom: .69em;
+      margin-bottom: .81em;
       font-size: 3.6rem;
       font-weight: 700;
       line-height: 1.17;
       color: #171f38; }
     #main-overview .section-learn-header-text {
-      font-size: 1.65rem;
+      font-size: 1.7rem;
       font-weight: 400;
       color: #2c3857; }
   #main-overview .section-learn-main {
@@ -792,20 +795,21 @@ body {
     -moz-justify-content: space-between;
     justify-content: space-between; }
     #main-overview .section-learn-main-card {
-      padding: 3.5em 3.3em;
+      padding: 3.7em 3.3em;
       max-width: 39.2em;
       border-radius: 4px; }
       #main-overview .section-learn-main-card:not(:last-of-type) {
         margin-right: 2em; }
       #main-overview .section-learn-main-card-title {
-        margin-bottom: 1.43em;
-        font-size: 2.1em;
+        margin-bottom: 1.3em;
+        font-size: 2em;
         font-weight: 600;
         letter-spacing: 0.11px; }
       #main-overview .section-learn-main-card-text {
-        margin-bottom: 2.39em;
+        margin-bottom: 2em;
         font-size: 1.55em;
         font-weight: 400;
+        line-height: 1.81;
         letter-spacing: 0.08px; }
       #main-overview .section-learn-main-card-learn-more {
         font-size: 1.8rem;
@@ -940,7 +944,7 @@ body {
         color: #ffffff;
         transition: opacity .3s ease-in-out .2s; }
         .custom-accordion-item-body-text:not(:last-of-type) {
-          margin-bottom: 1.67em; }
+          margin-bottom: 1.1em; }
     .custom-accordion-item.open .custom-accordion-item-header {
       background-color: #20303c;
       border-bottom-left-radius: 0;
