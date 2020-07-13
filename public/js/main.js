@@ -92,9 +92,9 @@ menuClose.addEventListener('click', function () {
 //   }, 100);
 // }
 
-var linksToAnchors = document.querySelectorAll('a[href^="#"]');
+// var linksToAnchors = document.querySelectorAll('a[href^="#"]');
 
-linksToAnchors.forEach((each) => (each.onclick = anchorLinkHandler));
+// linksToAnchors.forEach((each) => (each.onclick = anchorLinkHandler));
 
 //HEADER SHADOW
 var header = document.querySelector('.header');

@@ -666,7 +666,7 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      transition: opacity .4s linear; }
+      transition: opacity .0s linear; }
       #main-overview .section-feature-card-media-video.active {
         top: 0;
         left: 0;

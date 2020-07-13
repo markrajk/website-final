@@ -701,9 +701,10 @@
 
         console.log(document.querySelector(`.${card} video.${goTo}`))
 
-        document.querySelector(`.${card} video.${goTo}`).classList.add(
-          'active');
-
+        var video = document.querySelector(`.${card} video.${goTo}`);
+        video.classList.add('active');
+        video.currentTime = 0;
+        video.play();
 
       });
     }
