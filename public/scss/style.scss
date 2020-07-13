@@ -719,8 +719,14 @@ body {
 
 
 .b-b {
+  display: none;
   width: 100%;
+  max-width: 80%;
   border-bottom: 2px solid #F3F3F3;
+
+  @include respond(desktop-md) {
+    display: block;
+  }
 }
 
 
@@ -1272,6 +1278,7 @@ body {
 
       //TABLET
       @include respond(desktop-md) {
+        margin-bottom: 0;
         background: none;
       }
     }
@@ -1567,12 +1574,25 @@ body {
     @include align-items(center);
     @include justify-content(center);
 
+    //TABLET 
+    @include respond(desktop-md) {
+      padding-top: 6em!important;
+      padding-bottom: 6em!important;
+      @include flex-direction(column);
+      text-align: center;
+    }
+
     &-media {
       position: relative;
       -webkit-transform: translateZ(0);
-      width: 100%;
+      // width: 100%;
       max-width: 30em;
       height: 53.9em;
+
+      //TABLET 
+      @include respond(desktop-md) {
+        max-width: 32.5em;
+      }
       
       &-img {
         //display: none;
@@ -1602,12 +1622,24 @@ body {
     &-main {
       margin-left: 9em;
       max-width: 48.6em;
+
+      //TABLET 
+      @include respond(desktop-md) {
+        max-width: 100%;
+        margin-top: 3em;
+        margin-left: 0;
+      }
       
       &-subtitle {
         margin-bottom: .6em;
         font-size: 1.6rem;
         font-weight: 600;
         color: #121212;
+
+        //TABLET 
+        @include respond(desktop-md) {
+          display: none;
+        }
       }
 
       &-title {
@@ -1616,6 +1648,13 @@ body {
         font-weight: 700;
         line-height: 1.39;
         color: #0e1321;
+
+        //TABLET 
+        @include respond(desktop-md) {
+          margin-bottom: emcalc(2.6,2.8);
+          font-size: 2.8em;
+          line-height: 1.36;
+        }
       }
 
       &-text {
@@ -1626,7 +1665,15 @@ body {
         line-height: 1.88;
         color: #383838;
 
+        //TABLET
+        @include respond(desktop-md) {
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 1.75;
+        }
+
         & span {
+          width: 100%;
           position: absolute;
           top: 0;
           left: 0;
@@ -1695,9 +1742,19 @@ body {
     &.reversed {
       @include flex-direction(row-reverse);
 
+      //TABLET 
+      @include respond(desktop-md) {
+        @include flex-direction(column);
+      }
+
       & .section-feature-card-main {
         margin-left: 0;
         margin-right: 9rem;
+
+        //TABLET 
+        @include respond(desktop-md) {
+          margin-right: 0;
+        }
       }
     }
 
@@ -1706,12 +1763,25 @@ body {
 
       & .section-feature-card-main-text {
         max-width: emcalc(44.8, 1.6);
+
+        //TABLET
+        @include respond(desktop-md) {
+          max-width: emcalc(48, 1.6);
+        }
       }
     }
 
     &.card-02 {
       padding-top: 3.5em;
       padding-bottom: 7.5em;
+
+      & .section-feature-card-main-text {
+
+        //TABLET
+        @include respond(desktop-md) {
+          max-width: emcalc(48, 1.6);
+        }
+      }
     }
 
     &.card-03 {

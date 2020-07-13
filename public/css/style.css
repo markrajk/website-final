@@ -130,8 +130,13 @@ body {
       border-top: 1.5px solid #eaeaea; }
 
 .b-b {
+  display: none;
   width: 100%;
+  max-width: 80%;
   border-bottom: 2px solid #F3F3F3; }
+  @media (max-width: 991px) {
+    .b-b {
+      display: block; } }
 
 .header {
   position: fixed;
@@ -515,6 +520,7 @@ body {
           background-size: auto 95%; } }
       @media (max-width: 991px) {
         #main-overview .section-hero-wrapper {
+          margin-bottom: 0;
           background: none; } }
     #main-overview .section-hero-main {
       width: 100%;
@@ -657,12 +663,25 @@ body {
   -webkit-justify-content: center;
   -moz-justify-content: center;
   justify-content: center; }
+  @media (max-width: 991px) {
+    #main-overview .section-feature-card {
+      padding-top: 6em !important;
+      padding-bottom: 6em !important;
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      text-align: center; } }
   #main-overview .section-feature-card-media {
     position: relative;
     -webkit-transform: translateZ(0);
-    width: 100%;
     max-width: 30em;
     height: 53.9em; }
+    @media (max-width: 991px) {
+      #main-overview .section-feature-card-media {
+        max-width: 32.5em; } }
     #main-overview .section-feature-card-media-img {
       min-width: 0;
       width: 100%;
@@ -683,17 +702,30 @@ body {
   #main-overview .section-feature-card-main {
     margin-left: 9em;
     max-width: 48.6em; }
+    @media (max-width: 991px) {
+      #main-overview .section-feature-card-main {
+        max-width: 100%;
+        margin-top: 3em;
+        margin-left: 0; } }
     #main-overview .section-feature-card-main-subtitle {
       margin-bottom: .6em;
       font-size: 1.6rem;
       font-weight: 600;
       color: #121212; }
+      @media (max-width: 991px) {
+        #main-overview .section-feature-card-main-subtitle {
+          display: none; } }
     #main-overview .section-feature-card-main-title {
       margin-bottom: .62em;
       font-size: 3.6rem;
       font-weight: 700;
       line-height: 1.39;
       color: #0e1321; }
+      @media (max-width: 991px) {
+        #main-overview .section-feature-card-main-title {
+          margin-bottom: 0.9285714286em;
+          font-size: 2.8em;
+          line-height: 1.36; } }
     #main-overview .section-feature-card-main-text {
       height: 8.875em;
       margin-bottom: 1.65em;
@@ -701,7 +733,13 @@ body {
       font-weight: 400;
       line-height: 1.88;
       color: #383838; }
+      @media (max-width: 991px) {
+        #main-overview .section-feature-card-main-text {
+          margin-left: auto;
+          margin-right: auto;
+          line-height: 1.75; } }
       #main-overview .section-feature-card-main-text span {
+        width: 100%;
         position: absolute;
         top: 0;
         left: 0;
@@ -746,16 +784,33 @@ body {
     -moz-flex-direction: row-reverse;
     -ms-flex-direction: row-reverse;
     flex-direction: row-reverse; }
+    @media (max-width: 991px) {
+      #main-overview .section-feature-card.reversed {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
     #main-overview .section-feature-card.reversed .section-feature-card-main {
       margin-left: 0;
       margin-right: 9rem; }
+      @media (max-width: 991px) {
+        #main-overview .section-feature-card.reversed .section-feature-card-main {
+          margin-right: 0; } }
   #main-overview .section-feature-card.card-01 {
     padding-top: 7.4em; }
     #main-overview .section-feature-card.card-01 .section-feature-card-main-text {
       max-width: 28em; }
+      @media (max-width: 991px) {
+        #main-overview .section-feature-card.card-01 .section-feature-card-main-text {
+          max-width: 30em; } }
   #main-overview .section-feature-card.card-02 {
     padding-top: 3.5em;
     padding-bottom: 7.5em; }
+    @media (max-width: 991px) {
+      #main-overview .section-feature-card.card-02 .section-feature-card-main-text {
+        max-width: 30em; } }
   #main-overview .section-feature-card.card-03 {
     padding-top: 7.5em;
     padding-bottom: 7.5em; }
