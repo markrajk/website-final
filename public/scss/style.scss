@@ -1566,7 +1566,6 @@ body {
       -webkit-transform: translateZ(0);
       
       &-img {
-        opacity: 0;
         min-width: 0;
         width: 100%;
         max-width: 30em;
@@ -1582,6 +1581,8 @@ body {
         transition: opacity .4s linear;
 
         &.active {
+          top: 0;
+          left: 0;
           opacity: 1;
           visibility: visible;
         }
