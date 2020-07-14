@@ -1876,6 +1876,8 @@ body {
           @include respond(desktop-md) {
             max-width: auto;
            position: relative;
+           border-radius: 7.5px;
+           box-shadow: 0 5px 10px 0 rgba(52, 52, 52, 0.53);
           }
 
           &.active {
