@@ -776,6 +776,7 @@ body {
     }
 
     &-brand {
+      margin-left: -.2em;
       margin-right: 4.7%;
 
       & .brand-img-wrapper {
@@ -1277,10 +1278,10 @@ body {
     }
 
     &-wrapper {
-      margin-bottom: 6.2rem;
+      margin-bottom: 8.5rem;
       background-image: url(../assets/img/hero-background-img.png);
-      background-position: center 200%;
-      background-size: auto 99%;
+      background-position: center -80%;
+      background-size: auto 103%;
       background-repeat: no-repeat;
 
       @include custom-respond(1200) {
@@ -1312,7 +1313,7 @@ body {
       }
 
       &-title {
-        margin-bottom: .65em;
+        margin-bottom: .62em;
         font-size: 4.05em;
         font-weight: 700;
         line-height: 1.43;
@@ -1332,13 +1333,14 @@ body {
       }
 
       &-text {
-        max-width: emcalc(41.5,1.65);
+        max-width: emcalc(50.6,1.6);
         margin-bottom: 1.8em;
-        font-size: 1.65em;
+
+        font-size: 1.6em;
         font-weight: 500;
-        line-height: 1.7;
+        line-height: 1.88;
         letter-spacing: 0.08px;
-        color: #383838;
+        color: #484848;
 
         //TABLET
         @include respond(desktop-md) {
