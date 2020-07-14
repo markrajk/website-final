@@ -353,8 +353,6 @@
       </div>
     </section>
 
-    <div class="b-b container"></div>
-
     <!-- SECTION BANNER -->
     <section class="section section-banner banner-02">
       <div class="section-banner-main container">
@@ -417,6 +415,12 @@
                 adjust in real-time to avoid burnout and
                 increase ROI with balanced workloads.
               </p>
+              <div class="section-dashboard-main-media show-md-block">
+                <video class="section-dashboard-main-media-video accordion-video-01 active" muted preload="auto"
+                  autoplay>
+                  <source src="./public/assets/video/Manage.m4v" type="video/mp4">
+                </video>
+              </div>
               <div class="custom-accordion-item-body-progress accordion-video-01"></div>
             </div>
           </div>
@@ -437,6 +441,11 @@
                 adjust in real-time to avoid burnout and
                 increase ROI with balanced workloads.
               </p>
+              <div class="section-dashboard-main-media show-md-block">
+                <video class="section-dashboard-main-media-video accordion-video-02" muted preload="auto" autoplay>
+                  <source src="./public/assets/video/People.m4v" type="video/mp4">
+                </video>
+              </div>
               <div class="custom-accordion-item-body-progress accordion-video-02"></div>
             </div>
           </div>
@@ -457,6 +466,11 @@
                 adjust in real-time to avoid burnout and
                 increase ROI with balanced workloads.
               </p>
+              <div class="section-dashboard-main-media show-md-block">
+                <video class="section-dashboard-main-media-video accordion-video-03" muted preload="auto" autoplay>
+                  <source src="./public/assets/video/Team.m4v" type="video/mp4">
+                </video>
+              </div>
               <div class="custom-accordion-item-body-progress accordion-video-03"></div>
             </div>
           </div>
@@ -477,6 +491,11 @@
                 adjust in real-time to avoid burnout and
                 increase ROI with balanced workloads.
               </p>
+              <div class="section-dashboard-main-media show-md-block">
+                <video class="section-dashboard-main-media-video accordion-video-04" muted preload="auto" autoplay>
+                  <source src="./public/assets/video/Compare teams.m4v" type="video/mp4">
+                </video>
+              </div>
               <div class="custom-accordion-item-body-progress accordion-video-04"></div>
             </div>
           </div>
@@ -522,7 +541,7 @@
           </div>
         </div>
 
-        <div class="section-dashboard-main-media">
+        <div class="section-dashboard-main-media hide-md">
           <video class="section-dashboard-main-media-video accordion-video-01 active" muted preload="auto" autoplay>
             <source src="./public/assets/video/Manage.m4v" type="video/mp4">
           </video>
@@ -574,7 +593,7 @@
           <a href="#" class="section-learn-main-card-learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
         </div>
 
-        <div class="section-learn-main-card light">
+        <div class="section-learn-main-card light hide-md">
           <h3 class="section-learn-main-card-title">From companies point of view</h3>
           <p class="section-learn-main-card-text">
             The database of your employees, teams
@@ -794,7 +813,10 @@
         e.preventDefault();
         var goTo = this.getAttribute('target-video');
 
-        var video = document.querySelector(`.section-dashboard-main-media video.${goTo}`);
+        var video = document.querySelector(`.section-dashboard-main-media.hide-md video.${goTo}`);
+        if (window.innerWidth < 991) {
+          video = document.querySelector(`.section-dashboard-main-media.show-md-block video.${goTo}`);
+        }
         var progress = document.querySelector(`.custom-accordion-item-body-progress.${goTo}`);
         console.log(progress)
 

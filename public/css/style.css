@@ -375,7 +375,7 @@ body {
         .footer-main-list:first-of-type {
           margin-bottom: 4.2rem; } }
       .footer-main-list-item {
-        margin-bottom: 1.5rem; }
+        margin-bottom: 1.8rem; }
         @media (max-width: 991px) {
           .footer-main-list-item {
             margin-bottom: 1.9rem; } }
@@ -735,6 +735,7 @@ body {
       color: #383838; }
       @media (max-width: 991px) {
         #main-overview .section-feature-card-main-text {
+          max-width: 80% !important;
           margin-left: auto;
           margin-right: auto;
           line-height: 1.75; } }
@@ -756,7 +757,7 @@ body {
         #main-overview .section-feature-card-main-text .play-video.active {
           font-weight: 700; }
     #main-overview .section-feature-card-main-list-item {
-      font-size: 1.7rem;
+      font-size: 1.6rem;
       font-weight: 500;
       color: #afafaf;
       text-decoration: none; }
@@ -814,6 +815,11 @@ body {
   #main-overview .section-feature-card.card-03 {
     padding-top: 7.5em;
     padding-bottom: 7.5em; }
+    #main-overview .section-feature-card.card-03 .section-feature-card-main-text {
+      height: auto; }
+      @media (max-width: 991px) {
+        #main-overview .section-feature-card.card-03 .section-feature-card-main-text {
+          max-width: 30em; } }
 
 #main-overview .section-dashboard {
   padding-top: 6em;
@@ -857,6 +863,14 @@ body {
       width: 100%;
       height: 51.8em;
       max-width: 74.9em; }
+      @media (max-width: 991px) {
+        #main-overview .section-dashboard-main-media {
+          padding-top: 3em;
+          padding-left: 2.4em;
+          padding-right: 2.4em;
+          margin: 0;
+          max-width: auto;
+          height: auto; } }
       #main-overview .section-dashboard-main-media-img {
         display: none;
         width: 100%;
@@ -867,10 +881,14 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        max-width: 100%;
         transition: all .5s ease-in-out;
         border-radius: 5px;
         box-shadow: 0 5px 10px 0 rgba(191, 191, 191, 0.35); }
+        @media (max-width: 991px) {
+          #main-overview .section-dashboard-main-media-video {
+            max-width: auto;
+            position: relative; } }
         #main-overview .section-dashboard-main-media-video.active {
           opacity: 1;
           visibility: visible; }
@@ -879,6 +897,10 @@ body {
   padding-top: 12em;
   padding-bottom: 12em;
   font-size: 1rem; }
+  @media (max-width: 991px) {
+    #main-overview .section-learn {
+      padding-top: 9em;
+      padding-bottom: 9em; } }
   #main-overview .section-learn-header {
     margin-bottom: 7em;
     text-align: center; }
@@ -888,6 +910,10 @@ body {
       font-weight: 700;
       line-height: 1.17;
       color: #171f38; }
+      @media (max-width: 991px) {
+        #main-overview .section-learn-header-title {
+          margin-bottom: 0.7142857143em;
+          font-size: 2.8em; } }
     #main-overview .section-learn-header-text {
       font-size: 1.7rem;
       font-weight: 400;
@@ -908,23 +934,40 @@ body {
     -webkit-justify-content: space-between;
     -moz-justify-content: space-between;
     justify-content: space-between; }
+    @media (max-width: 991px) {
+      #main-overview .section-learn-main {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center; } }
     #main-overview .section-learn-main-card {
       padding: 3.7em 3.3em;
       max-width: 39.2em;
-      border-radius: 4px; }
+      border-radius: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap; }
       #main-overview .section-learn-main-card:not(:last-of-type) {
         margin-right: 2em; }
       #main-overview .section-learn-main-card-title {
         margin-bottom: 1.3em;
         font-size: 2em;
         font-weight: 600;
-        letter-spacing: 0.11px; }
+        letter-spacing: 0.11px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
       #main-overview .section-learn-main-card-text {
-        margin-bottom: 2em;
+        min-height: 10.0588235294em;
         font-size: 1.55em;
         font-weight: 400;
         line-height: 1.81;
-        letter-spacing: 0.08px; }
+        letter-spacing: 0.08px;
+        white-space: normal; }
+        @media (max-width: 991px) {
+          #main-overview .section-learn-main-card-text {
+            font-size: 1.45em; } }
       #main-overview .section-learn-main-card-learn-more {
         font-size: 1.8rem;
         font-weight: 500;
@@ -954,22 +997,34 @@ body {
   background-color: #f5f2eb;
   overflow: hidden; }
   #main-overview .section-start-main {
-    padding-top: 11em;
-    padding-bottom: 11em;
+    padding-top: 7em;
+    padding-bottom: 7em;
     position: relative;
-    text-align: center; }
+    text-align: center;
+    z-index: 1; }
     #main-overview .section-start-main-title {
       margin-bottom: .92em;
       font-size: 3.8em;
       font-weight: 700;
       line-height: 1.11;
       color: #171f38; }
+      @media (max-width: 991px) {
+        #main-overview .section-start-main-title {
+          margin-bottom: 0.9375em;
+          font-size: 3.2em;
+          line-height: 1.31; } }
     #main-overview .section-start-main-text {
       margin-bottom: 2.47em;
       font-size: 1.7em;
       font-weight: 400;
       letter-spacing: 0.09px;
       color: #2c3857; }
+      @media (max-width: 991px) {
+        #main-overview .section-start-main-text {
+          margin-bottom: 2.4827586207em;
+          font-size: 1.45em;
+          line-height: 1.38;
+          letter-spacing: 0.07px; } }
     #main-overview .section-start-main-inputs input {
       margin-right: .71em;
       padding: 1.18em 1.06em;
@@ -983,6 +1038,12 @@ body {
       background-color: #ffffff; }
       #main-overview .section-start-main-inputs input::placeholder {
         color: #657794; }
+      @media (max-width: 991px) {
+        #main-overview .section-start-main-inputs input {
+          height: 3.5714285714em;
+          padding: 1.05em 1.06em;
+          max-width: 20.9285714286em;
+          font-size: 1.4em; } }
     #main-overview .section-start-main-inputs .button {
       padding: 1em 2.11em;
       font-size: 1.9em;
@@ -990,25 +1051,54 @@ body {
       line-height: 1.21;
       letter-spacing: 0.1px;
       color: #ffffff; }
-    #main-overview .section-start-main-img.img-01 {
-      max-width: 36.3em;
-      position: absolute;
-      left: -15em;
-      bottom: 0; }
-    #main-overview .section-start-main-img.img-02 {
-      max-width: 14.7em;
-      position: absolute;
-      right: 4.7em;
-      bottom: 8.2em; }
-    #main-overview .section-start-main-img.img-03 {
-      max-width: 11.1em;
-      position: absolute;
-      right: -4em;
-      bottom: -4em; }
+      @media (max-width: 991px) {
+        #main-overview .section-start-main-inputs .button {
+          height: 3.125em;
+          padding: 1.05em 1.06em;
+          max-width: 20.9285714286em;
+          font-size: 1.6em; } }
+    #main-overview .section-start-main-img {
+      z-index: -1; }
+      #main-overview .section-start-main-img.img-01 {
+        max-width: 36.3em;
+        position: absolute;
+        left: -15em;
+        bottom: 0; }
+        @media (max-width: 991px) {
+          #main-overview .section-start-main-img.img-01 {
+            font-size: .65em;
+            left: -17em;
+            bottom: -4em; } }
+      #main-overview .section-start-main-img.img-02 {
+        max-width: 14.7em;
+        position: absolute;
+        right: 4.7em;
+        bottom: 8.2em; }
+        @media (max-width: 991px) {
+          #main-overview .section-start-main-img.img-02 {
+            font-size: .7em;
+            right: -8em;
+            top: 0; } }
+      #main-overview .section-start-main-img.img-03 {
+        max-width: 11.1em;
+        position: absolute;
+        right: -4em;
+        bottom: -4em; }
+        @media (max-width: 991px) {
+          #main-overview .section-start-main-img.img-03 {
+            font-size: 1em;
+            right: 0;
+            bottom: -4em; } }
 
 .custom-accordion {
   max-width: 39.2em;
   font-size: 1rem; }
+  @media (max-width: 991px) {
+    .custom-accordion {
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 64.8em; } }
   .custom-accordion-item {
     overflow: hidden;
     margin-bottom: 1.2em; }
