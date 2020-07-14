@@ -66,6 +66,12 @@ body {
     .button-primary.outlined {
       color: #19cf40;
       background-color: #FFF; }
+  .button-white {
+    border: solid 2px #c1c9d8;
+    background-color: #ffffff;
+    color: #292929;
+    border-radius: 5px;
+    letter-spacing: 0.08px; }
 
 .dropdown {
   height: 100%;
@@ -507,7 +513,9 @@ body {
         text-align: center; } }
     @media (max-width: 575px) {
       #main-overview .section-hero {
-        padding-right: 5%; } }
+        padding-right: 5%;
+        padding-top: 7em;
+        padding-bottom: 6em; } }
     #main-overview .section-hero-wrapper {
       margin-bottom: 6.2rem;
       background-image: url(../assets/img/hero-background-img.png);
@@ -619,12 +627,18 @@ body {
       font-size: 1.8rem;
       font-weight: 600;
       color: #121212; }
+      @media (max-width: 991px) {
+        #main-overview .section-banner-main-subtitle {
+          font-size: 1.7em; } }
     #main-overview .section-banner-main-title {
       margin-bottom: .7em;
       font-size: 3.6rem;
       font-weight: 700;
       line-height: 1.17;
       color: #0e1321; }
+      @media (max-width: 991px) {
+        #main-overview .section-banner-main-title {
+          font-size: 2.8em; } }
     #main-overview .section-banner-main-text {
       margin-left: auto;
       margin-right: auto;
@@ -633,16 +647,22 @@ body {
       font-weight: 400;
       line-height: 1.88;
       color: #383838; }
+      @media (max-width: 991px) {
+        #main-overview .section-banner-main-text {
+          max-width: 38.125em !important; } }
     #main-overview .section-banner-main-learn-more {
       margin-top: 1.67em;
-      font-size: 1.8rem;
+      font-size: 1.8em;
       display: inline-block;
       font-weight: 600;
       color: #06cc64;
       text-decoration: none; }
+      @media (max-width: 991px) {
+        #main-overview .section-banner-main-learn-more {
+          font-size: 1.6em; } }
       #main-overview .section-banner-main-learn-more i, #main-overview .section-banner-main-learn-more svg {
         margin-left: .5em;
-        font-size: 1.6rem; }
+        font-size: 0.8888888889em; }
   #main-overview .section-banner.banner-02 .section-banner-main-text {
     max-width: 49.0625em; }
 
@@ -674,18 +694,23 @@ body {
       -ms-flex-direction: column;
       flex-direction: column;
       text-align: center; } }
+  @media (max-width: 575px) {
+    #main-overview .section-feature-card {
+      padding-top: 4em !important;
+      padding-bottom: 4em !important; } }
   #main-overview .section-feature-card-media {
     position: relative;
-    -webkit-transform: translateZ(0);
-    max-width: 30em;
-    height: 53.9em; }
-    @media (max-width: 991px) {
-      #main-overview .section-feature-card-media {
-        max-width: 32.5em; } }
+    -webkit-transform: translateZ(0); }
     #main-overview .section-feature-card-media-img {
       min-width: 0;
       width: 100%;
       max-width: 30em; }
+      @media (max-width: 991px) {
+        #main-overview .section-feature-card-media-img {
+          max-width: 32.5em; } }
+      @media (max-width: 575px) {
+        #main-overview .section-feature-card-media-img {
+          max-width: 25.6em; } }
     #main-overview .section-feature-card-media-video {
       opacity: 0;
       visibility: hidden;
@@ -717,7 +742,7 @@ body {
           display: none; } }
     #main-overview .section-feature-card-main-title {
       margin-bottom: .62em;
-      font-size: 3.6rem;
+      font-size: 3.6em;
       font-weight: 700;
       line-height: 1.39;
       color: #0e1321; }
@@ -726,6 +751,9 @@ body {
           margin-bottom: 0.9285714286em;
           font-size: 2.8em;
           line-height: 1.36; } }
+      @media (max-width: 575px) {
+        #main-overview .section-feature-card-main-title {
+          font-size: 2em; } }
     #main-overview .section-feature-card-main-text {
       height: 8.875em;
       margin-bottom: 1.65em;
@@ -739,6 +767,11 @@ body {
           margin-left: auto;
           margin-right: auto;
           line-height: 1.75; } }
+      @media (max-width: 575px) {
+        #main-overview .section-feature-card-main-text {
+          height: 10.1428571429em;
+          max-width: 100% !important;
+          font-size: 1.4em; } }
       #main-overview .section-feature-card-main-text span {
         width: 100%;
         position: absolute;
@@ -761,6 +794,9 @@ body {
       font-weight: 500;
       color: #afafaf;
       text-decoration: none; }
+      @media (max-width: 575px) {
+        #main-overview .section-feature-card-main-list-item {
+          font-size: 1.4em; } }
       #main-overview .section-feature-card-main-list-item.active {
         color: #0053b4;
         font-weight: 600; }
@@ -771,13 +807,16 @@ body {
       #main-overview .section-feature-card-main-list-item:not(:last-of-type) {
         margin-right: 1.76em; }
     #main-overview .section-feature-card-main-learn-more {
-      font-size: 1.8rem;
+      font-size: 1.8em;
       font-weight: 500;
       color: #0053b4;
       text-decoration: none; }
       #main-overview .section-feature-card-main-learn-more i, #main-overview .section-feature-card-main-learn-more svg {
         margin-left: .8em;
-        font-size: 1.4rem; }
+        font-size: 0.7777777778em; }
+      @media (max-width: 575px) {
+        #main-overview .section-feature-card-main-learn-more {
+          font-size: 1.6em; } }
   #main-overview .section-feature-card.reversed {
     -webkit-box-direction: reverse;
     -webkit-box-orient: horizontal;
@@ -829,6 +868,9 @@ body {
   #main-overview .section-dashboard-header {
     margin-bottom: 6.2em;
     text-align: center; }
+    @media (max-width: 575px) {
+      #main-overview .section-dashboard-header {
+        display: none; } }
     #main-overview .section-dashboard-header-title {
       margin-bottom: .69em;
       font-size: 3.6rem;
@@ -901,8 +943,16 @@ body {
   font-size: 1rem; }
   @media (max-width: 991px) {
     #main-overview .section-learn {
-      padding-top: 9em;
-      padding-bottom: 9em; } }
+      padding-top: 6em;
+      padding-bottom: 6em; } }
+  @media (max-width: 575px) {
+    #main-overview .section-learn {
+      -webkit-box-direction: normal;
+      -webkit-box-orient: vertical;
+      -webkit-flex-direction: column;
+      -moz-flex-direction: column;
+      -ms-flex-direction: column;
+      flex-direction: column; } }
   #main-overview .section-learn-header {
     margin-bottom: 7em;
     text-align: center; }
@@ -943,6 +993,14 @@ body {
         -webkit-justify-content: center;
         -moz-justify-content: center;
         justify-content: center; } }
+    @media (max-width: 575px) {
+      #main-overview .section-learn-main {
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column; } }
     #main-overview .section-learn-main-card {
       padding: 3.7em 3.3em;
       max-width: 39.2em;
@@ -952,6 +1010,10 @@ body {
       white-space: nowrap; }
       #main-overview .section-learn-main-card:not(:last-of-type) {
         margin-right: 2em; }
+        @media (max-width: 575px) {
+          #main-overview .section-learn-main-card:not(:last-of-type) {
+            margin-right: 0;
+            margin-bottom: 2em; } }
       #main-overview .section-learn-main-card-title {
         margin-bottom: 1.3em;
         font-size: 2em;
@@ -960,8 +1022,12 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap; }
+        @media (max-width: 575px) {
+          #main-overview .section-learn-main-card-title {
+            white-space: normal;
+            font-size: 1.8em; } }
       #main-overview .section-learn-main-card-text {
-        min-height: 10.0588235294em;
+        min-height: 11.0322580645em;
         font-size: 1.55em;
         font-weight: 400;
         line-height: 1.81;
@@ -969,7 +1035,13 @@ body {
         white-space: normal; }
         @media (max-width: 991px) {
           #main-overview .section-learn-main-card-text {
+            min-height: 9.5em;
             font-size: 1.45em; } }
+        @media (max-width: 575px) {
+          #main-overview .section-learn-main-card-text {
+            margin-bottom: 1.7142857143em;
+            min-height: auto;
+            font-size: 1.4em; } }
       #main-overview .section-learn-main-card-learn-more {
         font-size: 1.8rem;
         font-weight: 500;
@@ -1015,6 +1087,10 @@ body {
           margin-bottom: 0.9375em;
           font-size: 3.2em;
           line-height: 1.31; } }
+      @media (max-width: 575px) {
+        #main-overview .section-start-main-title {
+          margin-bottom: 0.7142857143em;
+          font-size: 2.8em; } }
     #main-overview .section-start-main-text {
       margin-bottom: 2.47em;
       font-size: 1.7em;
@@ -1027,6 +1103,9 @@ body {
           font-size: 1.45em;
           line-height: 1.38;
           letter-spacing: 0.07px; } }
+      @media (max-width: 575px) {
+        #main-overview .section-start-main-text {
+          margin-bottom: 2.0689655172em; } }
     #main-overview .section-start-main-inputs input {
       margin-right: .71em;
       padding: 1.18em 1.06em;
@@ -1059,6 +1138,10 @@ body {
           padding: 1.05em 1.06em;
           max-width: 20.9285714286em;
           font-size: 1.6em; } }
+    #main-overview .section-start-main .button-white {
+      padding: 1em 2.1333333333em;
+      font-size: 1.5em;
+      font-weight: 600; }
     #main-overview .section-start-main-img {
       z-index: -1; }
       #main-overview .section-start-main-img.img-01 {

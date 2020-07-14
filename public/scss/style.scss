@@ -625,6 +625,14 @@ body {
       background-color: #FFF;
     }
   }
+
+  &-white {
+    border: solid 2px #c1c9d8;
+    background-color: #ffffff;
+    color: #292929;
+    border-radius: 5px;
+    letter-spacing: 0.08px;
+  }
 }
 
 .dropdown {
@@ -1262,6 +1270,8 @@ body {
     //MOBILE
     @include respond(desktop-xsm) {
       padding-right: 5%;
+      padding-top: 7em;
+      padding-bottom: 6em;
     }
 
     &-wrapper {
@@ -1517,6 +1527,11 @@ body {
         font-size: 1.8rem;
         font-weight: 600;
         color: #121212;
+
+        //TABLET
+        @include respond(desktop-md) {
+          font-size: 1.7em;
+        }
       }
   
       &-title {
@@ -1525,6 +1540,11 @@ body {
         font-weight: 700;
         line-height: 1.17;
         color: #0e1321;
+
+        //TABLET
+        @include respond(desktop-md) {
+          font-size: 2.8em;
+        }
       }
   
       &-text {
@@ -1535,20 +1555,30 @@ body {
         font-weight: 400;
         line-height: 1.88;
         color: #383838;
+
+        //TABLET
+        @include respond(desktop-md) {
+          max-width: emcalc(61, 1.6)!important;
+        }
       }
 
       &-learn-more {
         margin-top: 1.67em;
-        font-size: 1.8rem;
+        font-size: 1.8em;
         display: inline-block;
         font-weight: 600;
         color: #06cc64;
         text-decoration: none;
 
+        //TABLET
+        @include respond(desktop-md) {
+          font-size: 1.6em;
+        }
+
         & i,
         & svg {
           margin-left: .5em;
-          font-size: 1.6rem;
+          font-size: emcalc(1.6, 1.8);
         }
       }
     }
@@ -1582,23 +1612,33 @@ body {
       text-align: center;
     }
 
+    //MOBILE 
+    @include respond(desktop-xsm) {
+      padding-top: 4em!important;
+      padding-bottom: 4em!important;
+    }
+
     &-media {
       position: relative;
       -webkit-transform: translateZ(0);
       // width: 100%;
-      max-width: 30em;
-      height: 53.9em;
-
-      //TABLET 
-      @include respond(desktop-md) {
-        max-width: 32.5em;
-      }
+      // max-width: 30em;
+      // height: 53.9em;
       
       &-img {
-        //display: none;
         min-width: 0;
         width: 100%;
         max-width: 30em;
+
+        //TABLET 
+        @include respond(desktop-md) {
+          max-width: 32.5em;
+        }
+
+        //MOBILE 
+        @include respond(desktop-xsm) {
+          max-width: 25.6em;
+        }
       }
 
       &-video {
@@ -1644,7 +1684,7 @@ body {
 
       &-title {
         margin-bottom: .62em;
-        font-size: 3.6rem;
+        font-size: 3.6em;
         font-weight: 700;
         line-height: 1.39;
         color: #0e1321;
@@ -1654,6 +1694,11 @@ body {
           margin-bottom: emcalc(2.6,2.8);
           font-size: 2.8em;
           line-height: 1.36;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          font-size: 2em;
         }
       }
 
@@ -1671,6 +1716,13 @@ body {
           margin-left: auto;
           margin-right: auto;
           line-height: 1.75;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          height: emcalc(14.2,1.4);
+          max-width: 100%!important;
+          font-size: 1.4em;
         }
 
         & span {
@@ -1707,6 +1759,11 @@ body {
           color: #afafaf;
           text-decoration: none;
 
+          //MOBILE
+          @include respond(desktop-xsm) {
+            font-size: 1.4em;
+          }
+
           &.active {
             color: #0053b4;
             font-weight: 600;
@@ -1727,7 +1784,7 @@ body {
       }
 
       &-learn-more {
-        font-size: 1.8rem;
+        font-size: 1.8em;
         font-weight: 500;
         color: #0053b4;
         text-decoration: none;
@@ -1735,7 +1792,12 @@ body {
         & i,
         & svg {
           margin-left: .8em;
-          font-size: 1.4rem;
+          font-size: emcalc(1.4, 1.8);
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          font-size: 1.6em;
         }
       }
     }
@@ -1815,6 +1877,11 @@ body {
     &-header {
       margin-bottom: 6.2em;
       text-align: center;
+
+      //MOBILE
+      @include respond(desktop-xsm) {
+        display: none;
+      }
   
       &-title {
         margin-bottom: .69em;
@@ -1900,8 +1967,13 @@ body {
 
   //TABLET
   @include respond(desktop-md) {
-    padding-top: 9em;
-    padding-bottom: 9em;
+    padding-top: 6em;
+    padding-bottom: 6em;
+  }
+
+  //MOBILE
+  @include respond(desktop-xsm) {
+    @include flex-direction(column);
   }
 
   &-header {
@@ -1940,6 +2012,11 @@ body {
       @include justify-content(center);
     }
 
+    //MOBILE
+    @include respond(desktop-xsm) {
+      @include flex-direction(column);
+    }
+
     &-card {
       padding: 3.7em 3.3em;
       max-width: 39.2em;
@@ -1950,6 +2027,12 @@ body {
 
       &:not(:last-of-type) {
         margin-right: 2em;
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-right: 0;
+          margin-bottom: 2em;
+        }
       }
 
       &-title {
@@ -1960,11 +2043,17 @@ body {
         overflow: hidden;
         text-overflow:ellipsis;
         white-space: nowrap;
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          white-space: normal;
+          font-size: 1.8em;
+        }
       }
 
       &-text {
         // margin-bottom: 2em;
-        min-height: emcalc(17.1, 1.7);
+        min-height: emcalc(17.1, 1.55);
         font-size: 1.55em;
         font-weight: 400;
         line-height: 1.81;
@@ -1973,7 +2062,15 @@ body {
 
         //TABLET
         @include respond(desktop-md) {
+           min-height: emcalc(17.1, 1.8);
           font-size: 1.45em;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(2.4,1.4);
+          min-height: auto;
+          font-size: 1.4em;
         }
       }
 
@@ -2055,6 +2152,12 @@ body {
           font-size: 3.2em;
           line-height: 1.31;
         }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(2,2.8);
+          font-size: 2.8em;
+        }
       }
 
       &-text {
@@ -2070,6 +2173,11 @@ body {
           font-size: 1.45em;
           line-height: 1.38;
           letter-spacing: 0.07px;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(3,1.45);
         }
       }
 
@@ -2116,6 +2224,12 @@ body {
             font-size: 1.6em;
           }
         }
+      }
+
+      & .button-white {
+        padding: emcalc(1.5, 1.5) emcalc(3.2, 1.5);
+        font-size: 1.5em;
+        font-weight: 600;
       }
 
       &-img {

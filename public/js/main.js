@@ -116,54 +116,54 @@ window.addEventListener('scroll', function () {
     header.classList.remove('header-scroll');
   }
 
-  if (window.scrollY >= tableOfContentPos.offsetTop - 60) {
-    var scrollSpeed = Math.abs(checkScrollSpeed());
-    header.style.top = '-8.4rem';
-    header.style.transitionDuration = `${2 / scrollSpeed}s`;
-    tableOfContent.style.transitionDuration = `${2 / scrollSpeed}s`;
+  // if (window.scrollY >= tableOfContentPos.offsetTop - 60) {
+  //   var scrollSpeed = Math.abs(checkScrollSpeed());
+  //   header.style.top = '-8.4rem';
+  //   header.style.transitionDuration = `${2 / scrollSpeed}s`;
+  //   tableOfContent.style.transitionDuration = `${2 / scrollSpeed}s`;
 
-    if (window.scrollY >= section01Card.offsetTop - header.offsetHeight - 30) {
-      for (var i = 0; i < tocLinks.length; i++) {
-        tocLinks[i].classList.remove('active');
-        document.querySelector('[href="#section-01"]').classList.add('active');
-      }
-    }
-    if (window.scrollY >= section02Card.offsetTop - header.offsetHeight - 30) {
-      for (var i = 0; i < tocLinks.length; i++) {
-        tocLinks[i].classList.remove('active');
-        document.querySelector('[href="#section-02"]').classList.add('active');
-      }
-    }
+  //   if (window.scrollY >= section01Card.offsetTop - header.offsetHeight - 30) {
+  //     for (var i = 0; i < tocLinks.length; i++) {
+  //       tocLinks[i].classList.remove('active');
+  //       document.querySelector('[href="#section-01"]').classList.add('active');
+  //     }
+  //   }
+  //   if (window.scrollY >= section02Card.offsetTop - header.offsetHeight - 30) {
+  //     for (var i = 0; i < tocLinks.length; i++) {
+  //       tocLinks[i].classList.remove('active');
+  //       document.querySelector('[href="#section-02"]').classList.add('active');
+  //     }
+  //   }
 
-    if (window.scrollY >= section03Card.offsetTop - header.offsetHeight - 30) {
-      for (var i = 0; i < tocLinks.length; i++) {
-        tocLinks[i].classList.remove('active');
-        document.querySelector('[href="#section-03"]').classList.add('active');
-      }
-    }
+  //   if (window.scrollY >= section03Card.offsetTop - header.offsetHeight - 30) {
+  //     for (var i = 0; i < tocLinks.length; i++) {
+  //       tocLinks[i].classList.remove('active');
+  //       document.querySelector('[href="#section-03"]').classList.add('active');
+  //     }
+  //   }
 
-    if (window.scrollY >= section04Card.offsetTop - header.offsetHeight - 100) {
-      for (var i = 0; i < tocLinks.length; i++) {
-        tocLinks[i].classList.remove('active');
-        document.querySelector('[href="#section-04"]').classList.add('active');
-      }
-    }
-    if (window.scrollY >= hideToc.offsetTop - 120) {
-      tableOfContent.style.transitionDuration = `${
-        2 / Math.abs(checkScrollSpeed())
-      }s`;
-      tableOfContent.classList.add('toc-hidden');
-    } else {
-      tableOfContent.style.transitionDuration = `${
-        2 / Math.abs(checkScrollSpeed())
-      }s`;
-      tableOfContent.classList.remove('toc-hidden');
-    }
-  } else {
-    header.style.top = '0';
-    header.classList.remove('hide');
-    tableOfContent.classList.remove('table-of-content-scroll');
-  }
+  //   if (window.scrollY >= section04Card.offsetTop - header.offsetHeight - 100) {
+  //     for (var i = 0; i < tocLinks.length; i++) {
+  //       tocLinks[i].classList.remove('active');
+  //       document.querySelector('[href="#section-04"]').classList.add('active');
+  //     }
+  //   }
+  //   if (window.scrollY >= hideToc.offsetTop - 120) {
+  //     tableOfContent.style.transitionDuration = `${
+  //       2 / Math.abs(checkScrollSpeed())
+  //     }s`;
+  //     tableOfContent.classList.add('toc-hidden');
+  //   } else {
+  //     tableOfContent.style.transitionDuration = `${
+  //       2 / Math.abs(checkScrollSpeed())
+  //     }s`;
+  //     tableOfContent.classList.remove('toc-hidden');
+  //   }
+  // } else {
+  //   header.style.top = '0';
+  //   header.classList.remove('hide');
+  //   tableOfContent.classList.remove('table-of-content-scroll');
+  // }
 });
 
 var checkScrollSpeed = (function (settings) {

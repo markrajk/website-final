@@ -263,7 +263,8 @@
       </div>
       <div class="section-feature-card-main">
         <p class="section-feature-card-main-subtitle">For your employees</p>
-        <h2 class="section-feature-card-main-title">The new simple way <br class="hide-md"> to give feedback</h2>
+        <h2 class="section-feature-card-main-title">The <span class="hide-xsm"> new </span> simple way<br
+            class="hide-md"> to give feedback</h2>
         <p class="section-feature-card-main-text">
           <span class="card-01-01 active">
             Let your people give each other feedback with just a few
@@ -326,7 +327,8 @@
       </div>
       <div class="section-feature-card-main">
         <p class="section-feature-card-main-subtitle">For your employees</p>
-        <h2 class="section-feature-card-main-title">The new simple way <br class="hide-md"> to receive feedback</h2>
+        <h2 class="section-feature-card-main-title">The <span class="hide-xsm"> new </span> simple way<br
+            class="hide-md"> to receive feedback</h2>
         <p class="section-feature-card-main-text">
           <span class="card-02-01 active">
             All your people will get much more feedback than at the
@@ -400,7 +402,7 @@
       <div class="section-dashboard-main container">
         <div class="custom-accordion">
           <div class="custom-accordion-item item-01 open">
-            <div class="custom-accordion-item-header" target-video="accordion-video-01">
+            <div class="custom-accordion-item-header" target-video="accordion-video-01" id="acc-01">
               <h3 class="custom-accordion-item-header-title">Follow team’s development</h3>
               <i class="fas fa-caret-down"></i>
             </div>
@@ -425,8 +427,8 @@
             </div>
           </div>
 
-          <div class="custom-accordion-item item-02 active">
-            <div class="custom-accordion-item-header" target-video="accordion-video-02">
+          <div class="custom-accordion-item item-02">
+            <div class="custom-accordion-item-header" target-video="accordion-video-02" id="acc-02">
               <h3 class="custom-accordion-item-header-title">Follow employee’s development</h3>
               <i class="fas fa-caret-down"></i>
             </div>
@@ -450,8 +452,8 @@
             </div>
           </div>
 
-          <div class="custom-accordion-item item-01">
-            <div class="custom-accordion-item-header" target-video="accordion-video-03">
+          <div class="custom-accordion-item item-03">
+            <div class="custom-accordion-item-header" target-video="accordion-video-03" id="acc-03">
               <h3 class="custom-accordion-item-header-title">Compare team’s development</h3>
               <i class="fas fa-caret-down"></i>
             </div>
@@ -475,8 +477,8 @@
             </div>
           </div>
 
-          <div class="custom-accordion-item item-01">
-            <div class="custom-accordion-item-header" target-video="accordion-video-04">
+          <div class="custom-accordion-item item-04">
+            <div class="custom-accordion-item-header" target-video="accordion-video-04" id="acc-04">
               <h3 class="custom-accordion-item-header-title">Improvement ideas</h3>
               <i class="fas fa-caret-down"></i>
             </div>
@@ -500,8 +502,8 @@
             </div>
           </div>
 
-          <div class="custom-accordion-item item-01">
-            <div class="custom-accordion-item-header" target-video="accordion-video-05">
+          <div class="custom-accordion-item item-05">
+            <div class="custom-accordion-item-header" target-video="accordion-video-05" id="acc-05">
               <h3 class="custom-accordion-item-header-title">Manage easily</h3>
               <i class="fas fa-caret-down"></i>
             </div>
@@ -520,8 +522,8 @@
             </div>
           </div>
 
-          <div class="custom-accordion-item item-01">
-            <div class="custom-accordion-item-header" target-video="accordion-video-06">
+          <div class="custom-accordion-item item-06">
+            <div class="custom-accordion-item-header" target-video="accordion-video-06" id="acc-06">
               <h3 class="custom-accordion-item-header-title">Viewing rights</h3>
               <i class="fas fa-caret-down"></i>
             </div>
@@ -608,14 +610,18 @@
     <!-- SECTION START -->
     <section class="section section-start">
       <div class="section-start-main container">
-        <h2 class="section-start-main-title">Let’s start developing your teams</h2>
-        <p class="section-start-main-text">Teams up to 100 employees can use Team Feedback for free for an unlimited
+        <h2 class="section-start-main-title">Let’s start developing <br class="show-xsm-block"> your teams</h2>
+        <p class="section-start-main-text hide-xsm">Teams up to 100 employees can use Team Feedback for free for an
+          unlimited
           period
           of time.</p>
-        <div class="section-start-main-inputs">
+        <p class="section-start-main-text show-xsm-block">Take a closer look at Team Feedback from
+          two different point of views.</p>
+        <div class="section-start-main-inputs hide-xsm">
           <input type="email" placeholder="Enter your business email">
           <a href="#" class="button button-primary">Start for free</a>
         </div>
+        <a href="#" class="button button-white show-xsm-inline-flex">Download app</a>
         <img src="./public/assets/img/start-img-01.png" alt="Graphic element" class="section-start-main-img img-01">
         <img src="./public/assets/img/start-img-02.png" alt="Graphic element" class="section-start-main-img img-02">
         <img src="./public/assets/img/start-img-03.png" alt="Graphic element" class="section-start-main-img img-03">
@@ -810,12 +816,13 @@
 
     for (var i = 0; i < accordionHeaders.length; i++) {
       accordionHeaders[i].addEventListener('click', function (e) {
-        e.preventDefault();
+        this.scrollIntoView()
         var goTo = this.getAttribute('target-video');
-
-        var video = document.querySelector(`.section-dashboard-main-media.hide-md video.${goTo}`);
+        // var video = document.querySelector(`.section-dashboard-main-media.hide-md video.${goTo}`);
         if (window.innerWidth < 991) {
-          video = document.querySelector(`.section-dashboard-main-media.show-md-block video.${goTo}`);
+          var video = document.querySelector(`.section-dashboard-main-media.show-md-block video.${goTo}`);
+        } else {
+          var video = document.querySelector(`.section-dashboard-main-media.hide-md video.${goTo}`);
         }
         var progress = document.querySelector(`.custom-accordion-item-body-progress.${goTo}`);
         console.log(progress)
