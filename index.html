@@ -372,8 +372,8 @@
     <!-- SECTION FEATURE CARD -->
     <section class="section section-feature-card container card-03">
       <div class="section-feature-card-media">
-        <video class="card-01-01 section-feature-card-media-video" muted preload="auto">
-          <source src="/public/assets/video/card-01-01.m4v" type="video/mp4">
+        <video class="card-03-01 section-feature-card-media-video active" muted preload="auto" autoplay>
+          <source src="./public/assets/video/card-03-01.m4v" type="video/mp4">
         </video>
 
         <img src="./public/assets/img/phone-placeholder.jpeg" alt="Team Feedback app feature"
@@ -578,9 +578,11 @@
         <div class="section-learn-main-card light">
           <h3 class="section-learn-main-card-title">From employees point of view</h3>
           <p class="section-learn-main-card-text">
-            The new simple way to give and to
-            receive feedback. Everyone can now
-            easily follow his own development.
+            <span>
+              The new simple way to give and to
+              receive feedback. Everyone can now
+              easily follow his own development.
+            </span>
           </p>
           <a href="#" class="section-learn-main-card-learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -588,9 +590,9 @@
         <div class="section-learn-main-card dark">
           <h3 class="section-learn-main-card-title">From team leaders POV</h3>
           <p class="section-learn-main-card-text">
-            The great new tool to follow employees
-            and team’s development. What is going
-            well, where we need to improve.
+            <span>The great new tool to follow employees
+              and team’s development. What is going
+              well, where we need to improve.</span>
           </p>
           <a href="#" class="section-learn-main-card-learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -598,9 +600,11 @@
         <div class="section-learn-main-card light hide-md">
           <h3 class="section-learn-main-card-title">From companies point of view</h3>
           <p class="section-learn-main-card-text">
-            The database of your employees, teams
-            and team leaders development. A great
-            tool to support your companies development.
+            <span>
+              The database of your employees, teams
+              and team leaders development. A great
+              tool to support your companies development.
+            </span>
           </p>
           <a href="#" class="section-learn-main-card-learn-more">Learn more <i class="fas fa-arrow-right"></i></a>
         </div>
@@ -741,11 +745,11 @@
 
 
     function resizeHero() {
-      console.log(window.innerWidth)
       if (window.innerWidth > 1245) {
         heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
       }
       //heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
+      learnCardsHeight()
     }
 
     window.addEventListener('resize', resizeHero)
@@ -845,6 +849,28 @@
 
       });
     }
+
+    //LEARN MORE CARDS
+    function learnCardsHeight() {
+      var learnCards = document.querySelectorAll('.section-learn-main-card-text');
+      var learnCardSpan = document.querySelectorAll('.section-learn-main-card-text span');
+
+      var learnCardsHeights = [...learnCards].map(e => e.offsetHeight)
+      var learnCardSpanHeights = [...learnCardSpan].map(e => e.offsetHeight)
+
+      var maxHeight = Math.max(...learnCardsHeights);
+      var maxSpanHeight = Math.max(...learnCardSpanHeights);
+
+
+
+      if (maxSpanHeight <= maxHeight) {
+        learnCards.forEach(e => e.style.minHeight = `${maxSpanHeight}px`)
+      } else {
+        learnCards.forEach(e => e.style.minHeight = `${maxHeight}px`)
+      }
+    }
+
+    learnCardsHeight()
   </script>
 </body>
 
