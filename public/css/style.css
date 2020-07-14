@@ -23,7 +23,7 @@ body {
 
 .container {
   margin: 0 auto;
-  padding-left: 5%;
+  padding-left: 4.8%;
   padding-right: 5%;
   width: 100%;
   max-width: calc(123.2rem + 10%); }
@@ -169,7 +169,6 @@ body {
       .header .nav-brand .brand-img-wrapper {
         display: inline-block; }
       .header .nav-brand-img {
-        margin-left: -.5rem;
         height: 4.23rem; }
         @media (max-width: 991px) {
           .header .nav-brand-img {
@@ -519,7 +518,7 @@ body {
     #main-overview .section-hero-wrapper {
       margin-bottom: 6.2rem;
       background-image: url(../assets/img/hero-background-img.png);
-      background-position: center 100%;
+      background-position: center 200%;
       background-size: auto 99%;
       background-repeat: no-repeat; }
       @media (max-width: 1200px) {
@@ -556,7 +555,7 @@ body {
             margin-bottom: 1.1379310345em;
             font-size: 2.9em; } }
       #main-overview .section-hero-main-text {
-        max-width: 32em;
+        max-width: 25.1515151515em;
         margin-bottom: 1.8em;
         font-size: 1.65em;
         font-weight: 500;
@@ -578,12 +577,12 @@ body {
           #main-overview .section-hero-main-buttons {
             margin-bottom: 2em; } }
         #main-overview .section-hero-main-buttons .button {
-          padding: .8em 1.6em;
+          padding: .95em 1.8em;
           font-size: 1.7em;
           font-weight: 600;
           letter-spacing: 0.17px; }
           #main-overview .section-hero-main-buttons .button:first-of-type {
-            margin-right: .7em; }
+            margin-right: 1em; }
           @media (max-width: 575px) {
             #main-overview .section-hero-main-buttons .button {
               padding-top: 0.875em;
@@ -598,7 +597,7 @@ body {
         font-size: 1.4em;
         font-weight: 500;
         letter-spacing: 0.14px;
-        color: #414448; }
+        color: #646F7C; }
         @media (max-width: 575px) {
           #main-overview .section-hero-main-info {
             font-size: 1.3em; } }

@@ -583,7 +583,7 @@ body {
 // ====================================================================================================================================
 .container {
   margin: 0 auto;
-  padding-left: 5%;
+  padding-left: 4.8%;
   padding-right: 5%;
   width: 100%;
   max-width: calc(123.2rem + 10%);
@@ -783,7 +783,6 @@ body {
       }
 
       &-img {
-        margin-left: -.5rem;
         height: 4.23rem;
 
         @include respond(desktop-md) {
@@ -1280,7 +1279,7 @@ body {
     &-wrapper {
       margin-bottom: 6.2rem;
       background-image: url(../assets/img/hero-background-img.png);
-      background-position: center 100%;
+      background-position: center 200%;
       background-size: auto 99%;
       background-repeat: no-repeat;
 
@@ -1333,7 +1332,7 @@ body {
       }
 
       &-text {
-        max-width: 32em;
+        max-width: emcalc(41.5,1.65);
         margin-bottom: 1.8em;
         font-size: 1.65em;
         font-weight: 500;
@@ -1364,13 +1363,13 @@ body {
         }
 
         & .button {
-          padding: .8em 1.6em;
+          padding: .95em 1.8em;
           font-size: 1.7em;
           font-weight: 600;
           letter-spacing: 0.17px;
 
           &:first-of-type {
-            margin-right: .7em;
+            margin-right: 1em;
           }
 
           //MOBILE
@@ -1391,7 +1390,7 @@ body {
         font-size: 1.4em;
         font-weight: 500;
         letter-spacing: 0.14px;
-        color: #414448;
+        color: #646F7C;
 
         //MOBILE
         @include respond(desktop-xsm) {
