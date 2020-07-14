@@ -1878,8 +1878,8 @@ body {
       margin-bottom: 6.2em;
       text-align: center;
 
-      //MOBILE
-      @include respond(desktop-xsm) {
+      //TABLET
+      @include respond(desktop-md) {
         display: none;
       }
   
@@ -2062,9 +2062,16 @@ body {
 
         //TABLET
         @include respond(desktop-md) {
-           min-height: emcalc(17.1, 1.8);
+          min-height: emcalc(9.2, 1.45);
           font-size: 1.45em;
         }
+
+
+        //SMALL
+        @include respond(desktop-sm) {
+          min-height: emcalc(17.1, 1.8);
+        }
+        
 
         //MOBILE
         @include respond(desktop-xsm) {
@@ -2177,6 +2184,7 @@ body {
 
         //MOBILE
         @include respond(desktop-xsm) {
+          max-width: emcalc(28.8, 1.45);
           margin-bottom: emcalc(3,1.45);
         }
       }
@@ -2328,6 +2336,7 @@ body {
       border-radius: 4px;
       background-color: #20303c;
       transition: all 0s linear;
+      overflow: hidden;
 
       &-text {
         padding-left: emcalc(2.4,1.5 );
