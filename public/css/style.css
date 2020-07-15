@@ -7,6 +7,9 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 991px) {
+    html {
+      font-size: 60%; } }
 
 body {
   box-sizing: border-box;
@@ -858,7 +861,12 @@ body {
             max-width: 32.2580645161em; } } }
       @media (max-width: 991px) {
         #main-overview .section-feature-card.card-02 .section-feature-card-main-text {
-          max-width: 30.9677419355em; } }
+          max-width: 30.9677419355em;
+          height: auto;
+          margin-bottom: 0; } }
+    @media (max-width: 991px) {
+      #main-overview .section-feature-card.card-02 .section-feature-card-main-list {
+        display: none; } }
   #main-overview .section-feature-card.card-03 {
     padding-top: 7.5em;
     padding-bottom: 7.5em; }
@@ -961,15 +969,9 @@ body {
     #main-overview .section-learn {
       padding-top: 6em;
       padding-bottom: 6em; } }
-  @media (max-width: 575px) {
-    #main-overview .section-learn {
-      -webkit-box-direction: normal;
-      -webkit-box-orient: vertical;
-      -webkit-flex-direction: column;
-      -moz-flex-direction: column;
-      -ms-flex-direction: column;
-      flex-direction: column; } }
   #main-overview .section-learn-header {
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 7em;
     text-align: center; }
     #main-overview .section-learn-header-title {
@@ -986,6 +988,16 @@ body {
       font-size: 1.7rem;
       font-weight: 400;
       color: #2c3857; }
+      @media (max-width: 650px) {
+        #main-overview .section-learn-header-text {
+          font-size: 1.45rem; } }
+    @media (max-width: 991px) {
+      #main-overview .section-learn-header {
+        margin-bottom: 4em; } }
+    @media (max-width: 650px) {
+      #main-overview .section-learn-header {
+        max-width: 29.8em;
+        margin-bottom: 3.5em; } }
   #main-overview .section-learn-main {
     display: -webkit-box;
     display: -webkit-flex;
@@ -1009,7 +1021,7 @@ body {
         -webkit-justify-content: center;
         -moz-justify-content: center;
         justify-content: center; } }
-    @media (max-width: 575px) {
+    @media (max-width: 650px) {
       #main-overview .section-learn-main {
         -webkit-box-direction: normal;
         -webkit-box-orient: vertical;
@@ -1026,7 +1038,7 @@ body {
       white-space: nowrap; }
       #main-overview .section-learn-main-card:not(:last-of-type) {
         margin-right: 2em; }
-        @media (max-width: 575px) {
+        @media (max-width: 650px) {
           #main-overview .section-learn-main-card:not(:last-of-type) {
             margin-right: 0;
             margin-bottom: 2em; } }
@@ -1108,6 +1120,8 @@ body {
           margin-bottom: 0.7142857143em;
           font-size: 2.8em; } }
     #main-overview .section-start-main-text {
+      margin-left: auto;
+      margin-right: auto;
       margin-bottom: 2.47em;
       font-size: 1.7em;
       font-weight: 400;
@@ -1119,6 +1133,9 @@ body {
           font-size: 1.45em;
           line-height: 1.38;
           letter-spacing: 0.07px; } }
+      @media (max-width: 769px) {
+        #main-overview .section-start-main-text {
+          max-width: 26.2068965517em; } }
       @media (max-width: 575px) {
         #main-overview .section-start-main-text {
           max-width: 19.8620689655em;

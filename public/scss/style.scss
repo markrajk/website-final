@@ -567,6 +567,10 @@ html {
   
   font-size: 62.5%;   //1rem = 10px 10px/16 62.5%
 
+  @include respond(desktop-md) {
+    font-size: 60%;
+  }
+
 }
 
 body {
@@ -1866,6 +1870,15 @@ body {
         //TABLET
         @include respond(desktop-md) {
           max-width: emcalc(48, 1.55);
+          height: auto;
+          margin-bottom: 0;
+        }
+      }
+
+      & .section-feature-card-main-list {
+        //TABLET
+        @include respond(desktop-md) {
+          display: none;
         }
       }
     }
@@ -2013,12 +2026,9 @@ body {
     padding-bottom: 6em;
   }
 
-  //MOBILE
-  @include respond(desktop-xsm) {
-    @include flex-direction(column);
-  }
-
   &-header {
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 7em;
     text-align: center;
 
@@ -2041,6 +2051,21 @@ body {
       font-size: 1.7rem;
       font-weight: 400;
       color: #2c3857;
+
+      //MOBILE
+      @include custom-respond(650) {
+        font-size: 1.45rem;
+      }
+    }
+
+    @include respond(desktop-md) {
+      margin-bottom: 4em;
+    }
+
+    //MOBILE
+    @include custom-respond(650) {
+      max-width: 29.8em;
+      margin-bottom: 3.5em;
     }
   }
 
@@ -2054,10 +2079,10 @@ body {
       @include justify-content(center);
     }
 
-    //MOBILE
-    @include respond(desktop-xsm) {
-      @include flex-direction(column);
-    }
+  //MOBILE
+  @include custom-respond(650) {
+    @include flex-direction(column);
+  }
 
     &-card {
       padding: 3.5em 3.3em;
@@ -2071,7 +2096,7 @@ body {
         margin-right: 2em;
 
         //MOBILE
-        @include respond(desktop-xsm) {
+        @include custom-respond(650) {
           margin-right: 0;
           margin-bottom: 2em;
         }
@@ -2210,6 +2235,8 @@ body {
       }
 
       &-text {
+        margin-left: auto;
+        margin-right: auto;
         margin-bottom: 2.47em;
         font-size: 1.7em;
         font-weight: 400;
@@ -2222,6 +2249,11 @@ body {
           font-size: 1.45em;
           line-height: 1.38;
           letter-spacing: 0.07px;
+        }
+
+        //MOBILE
+        @include respond(desktop-sm) {
+          max-width: emcalc(38, 1.45);
         }
 
         //MOBILE
