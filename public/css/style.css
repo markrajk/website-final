@@ -1432,13 +1432,13 @@ body {
       color: #4a5669; }
       @media (max-width: 991px) {
         #main-employees .section-hero-main-text {
-          margin-bottom: 0;
           font-size: 1.7em;
           font-weight: 400;
           line-height: 1.65;
           color: #282d53; } }
       @media (max-width: 575px) {
         #main-employees .section-hero-main-text {
+          margin-bottom: 0;
           max-width: 22em;
           font-size: 1.5em; } }
     #main-employees .section-hero-main-inputs input {

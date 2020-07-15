@@ -2593,7 +2593,6 @@ body {
 
         //TABLET
         @include respond(desktop-md) {
-          margin-bottom: 0;
           font-size: 1.7em;
           font-weight: 400;
           line-height: 1.65;
@@ -2602,6 +2601,7 @@ body {
 
         //MOBILE
         @include respond(desktop-xsm) {
+          margin-bottom: 0;
           max-width: emcalc(33,1.5);
           font-size: 1.5em;
         }
