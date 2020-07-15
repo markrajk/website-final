@@ -844,6 +844,10 @@ body {
     padding-top: 7.4em; }
     #main-overview .section-feature-card.card-01 .section-feature-card-main-text {
       max-width: 29.1612903226em; }
+      @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) {
+          #main-overview .section-feature-card.card-01 .section-feature-card-main-text {
+            max-width: 29.8064516129em; } } }
       @media (max-width: 991px) {
         #main-overview .section-feature-card.card-01 .section-feature-card-main-text {
           max-width: 30.9677419355em; } }
@@ -852,6 +856,10 @@ body {
     padding-bottom: 7.5em; }
     #main-overview .section-feature-card.card-02 .section-feature-card-main-text {
       max-width: 30.3225806452em; }
+      @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) {
+          #main-overview .section-feature-card.card-02 .section-feature-card-main-text {
+            max-width: 30.9677419355em; } } }
       @media (max-width: 991px) {
         #main-overview .section-feature-card.card-02 .section-feature-card-main-text {
           max-width: 30.9677419355em; } }
@@ -1224,7 +1232,7 @@ body {
       transition: all .0s ease-in-out;
       cursor: pointer; }
       .custom-accordion-item-header-title {
-        font-size: 1.65em;
+        font-size: 1.625em;
         font-weight: 600;
         color: #171f38;
         letter-spacing: 0.16px;

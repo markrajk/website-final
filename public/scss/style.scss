@@ -15,6 +15,14 @@ $text-color-primary: #1c1c1c;
   }
 }
 
+@mixin target-safari() {
+  @media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) {
+      @content;
+    }
+  }
+}
+
 @mixin respond($breakpoint) {
   @if $breakpoint == desktop-xxsm {
     @media (max-width: 379px) {
@@ -1833,6 +1841,10 @@ body {
       & .section-feature-card-main-text {
         max-width: emcalc(45.2, 1.55);
 
+        @include target-safari() {
+          max-width: emcalc(46.2, 1.55);
+        }
+
         //TABLET
         @include respond(desktop-md) {
           max-width: emcalc(48, 1.55);
@@ -1846,6 +1858,9 @@ body {
 
       & .section-feature-card-main-text {
         max-width: emcalc(47, 1.55);
+        @include target-safari() {
+          max-width: emcalc(48, 1.55);
+        }
 
         //TABLET
         @include respond(desktop-md) {
@@ -2344,7 +2359,7 @@ body {
       cursor: pointer;
 
       &-title {
-        font-size: 1.65em;
+        font-size: 1.625em;
         font-weight: 600;
         color: #171f38;
         letter-spacing: 0.16px;
