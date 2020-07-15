@@ -1873,10 +1873,19 @@ body {
 #main-overview {
 
   .section-dashboard {
+    min-height: 93em;
     padding-top: 6em;
     padding-bottom: 6em;
     font-size: 1rem;
     background-color: #ebf5f3;
+
+    @include respond(desktop-md) {
+      min-height: 116.4em;
+    }
+
+    @include respond(desktop-xsm) {
+      min-height: 100em;
+    }
 
     &-header {
       margin-bottom: 6.2em;

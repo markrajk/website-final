@@ -820,7 +820,7 @@
 
     for (var i = 0; i < accordionHeaders.length; i++) {
       accordionHeaders[i].addEventListener('click', function (e) {
-        this.scrollIntoView()
+        // this.scrollIntoView()
         var goTo = this.getAttribute('target-video');
         // var video = document.querySelector(`.section-dashboard-main-media.hide-md video.${goTo}`);
         if (window.innerWidth < 991) {
@@ -846,7 +846,6 @@
         video.classList.add('active');
         video.currentTime = 0;
         video.play();
-
       });
     }
 
