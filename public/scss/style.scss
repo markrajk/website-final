@@ -888,7 +888,7 @@ body {
           margin-right: 1.6rem;
         }
 
-        @include custom-respond(1440) {
+        @include custom-respond(1200) {
           display: none;
         }
       }
@@ -897,7 +897,7 @@ body {
         min-width: 0;
         width: 100%;
         max-width: 14.67em;
-        display: none;
+        display: inline-block;
         margin-right: 1.25rem;
         padding: .85rem 1.2rem;
         font-size: 1.5rem;
@@ -914,14 +914,14 @@ body {
           color: #667690;
         }
 
-        @include custom-respond(1440) {
-          display: inline-block;
+        @include custom-respond(1270) {
+         display: none;
         }
 
-        @include custom-respond(1300) {
-          display: none;
-          max-width: 13.13em;
-        }
+        // @include custom-respond(1300) {
+        //   display: none;
+        //   max-width: 13.13em;
+        // }
       }
 
       & .button-primary {
@@ -2454,6 +2454,18 @@ body {
 //=========================================================================================================================================
 //                                                           ADDITIONAL CLASSES
 //=========================================================================================================================================
+
+.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  transition: all .4s ease-in-out;
+}
+
+.fade-in {
+  opacity: 1;
+  visibility: visible;
+  transition: all .4s ease-in-out;
+}
 
 .header-scroll {
   border-color: #f1f1f1;

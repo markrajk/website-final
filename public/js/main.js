@@ -109,11 +109,21 @@ var section04Card = document.getElementById('section-04');
 
 var tocLinks = document.querySelectorAll('.table-of-content-link');
 
+var navInput = document.querySelector('.nav-buttons input');
+var navContactSaleLink = document.querySelector('.nav-buttons .contact-sales');
+var navLoginLink = document.querySelector('.nav-buttons .login');
+
 window.addEventListener('scroll', function () {
   if (window.scrollY > header.offsetHeight) {
     header.classList.add('header-scroll');
+    navInput.classList.remove('hide');
+    navContactSaleLink.classList.add('hide');
+    navLoginLink.classList.add('hide');
   } else {
     header.classList.remove('header-scroll');
+    navInput.classList.add('hide');
+    navContactSaleLink.classList.remove('hide');
+    navLoginLink.classList.remove('hide');
   }
 
   // if (window.scrollY >= tableOfContentPos.offsetTop - 60) {
