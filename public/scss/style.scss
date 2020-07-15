@@ -567,13 +567,13 @@ html {
   
   font-size: 62.5%;   //1rem = 10px 10px/16 62.5%
 
-  // @include respond(desktop-md) {
-  //   font-size: 60%;
-  // }
+  @include respond(desktop-md) {
+    font-size: 60%;
+  }
 
-  // @include custom-respond(800) {
-  //   font-size: 57.5%;
-  // }
+  @include custom-respond(800) {
+    font-size: 57.5%;
+  }
 
 }
 
