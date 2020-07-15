@@ -757,9 +757,10 @@ body {
     #main-overview .section-feature-card-main-text {
       height: 8.875em;
       margin-bottom: 1.65em;
-      font-size: 1.6rem;
-      font-weight: 400;
-      line-height: 1.88;
+      font-size: 1.55rem;
+      font-weight: 500;
+      line-height: 1.81;
+      letter-spacing: 0.08px;
       color: #383838; }
       @media (max-width: 991px) {
         #main-overview .section-feature-card-main-text {
@@ -841,16 +842,16 @@ body {
   #main-overview .section-feature-card.card-01 {
     padding-top: 7.4em; }
     #main-overview .section-feature-card.card-01 .section-feature-card-main-text {
-      max-width: 28em; }
+      max-width: 29.1612903226em; }
       @media (max-width: 991px) {
         #main-overview .section-feature-card.card-01 .section-feature-card-main-text {
-          max-width: 30em; } }
+          max-width: 30.9677419355em; } }
   #main-overview .section-feature-card.card-02 {
     padding-top: 3.5em;
     padding-bottom: 7.5em; }
     @media (max-width: 991px) {
       #main-overview .section-feature-card.card-02 .section-feature-card-main-text {
-        max-width: 30em; } }
+        max-width: 30.9677419355em; } }
   #main-overview .section-feature-card.card-03 {
     padding-top: 7.5em;
     padding-bottom: 7.5em; }
@@ -858,7 +859,7 @@ body {
       height: auto; }
       @media (max-width: 991px) {
         #main-overview .section-feature-card.card-03 .section-feature-card-main-text {
-          max-width: 30em; } }
+          max-width: 30.9677419355em; } }
 
 #main-overview .section-dashboard {
   min-height: 93em;
@@ -1238,7 +1239,7 @@ body {
         opacity: 0;
         font-size: 1.5em;
         font-weight: 400;
-        line-height: 1.87;
+        line-height: 1.67;
         letter-spacing: 0.08px;
         color: #ffffff;
         transition: opacity .3s ease-in-out .2s; }

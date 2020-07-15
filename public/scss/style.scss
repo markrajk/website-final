@@ -1709,9 +1709,10 @@ body {
       &-text {
         height: emcalc(14.2,1.6);
         margin-bottom: 1.65em;
-        font-size: 1.6rem;
-        font-weight: 400;
-        line-height: 1.88;
+        font-size: 1.55rem;
+        font-weight: 500;
+        line-height: 1.81;
+        letter-spacing: 0.08px;
         color: #383838;
 
         //TABLET
@@ -1829,11 +1830,11 @@ body {
       padding-top: 7.4em;
 
       & .section-feature-card-main-text {
-        max-width: emcalc(44.8, 1.6);
+        max-width: emcalc(45.2, 1.55);
 
         //TABLET
         @include respond(desktop-md) {
-          max-width: emcalc(48, 1.6);
+          max-width: emcalc(48, 1.55);
         }
       }
     }
@@ -1846,7 +1847,7 @@ body {
 
         //TABLET
         @include respond(desktop-md) {
-          max-width: emcalc(48, 1.6);
+          max-width: emcalc(48, 1.55);
         }
       }
     }
@@ -1860,7 +1861,7 @@ body {
 
         //TABLET
         @include respond(desktop-md) {
-          max-width: emcalc(48, 1.6);
+          max-width: emcalc(48, 1.55);
         }
       }
     }
@@ -2357,7 +2358,7 @@ body {
         opacity: 0;
         font-size: 1.5em;
         font-weight: 400;
-        line-height: 1.87;
+        line-height: 1.67;
         letter-spacing: 0.08px;
         color: #ffffff;
         transition: opacity .3s ease-in-out .2s;
