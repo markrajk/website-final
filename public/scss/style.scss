@@ -1844,7 +1844,7 @@ body {
       padding-bottom: 7.5em;
 
       & .section-feature-card-main-text {
-        max-width: emcalc(47.6, 1.55);
+        max-width: emcalc(47, 1.55);
 
         //TABLET
         @include respond(desktop-md) {
