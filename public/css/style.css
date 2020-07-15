@@ -1022,7 +1022,7 @@ body {
         -ms-flex-direction: column;
         flex-direction: column; } }
     #main-overview .section-learn-main-card {
-      padding: 3.7em 3.3em;
+      padding: 3.5em 3.3em;
       max-width: 39.2em;
       border-radius: 4px;
       overflow: hidden;
@@ -1035,8 +1035,8 @@ body {
             margin-right: 0;
             margin-bottom: 2em; } }
       #main-overview .section-learn-main-card-title {
-        margin-bottom: 1.3em;
-        font-size: 2em;
+        margin-bottom: 1.3333333333em;
+        font-size: 2.1em;
         font-weight: 600;
         letter-spacing: 0.11px;
         overflow: hidden;
@@ -1047,10 +1047,10 @@ body {
             white-space: normal;
             font-size: 1.8em; } }
       #main-overview .section-learn-main-card-text {
-        margin-bottom: 2em;
-        font-size: 1.55em;
+        margin-bottom: 2.6666666667em;
+        font-size: 1.5em;
         font-weight: 400;
-        line-height: 1.81;
+        line-height: 1.73;
         letter-spacing: 0.08px;
         white-space: normal; }
         @media (max-width: 991px) {
