@@ -2317,6 +2317,7 @@ body {
 
 .custom-accordion{
   max-width: 39.2em;
+  min-width: 34em;
   font-size: 1em;
 
   //TABLET
@@ -2325,6 +2326,7 @@ body {
     margin-right: auto;
     width: 100%;
     max-width: 64.8em;
+    min-width: auto;
   }
 
   &-item {

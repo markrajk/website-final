@@ -1190,13 +1190,15 @@ body {
 
 .custom-accordion {
   max-width: 39.2em;
+  min-width: 34em;
   font-size: 1em; }
   @media (max-width: 991px) {
     .custom-accordion {
       margin-left: auto;
       margin-right: auto;
       width: 100%;
-      max-width: 64.8em; } }
+      max-width: 64.8em;
+      min-width: auto; } }
   .custom-accordion-item {
     overflow: hidden;
     margin-bottom: 1.25em; }

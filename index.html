@@ -722,10 +722,10 @@
       //heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
       learnCardsHeight()
 
-      if (window.innerWidth < 1320 && window.innerWidth > 991) {
+      if (window.innerWidth < 1320 && window.innerWidth > 1145) {
         resizeDashboard()
       } else {
-        if (dashboardEl.style.fontSize !== '1em') {
+        if (dashboardEl.style.fontSize !== '1em' && (window.innerWidth > 1320 || window.innerWidth < 991)) {
           dashboardEl.style.fontSize = '1em';
         }
       }
