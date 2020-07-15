@@ -567,13 +567,13 @@ html {
   
   font-size: 62.5%;   //1rem = 10px 10px/16 62.5%
 
-  @include respond(desktop-md) {
-    font-size: 60%;
-  }
+  // @include respond(desktop-md) {
+  //   font-size: 60%;
+  // }
 
-  @include custom-respond(800) {
-    font-size: 57.5%;
-  }
+  // @include custom-respond(800) {
+  //   font-size: 57.5%;
+  // }
 
 }
 
@@ -2512,12 +2512,24 @@ body {
 #main-employees {
 
   & .section-hero {
-    &-wrapper {
-      background-image: url('../assets/img/hero-02-img.png');
+    background-image: url('../assets/img/hero-02-img.png');
       background-position: center center;
       background-size: auto 100%;
       background-repeat: no-repeat;
+
+      @include custom-respond(1100) {
+        background: none;
+      }
+    &-wrapper {
+      // background-image: url('../assets/img/hero-02-img.png');
+      // background-position: center center;
+      // background-size: auto 100%;
+      // background-repeat: no-repeat;
       background-color: rgba(245, 245, 245, 0.57);
+
+      @include custom-respond(1100) {
+        background-color: transparent;
+      }
 
       // @include custom-respond(1440) {
       //   background-size: 100% auto;
@@ -2527,8 +2539,14 @@ body {
     &-main {
       padding-top: 10em;
       padding-bottom: 10em;
-      font-size: 1rem;
+      font-size: 1em;
       text-align: center;
+
+      //TABLET
+      @include respond(desktop-md) {
+        padding-top: 11em;
+        padding-bottom: 9em;
+      }
       
       &-title {
         margin-bottom: emcalc(4.2,4.6);
@@ -2536,6 +2554,15 @@ body {
         font-weight: 600;
         line-height: 1.35;
         color: #171f38;
+
+        //TABLET
+        @include respond(desktop-md) {
+          margin-bottom: emcalc(4.2,4);
+          font-size: 4em;
+          font-weight: 600;
+          line-height: 1.4;
+          color: #171f38;
+        }
       }
 
       &-text {
@@ -2548,6 +2575,15 @@ body {
         line-height: 1.78;
         letter-spacing: 0.09px;
         color: #4a5669;
+
+        //TABLET
+        @include respond(desktop-md) {
+          margin-bottom: emcalc(5.4,1.7);
+          font-size: 1.7em;
+          font-weight: 400;
+          line-height: 1.65;
+          color: #282d53;
+        }
       }
 
       &-inputs {
@@ -2563,6 +2599,12 @@ body {
           border: solid 2px #c1c9d8;
           background-color: #ffffff;
 
+          //TABLET
+          @include respond(desktop-md) {
+            height: emcalc(5.4,1.5);
+            font-size: 1.5em;
+          }
+
           &::placeholder {
             color: #657794;
           }
@@ -2575,6 +2617,14 @@ body {
           font-weight: 600;
           line-height: 1.21;
           letter-spacing: 0.1px;
+
+          //TABLET
+          @include respond(desktop-md) {
+            height: emcalc(5.4,1.7);
+            font-size: 1.7em;
+            line-height: 1.18;
+            letter-spacing: 0.09px;
+          }
         }
       }
     }
@@ -2585,11 +2635,30 @@ body {
     &-main {
       max-width: 49.6em;
 
+      //TABLET
+      @include respond(desktop-md) {
+        max-width: 100vw;
+      }
+
+      &-title {
+        margin-bottom: emcalc(2.6,2.8);
+        font-size: 2.8em;
+        font-weight: 600;
+      }
+
       &-text {
+        margin-bottom: emcalc(3,1.65);
         font-size: 1.65em;
+        font-weight: 400;
         line-height: 1.82;
         letter-spacing: normal;
         height: auto;
+
+        //TABLET
+        @include respond(desktop-md) {
+          font-size: 1.6em;
+          max-width: emcalc(48.6, 1.6)!important;
+        }
       }
     }
 
@@ -2607,6 +2676,11 @@ body {
 
       & .section-feature-card-main-text {
         max-width: emcalc(48.1,1.65);
+
+        //TABLET
+        @include respond(desktop-md) {
+          max-width: emcalc(55,1.6)!important;
+        }
       }
     }
 
@@ -2632,6 +2706,11 @@ body {
 
       & .section-feature-card-main-text {
         max-width: emcalc(46.3,1.65);
+
+        //TABLET
+        @include respond(desktop-md) {
+          max-width: emcalc(55,1.6)!important;
+        }
       }
     }
   }
@@ -2643,14 +2722,29 @@ body {
 
       &-subtitle {
         color: #FFF;
+
+        @include respond(desktop-md) {
+          font-size: 1.9em;
+          font-size: 600;
+        }
       }
 
       &-title {
         color: #FFF;
+
+        @include respond(desktop-md) {
+          font-size: 3em;
+        }
       }
 
       &-text {
         color: #FFF;
+
+        //TABLET
+        @include respond(desktop-md) {
+          font-size: 1.6em;
+          font-weight: 400;
+        }
       }
     }
   }

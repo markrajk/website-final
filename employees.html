@@ -479,29 +479,21 @@
   <script src="./public/js/main.js"></script>
 
   <script>
-    // var heroSection = document.querySelector('.section-hero');
-    // var dashboardEl = document.querySelector('.section-dashboard-main');
+    var heroSection = document.querySelector('.section-hero');
+    var dashboardEl = document.querySelector('.section-dashboard-main');
 
 
-    // function resizeHero() {
-    //   if (window.innerWidth > 1245) {
-    //     heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
-    //   }
-    //   //heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
-    //   learnCardsHeight()
+    function resizeHero() {
+      if (window.innerWidth < 1380 && window.innerWidth > 1100) {
+        heroSection.style.fontSize = `${heroSection.offsetWidth / 1380}em`;
+      } else {
+        heroSection.style.fontSize = `1em`;
+      }
+    }
 
-    //   if (window.innerWidth < 1320 && window.innerWidth > 1145) {
-    //     resizeDashboard()
-    //   } else {
-    //     if (dashboardEl.style.fontSize !== '1em' && (window.innerWidth > 1320 || window.innerWidth < 991)) {
-    //       dashboardEl.style.fontSize = '1em';
-    //     }
-    //   }
-    // }
+    window.addEventListener('resize', resizeHero)
 
-    // window.addEventListener('resize', resizeHero)
-
-    // resizeHero()
+    resizeHero()
 
     //ACCORDION
     var accordionItems = document.querySelectorAll('.custom-accordion-item');
