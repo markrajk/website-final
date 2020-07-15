@@ -1262,8 +1262,13 @@ body {
 //=============================================
 //               SECTION HERO
 //=============================================
+#main-overview,
+#main-employees {
+  padding-top: 6.8rem;
+}
+
 #main-overview {
-  padding-top: 8.4rem;
+
 
   & .section-hero {
     padding-right: 0;
@@ -1531,7 +1536,8 @@ body {
 //=============================================
 //             SECTION BANNER
 //=============================================
-#main-overview {
+#main-overview,
+#main-employees {
 
   & .section-banner {
     font-style: 1rem;
@@ -1617,7 +1623,8 @@ body {
 //=============================================
 //             FEATURE CARD
 //=============================================
-#main-overview {
+#main-overview,
+#main-employees {
 
   & .section-feature-card {
     font-size: 1rem;
@@ -1842,6 +1849,17 @@ body {
         }
       }
     }
+  }
+}
+
+//===========================================
+//          PAGE SPECIFIC
+//===========================================
+
+//OVERVIEW
+#main-overview {
+
+  & .section-feature-card {
 
     &.card-01 {
       padding-top: 7.4em;
@@ -2202,7 +2220,8 @@ body {
 //=============================================
 //             SECTION START
 //=============================================
-#main-overview {
+#main-overview,
+#main-employees {
 
   & .section-start {
     font-size: 1rem;
@@ -2486,6 +2505,157 @@ body {
     }
   }
 }
+
+//=========================================================================================================================================
+//                                                           EMPLOYEES LAYOUT
+//=========================================================================================================================================
+#main-employees {
+
+  & .section-hero {
+    &-wrapper {
+      background-image: url('../assets/img/hero-02-img.png');
+      background-position: center center;
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      background-color: rgba(245, 245, 245, 0.57);
+
+      // @include custom-respond(1440) {
+      //   background-size: 100% auto;
+      // }
+    }
+
+    &-main {
+      padding-top: 10em;
+      padding-bottom: 10em;
+      font-size: 1rem;
+      text-align: center;
+      
+      &-title {
+        margin-bottom: emcalc(4.2,4.6);
+        font-size: 4.6em;
+        font-weight: 600;
+        line-height: 1.35;
+        color: #171f38;
+      }
+
+      &-text {
+        margin-bottom: emcalc(5.4,1.8);
+        margin-left: auto;
+        margin-right: auto;
+        max-width: emcalc(39.2,1.8);
+        font-size: 1.8em;
+        font-weight: 400;
+        line-height: 1.78;
+        letter-spacing: 0.09px;
+        color: #4a5669;
+      }
+
+      &-inputs {
+
+        & input {
+          margin-right: emcalc(1.2,1.7);
+          padding: emcalc(1.8,1.7) emcalc(2,1.7);
+          height: emcalc(6,1.7);
+          font-size: 1.7em;
+          font-weight: 400;
+          letter-spacing: 0.09px;
+          border-radius: 5px;
+          border: solid 2px #c1c9d8;
+          background-color: #ffffff;
+
+          &::placeholder {
+            color: #657794;
+          }
+        }
+
+        & .button-primary {
+          padding: emcalc(1.9,1.9) emcalc(2.4,1.9);
+          height: emcalc(6,1.9);
+          font-size: 1.9em;
+          font-weight: 600;
+          line-height: 1.21;
+          letter-spacing: 0.1px;
+        }
+      }
+    }
+  }
+
+  & .section-feature-card {
+
+    &-main {
+      max-width: 49.6em;
+
+      &-text {
+        font-size: 1.65em;
+        line-height: 1.82;
+        letter-spacing: normal;
+        height: auto;
+      }
+    }
+
+    &.card-01 {
+      padding-top: 10em;
+
+      & .section-feature-card-main-text {
+        max-width: emcalc(50,1.65);
+      }
+    }
+
+    &.card-02 {
+      padding-top: 6em;
+      padding-bottom: 6em;
+
+      & .section-feature-card-main-text {
+        max-width: emcalc(48.1,1.65);
+      }
+    }
+
+    &.card-03 {
+      padding-bottom: 6em;
+
+      & .section-feature-card-main-text {
+        max-width: emcalc(49.6,1.65);
+      }
+    }
+
+    &.card-04 {
+      padding-top: 7em;
+
+      & .section-feature-card-main-text {
+        max-width: emcalc(47.9,1.65);
+      }
+    }
+
+    &.card-05 {
+      padding-top: 6em;
+      padding-bottom: 7em;
+
+      & .section-feature-card-main-text {
+        max-width: emcalc(46.3,1.65);
+      }
+    }
+  }
+
+  & .section-banner {
+    background-color: #05454d;
+    
+    &-main {
+
+      &-subtitle {
+        color: #FFF;
+      }
+
+      &-title {
+        color: #FFF;
+      }
+
+      &-text {
+        color: #FFF;
+      }
+    }
+  }
+}
+
 
 //=========================================================================================================================================
 //                                                           ADDITIONAL CLASSES
