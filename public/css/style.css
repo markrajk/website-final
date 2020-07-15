@@ -1194,9 +1194,9 @@ body {
       max-width: 64.8em; } }
   .custom-accordion-item {
     overflow: hidden;
-    margin-bottom: 1.2em; }
+    margin-bottom: 1.25em; }
     .custom-accordion-item-header {
-      padding: 2em 2.5em;
+      padding: 1.875em 2.5em;
       display: -webkit-box;
       display: -webkit-flex;
       display: -moz-flex;
@@ -1217,7 +1217,7 @@ body {
       transition: all .0s ease-in-out;
       cursor: pointer; }
       .custom-accordion-item-header-title {
-        font-size: 1.7em;
+        font-size: 1.6em;
         font-weight: 600;
         color: #171f38;
         letter-spacing: 0.09px;
