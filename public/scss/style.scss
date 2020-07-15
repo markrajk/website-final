@@ -2689,7 +2689,7 @@ body {
         //TABLET
         @include respond(desktop-md) {
           font-size: 1.6em;
-          max-width: emcalc(48.6, 1.6)!important;
+          max-width: emcalc(61, 1.6)!important;
         }
 
         //MOBILE
