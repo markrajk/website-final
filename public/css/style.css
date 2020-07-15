@@ -859,7 +859,7 @@ body {
       @media not all and (min-resolution: 0.001dpcm) {
         @supports (-webkit-appearance: none) {
           #main-overview .section-feature-card.card-02 .section-feature-card-main-text {
-            max-width: 30.9677419355em; } } }
+            max-width: 32.2580645161em; } } }
       @media (max-width: 991px) {
         #main-overview .section-feature-card.card-02 .section-feature-card-main-text {
           max-width: 30.9677419355em; } }

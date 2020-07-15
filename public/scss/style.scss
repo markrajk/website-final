@@ -1858,8 +1858,9 @@ body {
 
       & .section-feature-card-main-text {
         max-width: emcalc(47, 1.55);
+
         @include target-safari() {
-          max-width: emcalc(48, 1.55);
+          max-width: emcalc(50, 1.55);
         }
 
         //TABLET
