@@ -2547,6 +2547,12 @@ body {
         padding-top: 11em;
         padding-bottom: 9em;
       }
+
+      //MOBILE
+      @include respond(desktop-xsm) {
+        padding-top: 8em;
+        padding-bottom: 6em;
+      }
       
       &-title {
         margin-bottom: emcalc(4.2,4.6);
@@ -2563,6 +2569,15 @@ body {
           line-height: 1.4;
           color: #171f38;
         }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(3.6,2.8);
+          font-size: 2.8em;
+          font-weight: 600;
+          line-height: 1.5;
+          color: #0e1321;
+        }
       }
 
       &-text {
@@ -2578,11 +2593,17 @@ body {
 
         //TABLET
         @include respond(desktop-md) {
-          margin-bottom: emcalc(5.4,1.7);
+          margin-bottom: 0;
           font-size: 1.7em;
           font-weight: 400;
           line-height: 1.65;
           color: #282d53;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          max-width: emcalc(33,1.5);
+          font-size: 1.5em;
         }
       }
 
@@ -2626,6 +2647,11 @@ body {
             letter-spacing: 0.09px;
           }
         }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          display: none;
+        }
       }
     }
   }
@@ -2644,6 +2670,12 @@ body {
         margin-bottom: emcalc(2.6,2.8);
         font-size: 2.8em;
         font-weight: 600;
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(1.8,2);
+          font-size: 2em;
+        }
       }
 
       &-text {
@@ -2658,6 +2690,12 @@ body {
         @include respond(desktop-md) {
           font-size: 1.6em;
           max-width: emcalc(48.6, 1.6)!important;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(1.8,2);
+          font-size: 1.4em;
         }
       }
     }
@@ -2723,17 +2761,32 @@ body {
       &-subtitle {
         color: #FFF;
 
+        //TABLET
         @include respond(desktop-md) {
           font-size: 1.9em;
           font-size: 600;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(2,1.8);
+          font-size: 1.8em;
         }
       }
 
       &-title {
         color: #FFF;
 
+        //TABLET
         @include respond(desktop-md) {
           font-size: 3em;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          margin-bottom: emcalc(2,2.8);
+          font-size: 2.8em;
+          line-height: 1.5;
         }
       }
 
@@ -2744,6 +2797,13 @@ body {
         @include respond(desktop-md) {
           font-size: 1.6em;
           font-weight: 400;
+        }
+
+        //MOBILE
+        @include respond(desktop-xsm) {
+          max-width: 90%!important;
+          font-size: 1.45em;
+          line-height: 1.79;
         }
       }
     }
