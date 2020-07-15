@@ -334,7 +334,7 @@
             All your people will get much more feedback than at the
             moment. Everyone can now easily follow his own development
             and receives a lot of compliments and improvement ideas.
-            With just a quick a look at the app everyone can check <br>
+            With just a quick a look at the app everyone can check <br class="hide-md">
             how he is doing at the moment and how to improve.
           </span>
 
@@ -712,6 +712,7 @@
 
   <script>
     var heroSection = document.querySelector('.section-hero');
+    var dashboardEl = document.querySelector('.section-dashboard-main');
 
 
     function resizeHero() {
@@ -720,6 +721,14 @@
       }
       //heroSection.style.fontSize = `${heroSection.offsetWidth / 1376}em`;
       learnCardsHeight()
+
+      if (window.innerWidth < 1320 && window.innerWidth > 991) {
+        resizeDashboard()
+      } else {
+        if (dashboardEl.style.fontSize !== '1em') {
+          dashboardEl.style.fontSize = '1em';
+        }
+      }
     }
 
     window.addEventListener('resize', resizeHero)
@@ -731,14 +740,6 @@
 
     for (var i = 0; i < accordionItems.length; i++) {
       accordionItems[i].addEventListener('click', function () {
-        // if (this.classList.contains('open')) {
-        //   this.classList.remove('open')
-        // } else {
-        //   for (var j = 0; j < accordionItems.length; j++) {
-        //     accordionItems[j].classList.remove('open');
-        //   }
-        //   this.classList.add('open')
-        // }
         for (var j = 0; j < accordionItems.length; j++) {
           accordionItems[j].classList.remove('open');
         }
@@ -837,6 +838,12 @@
       } else {
         learnCards.forEach(e => e.style.minHeight = `${maxHeight}px`)
       }
+    }
+
+    //RESIZE DASHBOARD
+
+    function resizeDashboard() {
+      dashboardEl.style.fontSize = `${window.innerWidth / 1320}em`;
     }
 
     learnCardsHeight()

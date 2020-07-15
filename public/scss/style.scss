@@ -1555,9 +1555,10 @@ body {
         margin-left: auto;
         margin-right: auto;
         max-width: emcalc(60, 1.6);
-        font-size: 1.6rem;
-        font-weight: 400;
-        line-height: 1.88;
+        font-size: 1.55rem;
+        font-weight: 500;
+        line-height: 1.81;
+        letter-spacing: 0.08px;
         color: #383838;
 
         //TABLET
@@ -1875,22 +1876,20 @@ body {
 #main-overview {
 
   .section-dashboard {
-    min-height: 93em;
+    // min-height: 93em;
     padding-top: 6em;
-    padding-bottom: 6em;
     font-size: 1rem;
     background-color: #ebf5f3;
 
     @include respond(desktop-md) {
-      min-height: 116.4em;
+      //min-height: 116.4em;
     }
 
     @include respond(desktop-xsm) {
-      min-height: 100em;
+      //min-height: 100em;
     }
 
     &-header {
-      margin-bottom: 6.2em;
       text-align: center;
 
       //TABLET
@@ -1914,14 +1913,26 @@ body {
     }
 
     &-main {
+      min-height: 75em;
+      padding-top: 6em;
+      padding-bottom: 6em;
       @include flexbox();
       @include align-items(flex-start);
       @include justify-content(space-between);
+      font-size: 1em;
+
+      @include respond(desktop-md) {
+        min-height: 100em;
+      }
+
+      @include respond(desktop-xsm) {
+        min-height: 90em;
+      }
 
       &-media {
         position: relative;
         margin-left: 4em;
-        margin-top: 7.2em;
+        margin-top: 3.5em;
         max-width: 74.9em;
         width: 100%;
         height: 51.8em;
@@ -2306,7 +2317,7 @@ body {
 
 .custom-accordion{
   max-width: 39.2em;
-  font-size: 1rem;
+  font-size: 1em;
 
   //TABLET
   @include respond(desktop-md) {
